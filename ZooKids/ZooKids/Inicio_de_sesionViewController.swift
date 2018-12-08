@@ -25,6 +25,19 @@ class Inicio_de_sesionViewController: UIViewController {
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
+    @IBAction func entrar_como_admin(sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Admin", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("admin") as UIViewController
+        
+        //esta primera es para cuando se quiere añadir un view controller de modo modal, es decir, que no tenga
+        //la opcion predeterminada de ir para atras
+        //self.presentViewController(controller, animated: true, completion: nil)
+        
+        //con esta forma se añade el view controller con el boton de atras.
+        self.navigationController?.pushViewController(controller, animated: true)
+
+    }
     
     
     override func didReceiveMemoryWarning() {

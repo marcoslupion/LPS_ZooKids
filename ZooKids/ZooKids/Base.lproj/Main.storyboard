@@ -31,6 +31,13 @@
                                     <segue destination="TVh-Yb-jaQ" kind="show" id="Fha-Gw-lmd"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlD-13-5kK">
+                                <rect key="frame" x="144" y="378" width="130" height="30"/>
+                                <state key="normal" title="entrar como admin"/>
+                                <connections>
+                                    <action selector="entrar_como_admin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXf-fO-dn5"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfj-DD-5u2">
                                 <rect key="frame" x="191" y="151" width="46" height="30"/>
                                 <state key="normal" title="Entrar"/>
