@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IDT-vy-3u9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -17,8 +17,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeL-j9-2uW">
+                                <rect key="frame" x="138" y="214" width="152" height="43"/>
+                                <state key="normal" title="Recuperar contraseña"/>
+                                <connections>
+                                    <action selector="btnEntrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cI-yg-Hrj"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbt-7t-JrH">
+                                <rect key="frame" x="235" y="299" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <segue destination="TVh-Yb-jaQ" kind="show" id="Fha-Gw-lmd"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfj-DD-5u2">
-                                <rect key="frame" x="220" y="155" width="46" height="30"/>
+                                <rect key="frame" x="191" y="151" width="46" height="30"/>
                                 <state key="normal" title="Entrar"/>
                                 <connections>
                                     <action selector="btnEntrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fN2-dR-zGe"/>
@@ -27,36 +41,77 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Pf8-Ng-Ay5"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-298" y="133"/>
+            <point key="canvasLocation" x="514" y="133"/>
         </scene>
-        <!--Recuperar_password-->
-        <scene sceneID="Mu0-11-kEv">
+        <!--Recuperar contraseña-->
+        <scene sceneID="ItM-il-xpg">
             <objects>
-                <viewController title="Recuperar_password" id="vks-m2-TOY" sceneMemberID="viewController">
+                <viewController id="TVh-Yb-jaQ" customClass="Recuperar_Contrasenia_ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="i0I-jp-iQJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="rrA-Or-fYy"/>
+                        <viewControllerLayoutGuide type="top" id="bej-6k-s1W"/>
+                        <viewControllerLayoutGuide type="bottom" id="mg3-oR-4XB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Edc-f2-JLl">
+                    <view key="view" contentMode="scaleToFill" id="jKA-oa-ehW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r2F-R4-a9g">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Administración" id="ncW-dv-Nia"/>
-                                </items>
-                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9z8-Uo-LB7">
+                                <rect key="frame" x="148" y="197" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Recuperar contraseña" id="DVh-N5-D7u"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CSp-9Z-yOd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sgG-FX-hUJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="411" y="133"/>
+            <point key="canvasLocation" x="1198" y="133"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="tCx-LG-79Z">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IDT-vy-3u9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cKp-yy-fSA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="wlc-hp-Wxw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZDl-r5-jmV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-298" y="133"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="p2b-8A-nrj">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="iQY-S2-5Fl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="YEs-p3-Joe">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="TVh-Yb-jaQ" kind="relationship" relationship="rootViewController" id="7rv-Nc-PP3"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KvX-xN-tRn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="514" y="777"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fha-Gw-lmd"/>
+    </inferredMetricsTieBreakers>
 </document>

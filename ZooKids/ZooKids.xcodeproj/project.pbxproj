@@ -44,6 +44,7 @@
 		8D87449E21B6EBD300F7986A /* ZooKidsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZooKidsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D8744A221B6EBD300F7986A /* ZooKidsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooKidsTests.swift; sourceTree = "<group>"; };
 		8D8744A421B6EBD300F7986A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DF58F2221BC4887004ACFC5 /* Recuperar_Contrasenia_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recuperar_Contrasenia_ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +92,7 @@
 				843B817421B9C4B20051146F /* Admin.storyboard */,
 				843B817821B9D1590051146F /* nino.storyboard */,
 				843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */,
+				8DF58F2221BC4887004ACFC5 /* Recuperar_Contrasenia_ViewController.swift */,
 				8D87449421B6EBD300F7986A /* Assets.xcassets */,
 				8D87449621B6EBD300F7986A /* LaunchScreen.storyboard */,
 				8D87449921B6EBD300F7986A /* Info.plist */,
