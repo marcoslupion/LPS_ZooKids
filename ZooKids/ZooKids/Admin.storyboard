@@ -17,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFa-iP-mCd">
-                                <rect key="frame" x="111" y="140" width="99" height="30"/>
-                                <state key="normal" title="Añadir alumno"/>
-                                <connections>
-                                    <segue destination="fkp-bQ-R8m" kind="show" id="OND-Xb-vPt"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFx-rp-bB0">
                                 <rect key="frame" x="103" y="178" width="85" height="30"/>
                                 <state key="normal" title="Ver alumnos"/>
@@ -36,6 +29,13 @@
                                 <state key="normal" title="Estadisticas"/>
                                 <connections>
                                     <segue destination="KMQ-0V-8PW" kind="show" id="Xz1-A8-dfY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8N-bZ-GVy">
+                                <rect key="frame" x="50" y="105" width="99" height="30"/>
+                                <state key="normal" title="Añadir alumno"/>
+                                <connections>
+                                    <segue destination="2uA-yf-VhT" kind="presentation" id="JHL-01-Ugu"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -84,7 +84,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxL-xJ-oVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1126" y="713"/>
+            <point key="canvasLocation" x="2892" y="773"/>
         </scene>
         <!--Estadistica Resultados-->
         <scene sceneID="5na-ab-mWe">
@@ -111,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03E-S7-Ngk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1861" y="713"/>
+            <point key="canvasLocation" x="3575" y="729"/>
         </scene>
         <!--Registro-->
         <scene sceneID="Bvv-LB-WmL">
@@ -134,11 +134,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Registrar alumno" id="BFY-QF-TRG"/>
+                    <navigationItem key="navigationItem" title="Registrar alumno" id="BFY-QF-TRG">
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="eZe-Bc-oLJ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Añadir alumno" id="ui3-5i-l1B"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFh-fA-bHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="707"/>
+            <point key="canvasLocation" x="1932" y="791"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hhN-AW-9FI">
@@ -174,7 +177,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7EU-FD-qcP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137" y="1387"/>
+            <point key="canvasLocation" x="2031" y="1457"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="e3l-ij-CGR">
@@ -193,29 +196,43 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDn-pk-d4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1785" y="1387"/>
+            <point key="canvasLocation" x="2605" y="1463"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="H6U-AL-goq">
+        <scene sceneID="4Wi-Q3-Djz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tfN-LK-QLr" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="APU-ux-heU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bZU-f8-cK9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HqX-nr-IRl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QmS-CE-Icp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="545" y="703"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="445-Tf-Yaz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2uA-yf-VhT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="EbQ-fc-C33">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="fkp-bQ-R8m" kind="relationship" relationship="rootViewController" id="1vS-iu-gNG"/>
+                        <segue destination="fkp-bQ-R8m" kind="relationship" relationship="rootViewController" id="NKr-hZ-Od3"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="vJ9-fS-1fU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0YW-gh-zmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448" y="1375"/>
+            <point key="canvasLocation" x="1120" y="791"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="OND-Xb-vPt"/>
         <segue reference="Xz1-A8-dfY"/>
         <segue reference="qjZ-od-Uct"/>
     </inferredMetricsTieBreakers>
