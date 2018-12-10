@@ -26,7 +26,8 @@ class Recuperar_contraseniaViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
+        
         // Do any additional setup after loading the view.
     }
 

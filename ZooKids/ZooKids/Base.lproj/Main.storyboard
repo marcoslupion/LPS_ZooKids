@@ -18,10 +18,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="FKH-S7-ju6">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="FKH-S7-ju6">
                                 <rect key="frame" x="40" y="84" width="520" height="399"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="lHG-6p-V41">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lHG-6p-V41">
                                         <rect key="frame" x="127" y="0.0" width="266" height="237"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="y88-A5-v0r">
@@ -71,10 +71,10 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yg1-8w-Dik">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yg1-8w-Dik">
                                         <rect key="frame" x="160" y="369" width="200" height="30"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfj-DD-5u2">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfj-DD-5u2">
                                                 <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.20000000000000001" green="0.52156862745098043" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -118,6 +118,7 @@
         <!--Recuperar contraseña-->
         <scene sceneID="9lH-ag-7Tf">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JK5-cP-qNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="wWS-oW-esG" customClass="Recuperar_contraseniaViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3LY-jO-VBj"/>
@@ -144,7 +145,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzG-Ac-bkW">
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzG-Ac-bkW">
                                         <rect key="frame" x="160" y="182" width="200" height="30"/>
                                         <color key="backgroundColor" red="0.20000000000000001" green="0.52156862749999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -168,15 +169,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="Recuperar contraseña" id="s4i-BJ-5RB" colorLabel="IBBuiltInLabel-Blue">
                         <barButtonItem key="leftBarButtonItem" title="Salir" id="mpk-Eo-tJQ">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="salir:" destination="wWS-oW-esG" id="qeQ-oB-TLd"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="JfG-Hx-cvy">
+                            <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jvT-we-7pF">
+                                <rect key="frame" x="529" y="0.0" width="51" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Logo Item Bar"/>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JK5-cP-qNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2206" y="-233"/>
+            <point key="canvasLocation" x="2131" y="-162"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="tCx-LG-79Z">
@@ -216,6 +224,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="266" height="237"/>
+        <image name="Logo" width="266" height="237"/>
+        <image name="Logo Item Bar" width="177" height="158"/>
     </resources>
 </document>
