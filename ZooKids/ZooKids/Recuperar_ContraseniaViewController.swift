@@ -1,22 +1,33 @@
 //
-//  Recuperar_Contrasenia_ViewController.swift
+//  Recuperar_contraseniaViewController.swift
 //  ZooKids
 //
-//  Created by Marcos on 08/12/2018.
+//  Created by Aula11 on 10/12/18.
 //  Copyright © 2018 ual. All rights reserved.
 //
 
 import UIKit
 
-class Recuperar_Contrasenia_ViewController: UIViewController {
+class Recuperar_contraseniaViewController: UIViewController {
 
+    @IBAction func salir(sender: UIBarButtonItem) {
+        if presentingViewController is UINavigationController{
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            navigationController!.popViewControllerAnimated(true)
+        }
+    }
+    @IBAction func enviar(sender: UIButton) {
+        if presentingViewController is UINavigationController{
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            navigationController!.popViewControllerAnimated(true)
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Volver Atrás", style: .Plain, target: nil, action: nil)
-        
-
     }
 
     override func didReceiveMemoryWarning() {

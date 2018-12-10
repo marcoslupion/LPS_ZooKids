@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="17G3025" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IDT-vy-3u9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="17G65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="IDT-vy-3u9">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Inicio de sesion View Controller-->
@@ -17,38 +18,96 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeL-j9-2uW">
-                                <rect key="frame" x="138" y="214" width="152" height="43"/>
-                                <state key="normal" title="Recuperar contraseña"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="FKH-S7-ju6">
+                                <rect key="frame" x="40" y="84" width="520" height="399"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="lHG-6p-V41">
+                                        <rect key="frame" x="127" y="0.0" width="266" height="237"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="y88-A5-v0r">
+                                        <rect key="frame" x="116" y="267" width="289" height="72"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-b2-gZf">
+                                                <rect key="frame" x="0.0" y="0.0" width="289" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeS-48-55A">
+                                                        <rect key="frame" x="0.0" y="0.0" width="59" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduce nombre usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eq1-BN-1Xc">
+                                                        <rect key="frame" x="101" y="0.0" width="188" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="eq1-BN-1Xc" firstAttribute="leading" secondItem="XeS-48-55A" secondAttribute="trailing" constant="30" id="DsG-B5-jQE"/>
+                                                    <constraint firstItem="XeS-48-55A" firstAttribute="leading" secondItem="3DA-b2-gZf" secondAttribute="leading" constant="24" id="LP3-jv-J1B"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="RbG-Gt-eDn">
+                                                <rect key="frame" x="0.0" y="42" width="289" height="30"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Contraseña" textAlignment="justified" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRb-IE-Jqw">
+                                                        <rect key="frame" x="0.0" y="0.0" width="89" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduce contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hax-k0-Z3T">
+                                                        <rect key="frame" x="101" y="0.0" width="188" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="188" id="TK0-E3-J2U"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="dRb-IE-Jqw" firstAttribute="leading" secondItem="RbG-Gt-eDn" secondAttribute="leading" constant="12" id="yxs-TO-qj8"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yg1-8w-Dik">
+                                        <rect key="frame" x="160" y="369" width="200" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfj-DD-5u2">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
+                                                <color key="backgroundColor" red="0.20000000000000001" green="0.52156862745098043" blue="0.85098039215686272" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="200" id="NHR-y9-AiG"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Entrar"/>
+                                                <connections>
+                                                    <action selector="btnEntrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fN2-dR-zGe"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97P-Ox-T7h">
+                                <rect key="frame" x="426" y="550" width="154" height="30"/>
+                                <state key="normal" title="Recuperar Contraseña"/>
                                 <connections>
-                                    <action selector="btnEntrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5cI-yg-Hrj"/>
-                                    <segue destination="aqw-AM-wxo" kind="presentation" id="vJV-QC-Wff"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbt-7t-JrH">
-                                <rect key="frame" x="235" y="299" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfj-DD-5u2">
-                                <rect key="frame" x="191" y="151" width="46" height="30"/>
-                                <state key="normal" title="Entrar"/>
-                                <connections>
-                                    <action selector="btnEntrar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fN2-dR-zGe"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="97P-Ox-T7h">
-                                <rect key="frame" x="252" y="432" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlD-13-5kK">
-                                <rect key="frame" x="144" y="378" width="130" height="30"/>
-                                <state key="normal" title="entrar como admin"/>
-                                <connections>
-                                    <action selector="entrar_como_admin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QXf-fO-dn5"/>
+                                    <segue destination="aqw-AM-wxo" kind="presentation" id="R5S-6c-BFy"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="97P-Ox-T7h" secondAttribute="trailing" constant="20" id="42j-BW-T83"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FKH-S7-ju6" secondAttribute="trailing" constant="20" id="bcL-SG-Joj"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="97P-Ox-T7h" secondAttribute="bottom" constant="20" id="mhl-NE-xch"/>
+                            <constraint firstItem="FKH-S7-ju6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="pnA-aH-cEb"/>
+                            <constraint firstItem="FKH-S7-ju6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="sFe-Se-axV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pf8-Ng-Ay5"/>
                 </viewController>
@@ -59,7 +118,7 @@
         <!--Recuperar contraseña-->
         <scene sceneID="9lH-ag-7Tf">
             <objects>
-                <viewController id="wWS-oW-esG" sceneMemberID="viewController">
+                <viewController id="wWS-oW-esG" customClass="Recuperar_contraseniaViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3LY-jO-VBj"/>
                         <viewControllerLayoutGuide type="bottom" id="Yid-ga-5CN"/>
@@ -67,10 +126,52 @@
                     <view key="view" contentMode="scaleToFill" id="ue2-ra-h3S">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="center" ambiguous="YES" misplaced="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lfM-0H-HCm">
+                                <rect key="frame" x="40" y="84" width="520" height="212"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" editable="NO" textAlignment="justified" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D2D-5e-NeP">
+                                        <rect key="frame" x="0.0" y="0.0" width="520" height="112"/>
+                                        <string key="text">En esta ventana se va a proceder a recuperar la contraseña, para ello introduzca el email con el que se registró para mandar la contraseña actual a él</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="97" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduzca el email con el que se registró" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VWB-6e-eFj">
+                                        <rect key="frame" x="60" y="132" width="400" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="400" id="T1v-th-GI0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YzG-Ac-bkW">
+                                        <rect key="frame" x="160" y="182" width="200" height="30"/>
+                                        <color key="backgroundColor" red="0.20000000000000001" green="0.52156862749999999" blue="0.85098039219999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="XCk-fm-EB7"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Enviar"/>
+                                        <connections>
+                                            <action selector="enviar:" destination="wWS-oW-esG" eventType="touchUpInside" id="U1s-K0-d8r"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="lfM-0H-HCm" firstAttribute="top" secondItem="3LY-jO-VBj" secondAttribute="bottom" constant="20" id="9kA-nV-He7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lfM-0H-HCm" secondAttribute="trailing" constant="20" id="QZ7-jw-QsT"/>
+                            <constraint firstItem="lfM-0H-HCm" firstAttribute="leading" secondItem="ue2-ra-h3S" secondAttribute="leadingMargin" constant="20" id="xfh-de-gtw"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Recuperar contraseña" id="s4i-BJ-5RB">
-                        <barButtonItem key="leftBarButtonItem" title="Item" id="mpk-Eo-tJQ"/>
+                    <navigationItem key="navigationItem" title="Recuperar contraseña" id="s4i-BJ-5RB" colorLabel="IBBuiltInLabel-Blue">
+                        <barButtonItem key="leftBarButtonItem" title="Salir" id="mpk-Eo-tJQ">
+                            <connections>
+                                <action selector="salir:" destination="wWS-oW-esG" id="qeQ-oB-TLd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JK5-cP-qNY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -114,4 +215,7 @@
             <point key="canvasLocation" x="1353" y="46"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="266" height="237"/>
+    </resources>
 </document>
