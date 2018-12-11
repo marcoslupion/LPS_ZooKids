@@ -24,6 +24,13 @@ class Inicio_de_sesionViewController: UIViewController {
         self.presentViewController(controller, animated: true, completion: nil)
     }
     
+    @IBAction func ir_a_juego(sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "Juego", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("juego") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
