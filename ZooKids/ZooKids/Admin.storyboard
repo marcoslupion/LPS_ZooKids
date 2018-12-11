@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Administración-->
@@ -17,35 +18,126 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FFx-rp-bB0">
-                                <rect key="frame" x="103" y="178" width="85" height="30"/>
-                                <state key="normal" title="Ver alumnos"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="iHQ-Oc-X7d">
+                                <rect key="frame" x="150" y="77" width="300" height="444"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="NOg-HI-z6T">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="140"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="anadirAlumno" translatesAutoresizingMaskIntoConstraints="NO" id="naH-Qs-LM6">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="140" id="CRi-as-z1P"/>
+                                                    <constraint firstAttribute="height" constant="140" id="EhS-0L-Ejw"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="avu-01-TcD" appends="YES" id="KlV-cK-Hm8"/>
+                                                </connections>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Añadir alumno" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7N-KD-vOj">
+                                                <rect key="frame" x="140" y="59" width="160" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="140" id="4wS-Ya-t3x"/>
+                                            <constraint firstItem="g7N-KD-vOj" firstAttribute="top" secondItem="NOg-HI-z6T" secondAttribute="top" constant="59" id="byP-r5-7KR"/>
+                                            <constraint firstAttribute="width" constant="300" id="qf4-3G-72F"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FlK-VL-GAS">
+                                        <rect key="frame" x="0.0" y="152" width="300" height="140"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verAlumnos" translatesAutoresizingMaskIntoConstraints="NO" id="RXf-72-fka">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="140" id="GQ3-4m-v1a"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="PJC-gz-9c5" appends="YES" id="Ege-ak-Vpm"/>
+                                                </connections>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver lista de alumnos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eLt-ZJ-Gac">
+                                                <rect key="frame" x="140" y="59" width="160" height="22"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="eLt-ZJ-Gac" firstAttribute="top" secondItem="FlK-VL-GAS" secondAttribute="top" constant="59" id="32Q-m9-BDu"/>
+                                            <constraint firstAttribute="height" constant="140" id="yS6-MA-aT8"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="OZ1-xc-KEO">
+                                        <rect key="frame" x="0.0" y="304" width="300" height="140"/>
+                                        <subviews>
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verEstadisticas" translatesAutoresizingMaskIntoConstraints="NO" id="x19-zP-EaF">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="140" id="VbT-qA-M9V"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Phg-YR-jNo" appends="YES" id="M7u-7D-ObO"/>
+                                                </connections>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ver estadísticas" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LNJ-hl-5zB">
+                                                <rect key="frame" x="140" y="60" width="160" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cerrarSesion" translatesAutoresizingMaskIntoConstraints="NO" id="dMn-DQ-3UG">
+                                <rect key="frame" x="520" y="502" width="65" height="50"/>
+                                <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="KX3-oo-hqZ"/>
+                                    <constraint firstAttribute="height" constant="50" id="Wm6-go-TnD"/>
+                                </constraints>
                                 <connections>
-                                    <segue destination="j65-di-h17" kind="show" id="qjZ-od-Uct"/>
+                                    <outletCollection property="gestureRecognizers" destination="JGU-7j-rFX" appends="YES" id="Oed-0u-vqC"/>
                                 </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Tr-46-edB">
-                                <rect key="frame" x="106" y="238" width="82" height="30"/>
-                                <state key="normal" title="Estadisticas"/>
-                                <connections>
-                                    <segue destination="KMQ-0V-8PW" kind="show" id="Xz1-A8-dfY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8N-bZ-GVy">
-                                <rect key="frame" x="50" y="105" width="99" height="30"/>
-                                <state key="normal" title="Añadir alumno"/>
-                                <connections>
-                                    <segue destination="2uA-yf-VhT" kind="presentation" id="JHL-01-Ugu"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.78823529411764703" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="iHQ-Oc-X7d" firstAttribute="centerX" secondItem="f6m-IJ-8Gh" secondAttribute="centerX" id="92j-ab-Svv"/>
+                            <constraint firstItem="dMn-DQ-3UG" firstAttribute="trailing" secondItem="f6m-IJ-8Gh" secondAttribute="trailingMargin" constant="5" id="FWF-h3-1rk"/>
+                            <constraint firstItem="iHQ-Oc-X7d" firstAttribute="top" secondItem="XdT-Su-jRg" secondAttribute="bottom" constant="13" id="NpN-9D-3Tg"/>
+                            <constraint firstItem="DrA-fI-6UT" firstAttribute="top" secondItem="dMn-DQ-3UG" secondAttribute="bottom" constant="4" id="fUW-rs-UhN"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Administración" id="cIm-qd-6ao"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2X-x5-2gK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="avu-01-TcD">
+                    <connections>
+                        <segue destination="2uA-yf-VhT" kind="presentation" identifier="anadirAlumno" id="GhA-gT-Oga"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="PJC-gz-9c5">
+                    <connections>
+                        <segue destination="uho-NR-nvp" kind="presentation" id="LNp-jQ-SW2"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Phg-YR-jNo">
+                    <connections>
+                        <segue destination="8cH-jG-PQO" kind="presentation" identifier="" id="Enw-cK-WLV"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="JGU-7j-rFX"/>
             </objects>
             <point key="canvasLocation" x="1100" y="-79"/>
         </scene>
@@ -59,7 +151,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="OM6-rC-HcI">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OM6-rC-HcI" id="Dwg-ae-0i4">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -141,7 +233,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFh-fA-bHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1404" y="989"/>
+            <point key="canvasLocation" x="1424" y="905"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hhN-AW-9FI">
@@ -217,8 +309,10 @@
             <point key="canvasLocation" x="688" y="700"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="Xz1-A8-dfY"/>
-        <segue reference="mnw-y1-DN8"/>
-    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="anadirAlumno" width="266" height="237"/>
+        <image name="cerrarSesion" width="131" height="96"/>
+        <image name="verAlumnos" width="266" height="237"/>
+        <image name="verEstadisticas" width="133" height="140"/>
+    </resources>
 </document>
