@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2948082521C81DCA00178DC7 /* nino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2948082421C81DCA00178DC7 /* nino.storyboard */; };
 		299C533C21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C533B21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift */; };
 		29B9A82621C8052000F1CED9 /* Profesor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82521C8052000F1CED9 /* Profesor.swift */; };
 		29B9A82821C8092800F1CED9 /* Alumno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82721C8092800F1CED9 /* Alumno.swift */; };
@@ -17,7 +18,6 @@
 		29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82D21C81C7500F1CED9 /* TestViewController.swift */; };
 		843B817521B9C4B20051146F /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843B817421B9C4B20051146F /* Admin.storyboard */; };
 		843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */; };
-		843B817921B9D1590051146F /* nino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843B817821B9D1590051146F /* nino.storyboard */; };
 		8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448A21B6EBD300F7986A /* AppDelegate.swift */; };
 		8D87448D21B6EBD300F7986A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448C21B6EBD300F7986A /* ViewController.swift */; };
 		8D87449021B6EBD300F7986A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D87448E21B6EBD300F7986A /* Main.storyboard */; };
@@ -38,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2948082421C81DCA00178DC7 /* nino.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = nino.storyboard; path = ../../../../LPS_ZooKids/ZooKids/ZooKids/nino.storyboard; sourceTree = "<group>"; };
 		299C533B21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recuperar_contraseniaViewController.swift; sourceTree = "<group>"; };
 		29B9A82521C8052000F1CED9 /* Profesor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profesor.swift; sourceTree = "<group>"; };
 		29B9A82721C8092800F1CED9 /* Alumno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alumno.swift; sourceTree = "<group>"; };
@@ -47,7 +48,6 @@
 		29B9A82D21C81C7500F1CED9 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		843B817421B9C4B20051146F /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inicio_de_sesionViewController.swift; sourceTree = "<group>"; };
-		843B817821B9D1590051146F /* nino.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = nino.storyboard; sourceTree = "<group>"; };
 		8D87448721B6EBD300F7986A /* ZooKids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooKids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D87448A21B6EBD300F7986A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D87448C21B6EBD300F7986A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 				299C533B21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift */,
 				8D87448C21B6EBD300F7986A /* ViewController.swift */,
 				8D87448E21B6EBD300F7986A /* Main.storyboard */,
+				2948082421C81DCA00178DC7 /* nino.storyboard */,
 				843B817421B9C4B20051146F /* Admin.storyboard */,
-				843B817821B9D1590051146F /* nino.storyboard */,
 				8DF58F2321BC5460004ACFC5 /* Juego.storyboard */,
 				843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */,
 				29B9A82721C8092800F1CED9 /* Alumno.swift */,
@@ -216,7 +216,7 @@
 				843B817521B9C4B20051146F /* Admin.storyboard in Resources */,
 				29B9A82921C80FFB00F1CED9 /* Juego.storyboard in Resources */,
 				8D87449821B6EBD300F7986A /* LaunchScreen.storyboard in Resources */,
-				843B817921B9D1590051146F /* nino.storyboard in Resources */,
+				2948082521C81DCA00178DC7 /* nino.storyboard in Resources */,
 				8D87449521B6EBD300F7986A /* Assets.xcassets in Resources */,
 				8D87449021B6EBD300F7986A /* Main.storyboard in Resources */,
 			);
