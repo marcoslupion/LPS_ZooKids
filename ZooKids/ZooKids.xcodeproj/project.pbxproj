@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		299C533C21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C533B21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift */; };
+		29B9A82621C8052000F1CED9 /* Profesor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82521C8052000F1CED9 /* Profesor.swift */; };
+		29B9A82821C8092800F1CED9 /* Alumno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82721C8092800F1CED9 /* Alumno.swift */; };
+		29B9A82921C80FFB00F1CED9 /* Juego.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF58F2321BC5460004ACFC5 /* Juego.storyboard */; };
 		843B817521B9C4B20051146F /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843B817421B9C4B20051146F /* Admin.storyboard */; };
 		843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */; };
 		843B817921B9D1590051146F /* nino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843B817821B9D1590051146F /* nino.storyboard */; };
@@ -32,6 +35,8 @@
 
 /* Begin PBXFileReference section */
 		299C533B21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recuperar_contraseniaViewController.swift; sourceTree = "<group>"; };
+		29B9A82521C8052000F1CED9 /* Profesor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profesor.swift; sourceTree = "<group>"; };
+		29B9A82721C8092800F1CED9 /* Alumno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alumno.swift; sourceTree = "<group>"; };
 		843B817421B9C4B20051146F /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inicio_de_sesionViewController.swift; sourceTree = "<group>"; };
 		843B817821B9D1590051146F /* nino.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = nino.storyboard; sourceTree = "<group>"; };
@@ -96,6 +101,8 @@
 				843B817821B9D1590051146F /* nino.storyboard */,
 				8DF58F2321BC5460004ACFC5 /* Juego.storyboard */,
 				843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */,
+				29B9A82721C8092800F1CED9 /* Alumno.swift */,
+				29B9A82521C8052000F1CED9 /* Profesor.swift */,
 				8D87449421B6EBD300F7986A /* Assets.xcassets */,
 				8D87449621B6EBD300F7986A /* LaunchScreen.storyboard */,
 				8D87449921B6EBD300F7986A /* Info.plist */,
@@ -195,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				843B817521B9C4B20051146F /* Admin.storyboard in Resources */,
+				29B9A82921C80FFB00F1CED9 /* Juego.storyboard in Resources */,
 				8D87449821B6EBD300F7986A /* LaunchScreen.storyboard in Resources */,
 				843B817921B9D1590051146F /* nino.storyboard in Resources */,
 				8D87449521B6EBD300F7986A /* Assets.xcassets in Resources */,
@@ -216,11 +224,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29B9A82821C8092800F1CED9 /* Alumno.swift in Sources */,
 				299C533C21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift in Sources */,
 				8D87448D21B6EBD300F7986A /* ViewController.swift in Sources */,
 				843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */,
 				8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */,
 				8D87449321B6EBD300F7986A /* ZooKids.xcdatamodeld in Sources */,
+				29B9A82621C8052000F1CED9 /* Profesor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
