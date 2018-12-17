@@ -9,7 +9,7 @@
         <!--Administración-->
         <scene sceneID="iz8-xf-zMu">
             <objects>
-                <viewController storyboardIdentifier="admin" id="5VI-gY-tL3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="admin" id="5VI-gY-tL3" customClass="AdminViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XdT-Su-jRg"/>
                         <viewControllerLayoutGuide type="bottom" id="DrA-fI-6UT"/>
@@ -137,7 +137,11 @@
                         <segue destination="8cH-jG-PQO" kind="presentation" identifier="" id="Enw-cK-WLV"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="JGU-7j-rFX"/>
+                <tapGestureRecognizer id="JGU-7j-rFX">
+                    <connections>
+                        <action selector="irAinicio:" destination="5VI-gY-tL3" id="3rD-kp-WjG"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1100" y="-79"/>
         </scene>
