@@ -35,6 +35,8 @@ class Recuperar_contraseniaViewController: UIViewController {
         let alertController = UIAlertController(title: "e-mail enviado", message: "Si el e-mail existe serás notificado", preferredStyle: .Alert)
         let confirmAction = UIAlertAction(title: "Confirmar", style: UIAlertActionStyle.Default, handler: ({
             (_) in
+            
+            self.buscarUsuarioEmail()
             self.cerrarAlertController()
             
         }))
@@ -42,6 +44,60 @@ class Recuperar_contraseniaViewController: UIViewController {
         self.presentViewController(alertController, animated: true, completion: nil)
     }
     
+    //Buscar si existe el email
+    func buscarUsuarioEmail(){
+        if(!introducirPassTxtField.text?.containsString("@")) {
+            return;
+        }
+        
+        //Comprobar contexto
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //Comprobar si es profesor o usuario
+        
+        //Profesor
+        let fetchRequestProfesor = NSFetchRequest(entityName: "Profesor")
+        do{
+            let resultsProfesor = try managedContext.executeFetchRequest(fetchRequestProfesor)
+            for profesor in resultsProfesor{
+                if(profesor.email == introducirPassTxtField.text){
+                    print("email encontrado: PROFESOR")
+                    enviarEmail(profesor.contrasenia)
+                    return
+                }
+            }
+            
+        }
+        catch{
+            print("error")
+        }
+        
+        //Usuario
+        let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
+        
+        do{
+            let resultsAlumno = try managedContext.executeFetchRequest(fetchRequestAlumno)
+            for alumno in resultsAlumno{
+                if(alumno.email == introducirPassTxtField.text){
+                    print("Email encontrado: ALUMNO")
+                    enviarEmail(alumno.contrasenia)
+                    return
+                }
+            }
+        }
+        catch{
+            print("error")
+        }
+    }
+    
+    //Enviar email
+    func enviarEmail(pass: String){
+        
+    }
+    
+    //Cerrar la ventana al cerrar el alert controller
     func cerrarAlertController(){
         
         

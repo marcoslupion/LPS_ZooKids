@@ -18,5 +18,6 @@ class Alumno: NSManagedObject {
     @NSManaged var foto: String
     @NSManaged var nombre_usuario: String
     @NSManaged var sexo: String
+    @NSManaged var email: String
 
 }
