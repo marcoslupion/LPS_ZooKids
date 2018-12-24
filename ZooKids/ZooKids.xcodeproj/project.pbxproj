@@ -18,6 +18,7 @@
 		29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82D21C81C7500F1CED9 /* TestViewController.swift */; };
 		843B817521B9C4B20051146F /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843B817421B9C4B20051146F /* Admin.storyboard */; };
 		843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */; };
+		8D696DFB21D15EEC00AECD45 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D696DFA21D15EEC00AECD45 /* Animal.swift */; };
 		8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448A21B6EBD300F7986A /* AppDelegate.swift */; };
 		8D87448D21B6EBD300F7986A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448C21B6EBD300F7986A /* ViewController.swift */; };
 		8D87449021B6EBD300F7986A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D87448E21B6EBD300F7986A /* Main.storyboard */; };
@@ -48,6 +49,7 @@
 		29B9A82D21C81C7500F1CED9 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		843B817421B9C4B20051146F /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inicio_de_sesionViewController.swift; sourceTree = "<group>"; };
+		8D696DFA21D15EEC00AECD45 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		8D87448721B6EBD300F7986A /* ZooKids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooKids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D87448A21B6EBD300F7986A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8D87448C21B6EBD300F7986A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				29B9A82A21C81C7500F1CED9 /* PartidaViewController.swift */,
+				8D696DFA21D15EEC00AECD45 /* Animal.swift */,
 				29B9A82B21C81C7500F1CED9 /* PreguntaViewController.swift */,
 				29B9A82C21C81C7500F1CED9 /* ResultadosViewController.swift */,
 				29B9A82D21C81C7500F1CED9 /* TestViewController.swift */,
@@ -241,6 +244,7 @@
 				29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */,
 				29B9A82E21C81C7500F1CED9 /* PartidaViewController.swift in Sources */,
 				29B9A82F21C81C7500F1CED9 /* PreguntaViewController.swift in Sources */,
+				8D696DFB21D15EEC00AECD45 /* Animal.swift in Sources */,
 				29B9A83021C81C7500F1CED9 /* ResultadosViewController.swift in Sources */,
 				8D87448D21B6EBD300F7986A /* ViewController.swift in Sources */,
 				843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */,

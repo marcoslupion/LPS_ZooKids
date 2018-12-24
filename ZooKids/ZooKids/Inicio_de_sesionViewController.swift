@@ -9,18 +9,20 @@
 import UIKit
 import CoreData
 
+
+
 class Inicio_de_sesionViewController: UIViewController {
     
     @IBOutlet weak var userTxtField: UITextField!
     @IBOutlet weak var passTxtField: UITextField!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         //self.crear_profesor_por_defecto()
         //self.crear_alumno()
     }
-
+    
     func crear_profesor_por_defecto(){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -88,7 +90,7 @@ class Inicio_de_sesionViewController: UIViewController {
         //Profesor
         let fetchRequestProfesor = NSFetchRequest(entityName: "Profesor")
         
-
+        
         do{
             let resultsProfesor = try managedContext.executeFetchRequest(fetchRequestProfesor)
             for profesor in resultsProfesor{
@@ -138,7 +140,7 @@ class Inicio_de_sesionViewController: UIViewController {
     @IBAction func ir_a_juego(sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Juego", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier("juego") as UIViewController
+        let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
         
         self.presentViewController(controller, animated: true, completion: nil)
     }
@@ -148,15 +150,15 @@ class Inicio_de_sesionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="17G3025" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -31,11 +31,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Animal 1/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJ7-l1-0PS">
                                         <rect key="frame" x="60" y="51" width="80" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Juego" translatesAutoresizingMaskIntoConstraints="NO" id="ZOd-Ea-2KY">
-                                        <rect key="frame" x="0.0" y="102" width="200" height="250"/>
+                                        <rect key="frame" x="0.0" y="102" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="Dnk-i6-SCS"/>
                                             <constraint firstAttribute="width" secondItem="ZOd-Ea-2KY" secondAttribute="height" multiplier="1:1" id="eQd-Nz-yCU"/>
@@ -43,10 +43,10 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktS-DO-JbG">
-                                        <rect key="frame" x="81" y="382" width="39" height="114"/>
+                                        <rect key="frame" x="81" y="332" width="39" height="164"/>
                                         <state key="normal" title="Jugar"/>
                                         <connections>
-                                            <segue destination="fhV-P8-a0V" kind="presentation" id="pxm-BO-dgi"/>
+                                            <action selector="jugar:" destination="sq7-ZI-7Pe" eventType="touchUpInside" id="CMI-dI-yly"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -55,6 +55,10 @@
                                     <constraint firstAttribute="width" constant="200" id="TED-41-aTb"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6O-XN-5WL">
+                                <rect key="frame" x="276" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94117647058823528" blue="0.78823529411764703" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -63,21 +67,27 @@
                             <constraint firstItem="1lW-Dg-BNt" firstAttribute="leading" secondItem="lUV-RB-ETR" secondAttribute="leadingMargin" constant="20" id="Vhp-k8-GiH"/>
                             <constraint firstItem="1lW-Dg-BNt" firstAttribute="top" secondItem="oFL-SL-2rq" secondAttribute="bottom" constant="20" id="lLT-ag-1M6"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="H6O-XN-5WL"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Juego" id="l38-RG-mCX"/>
                     <connections>
                         <outlet property="animalActual" destination="DJ7-l1-0PS" id="qyH-BC-fmP"/>
                         <outlet property="fotoAnimal" destination="ZOd-Ea-2KY" id="jdj-w0-PyE"/>
+                        <outlet property="jugarBtn" destination="ktS-DO-JbG" id="6CJ-Fp-qNF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmY-bn-20m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1249" y="88"/>
+            <point key="canvasLocation" x="2067" y="48"/>
         </scene>
         <!--Pregunta-->
         <scene sceneID="SE7-1C-geT">
             <objects>
-                <viewController id="cmI-jo-HTk" customClass="PreguntaViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pregunta" id="cmI-jo-HTk" customClass="PreguntaViewController" customModule="ZooKids" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fO3-Ip-1NU"/>
                         <viewControllerLayoutGuide type="bottom" id="iZ4-mw-20t"/>
@@ -130,7 +140,6 @@
                                         <state key="normal" title="Sí"/>
                                         <connections>
                                             <action selector="yes_answer:" destination="cmI-jo-HTk" eventType="touchUpInside" id="Nmx-ps-vdf"/>
-                                            <segue destination="KOK-a4-e3q" kind="presentation" id="rK8-1n-9EX"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0og-CG-ezo">
@@ -142,6 +151,13 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYx-wQ-bO2">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="cerrar_juego:" destination="cmI-jo-HTk" eventType="touchUpInside" id="MFl-RF-pll"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -163,12 +179,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0q-uy-E3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1268" y="820"/>
+            <point key="canvasLocation" x="2080" y="820"/>
         </scene>
         <!--Test-->
         <scene sceneID="zCn-iQ-ETk">
             <objects>
-                <viewController id="vQa-DU-T54" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="test" id="vQa-DU-T54" customClass="TestViewController" customModule="ZooKids" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y8P-oI-AY6"/>
                         <viewControllerLayoutGuide type="bottom" id="z41-kW-KOe"/>
@@ -201,6 +217,9 @@
                                                 <state key="normal" title="Pez">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="escoge_opcion_1:" destination="vQa-DU-T54" eventType="touchUpInside" id="5NR-Te-3Db"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qev-eP-UIZ">
                                                 <rect key="frame" x="155" y="175" width="250" height="75"/>
@@ -213,6 +232,9 @@
                                                 <state key="normal" title="Mamífero">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="escoge_opcion_2:" destination="vQa-DU-T54" eventType="touchUpInside" id="gdD-a9-tyX"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6i-GS-zCU">
                                                 <rect key="frame" x="155" y="350" width="250" height="75"/>
@@ -226,7 +248,7 @@
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="jsZ-u7-l0u" kind="presentation" id="dpd-Rx-lLv"/>
+                                                    <action selector="escoge_opcion_3:" destination="vQa-DU-T54" eventType="touchUpInside" id="wII-Of-PfQ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -253,51 +275,20 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Test" id="dt7-QB-LMK"/>
+                    <connections>
+                        <outlet property="opcion_1" destination="PhE-xH-zAi" id="dpq-Ly-iHe"/>
+                        <outlet property="opcion_2" destination="qev-eP-UIZ" id="ZgZ-nd-jvl"/>
+                        <outlet property="opcion_3" destination="V6i-GS-zCU" id="b1k-xp-Leb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASn-EX-Fhp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1328" y="1592"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="vL5-ci-Flp">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2rc-1Q-xeZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="D3m-li-Rzr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="sq7-ZI-7Pe" kind="relationship" relationship="rootViewController" id="xa8-2b-krH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ojn-J8-Vjr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="567" y="88"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="gh7-YB-3Cf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fhV-P8-a0V" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WwI-cp-amZ">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="cmI-jo-HTk" kind="relationship" relationship="rootViewController" id="d6D-ME-wZ0"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nnT-KC-YLZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="543" y="873"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="XJS-wP-sFK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KOK-a4-e3q" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="testN" automaticallyAdjustsScrollViewInsets="NO" id="KOK-a4-e3q" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jTj-PM-PQx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -315,7 +306,7 @@
         <!--Resultados-->
         <scene sceneID="Zf5-Tz-wwn">
             <objects>
-                <viewController id="zAn-j4-1aT" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resultados" id="zAn-j4-1aT" customClass="ResultadosViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zBv-tt-9Ve"/>
                         <viewControllerLayoutGuide type="bottom" id="hVO-ey-W2Y"/>
@@ -360,6 +351,9 @@
                                         <state key="normal" title="Nueva partida">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="nueva_partida:" destination="zAn-j4-1aT" eventType="touchUpInside" id="U53-iU-H3w"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OvO-Mh-mBi">
                                         <rect key="frame" x="0.0" y="80" width="560" height="30"/>
@@ -370,6 +364,9 @@
                                         <state key="normal" title="Acceder a perfil">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="ir_perfil:" destination="zAn-j4-1aT" eventType="touchUpInside" id="tpH-xD-nds"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -386,6 +383,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Resultados" id="tx6-ue-kef"/>
+                    <connections>
+                        <outlet property="mensaje" destination="7XM-wW-BIv" id="58R-O7-zJ2"/>
+                        <outlet property="porcentaje" destination="z3Q-Bn-KFz" id="Ach-AF-wbb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jwv-OB-gBg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -394,7 +395,7 @@
         <!--Navigation Controller-->
         <scene sceneID="yYq-tZ-dvJ">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jsZ-u7-l0u" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="resultadosN" automaticallyAdjustsScrollViewInsets="NO" id="jsZ-u7-l0u" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="av1-CB-2tb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -409,9 +410,46 @@
             </objects>
             <point key="canvasLocation" x="522" y="2368"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="25n-kF-2QL">
+            <objects>
+                <navigationController storyboardIdentifier="entrada" automaticallyAdjustsScrollViewInsets="NO" id="G0a-uz-pRg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="oWn-4P-e4j"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QTn-Me-Tca">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="sq7-ZI-7Pe" kind="relationship" relationship="rootViewController" id="sfm-Xq-QCd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nkI-EU-Kqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1255" y="48"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Od4-7d-jwd">
+            <objects>
+                <navigationController storyboardIdentifier="preguntaN" automaticallyAdjustsScrollViewInsets="NO" id="dbN-EY-X1Y" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rYv-PC-Vea">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cmI-jo-HTk" kind="relationship" relationship="rootViewController" id="hUW-Rf-GPN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ovP-Q7-jeh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1268" y="820"/>
+        </scene>
     </scenes>
     <resources>
-        <image name="Juego" width="112" height="112"/>
+        <image name="Juego" width="266" height="237"/>
         <image name="leche" width="112" height="112"/>
     </resources>
 </document>
