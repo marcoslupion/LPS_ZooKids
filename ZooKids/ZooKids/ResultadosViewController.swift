@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class ResultadosViewController: ViewController {
     
@@ -57,6 +58,55 @@ class ResultadosViewController: ViewController {
         print(animales[0].resultado);
         
         //se tiene que meter en la base de datos todos los datos que hay recogidos en animales
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let entity = NSEntityDescription.entityForName("Partida", inManagedObjectContext: managedContext)
+        
+        //Cargar partidas para coger el id de la última
+        
+        var idPartida:Int
+        idPartida = -1
+        
+        
+        let fetchRequestPartidas = NSFetchRequest(entityName: "Partida")
+        do{
+            let resultsPartidas = try managedContext.executeFetchRequest(fetchRequestPartidas)
+            for partida in resultsPartidas as! [Partida]{
+                if (partida.id_partida > idPartida){
+                    idPartida = partida.id_partida
+                }
+            }
+            
+            idPartida+=1
+            
+        }catch{
+            print("Error")
+        }
+        
+        //Guardar partida
+        let partida = Partida(entity:entity!, insertIntoManagedObjectContext: managedContext)
+        
+        partida.fecha = NSDate()
+        partida.id_partida = idPartida
+        //partida.num_aciertos = 0
+        //partia.num_fallos = 0
+        
+        
+        do{
+            try managedContext.save()
+            
+        }
+        catch{
+            
+            print("error")
+        }
+
+        //Resultados partida
+        
+        //Si se ha seleccionado mal es un fallo
         
     }
     
