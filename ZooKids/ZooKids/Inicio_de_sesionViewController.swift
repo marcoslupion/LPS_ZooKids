@@ -21,6 +21,7 @@ class Inicio_de_sesionViewController: UIViewController {
         // Do any additional setup after loading the view.
         //self.crear_profesor_por_defecto()
         //self.crear_alumno()
+        //self.crear_fallos()
     }
     
     func crear_profesor_por_defecto(){
@@ -66,6 +67,47 @@ class Inicio_de_sesionViewController: UIViewController {
             
             print("error")
         }
+    }
+    
+    func crear_fallos(){
+        //Para evitar que al acceder a los fallos haya valores nulos se inicializan los fallos a 0
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let entity = NSEntityDescription.entityForName("Fallo", inManagedObjectContext: managedContext)
+        
+        
+        
+        var opciones_totales = [String]();
+        opciones_totales.append("Mamífero");
+        opciones_totales.append("Pez");
+        opciones_totales.append("Anfibio");
+        opciones_totales.append("Reptil");
+        opciones_totales.append("Invertebrado");
+        opciones_totales.append("Insecto");
+        opciones_totales.append("Ave");
+        
+        for str in opciones_totales{
+            let fallos = Fallo(entity:entity!, insertIntoManagedObjectContext: managedContext)
+            /*var f:Int16
+            f=0*/
+            fallos.fallos = 0 as Int!
+            fallos.tipo_animal = str
+            
+            do{
+                try managedContext.save()
+                
+            }
+            catch{
+                
+                print("error")
+            }
+        }
+        
+        
+
     }
     
     @IBAction func btnEntrar(sender: UIButton) {

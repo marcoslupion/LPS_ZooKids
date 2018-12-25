@@ -93,6 +93,7 @@ class ResultadosViewController: ViewController {
         for animal in animales{
             //Aciertos y fallos en las preguntas
             for respuestas in animal.respuestas_dadas{
+                print("Respuesta = ",respuestas.description)
                 if (respuestas == true){
                     numAciertos+=1
                 }else{
@@ -102,41 +103,9 @@ class ResultadosViewController: ViewController {
             
             //Fallos en la respuesta final
             if(animal.resultado == false){
-                //Almacenar fallo en Core Data
-                var numFallosAnimal = 0
-                var tipoAnimalFallo = ""
+                //Se almacena el animal que ha fallado
+                self.guardarFallo(animal.respuesta_verdadera)
                 
-                //Cargar el tipo de animal para añadir los valores
-                let fetchRequestFalloAnimal = NSFetchRequest(entityName: "Fallo")
-                do{
-                    let resultsFalloAnimal = try managedContext.executeFetchRequest(fetchRequestFalloAnimal)
-                    for falloAnimal in resultsFalloAnimal as! [Fallo]{
-                        if (falloAnimal.tipo_animal == animal.respuesta_verdadera){
-                            numFallosAnimal = falloAnimal.fallos
-                            tipoAnimalFallo = falloAnimal.tipo_animal
-                        }
-                    }
-                    
-                }catch{
-                    print("Error")
-                }
-
-                //Añadir un fallo al tipo de animal
-                let entity = NSEntityDescription.entityForName("Fallo", inManagedObjectContext: managedContext)
-                
-                let fallo = Fallo(entity:entity!, insertIntoManagedObjectContext: managedContext)
-                fallo.fallos = numFallosAnimal
-                fallo.tipo_animal = tipoAnimalFallo
-                
-                do{
-                    try managedContext.save()
-                    
-                }
-                catch{
-                    
-                    print("error")
-                }
-
             }
         }
         
@@ -148,6 +117,11 @@ class ResultadosViewController: ViewController {
         partida.num_aciertos = numAciertos
         partida.num_fallos = numFallos
         
+        //TODO :
+        
+        //partida.setValue(ALUMNO, forKey: "alumno")
+        
+        
         
         do{
             try managedContext.save()
@@ -157,10 +131,6 @@ class ResultadosViewController: ViewController {
             
             print("error")
         }
-
-        //Resultados partida
-        
-        //Si se ha seleccionado mal es un fallo
         
     }
     
@@ -168,6 +138,66 @@ class ResultadosViewController: ViewController {
         animales.removeAll();
         numeros.removeAll();
         estadoAnimal = (-1);
+        
+    }
+    
+    func guardarFallo(respuestaCorrecta:String){
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+
+        
+        //Almacenar fallo en Core Data
+        //var numFallosAnimal = 0
+        //var tipoAnimalFallo = ""
+        
+        //Cargar el tipo de animal para añadir los valores
+        let fetchRequestFalloAnimal = NSFetchRequest(entityName: "Fallo")
+        fetchRequestFalloAnimal.predicate = NSPredicate(format: "tipo_animal == %@",respuestaCorrecta)
+        do{
+            let resultsFalloAnimal = try managedContext.executeFetchRequest(fetchRequestFalloAnimal)
+            /*for falloAnimal in resultsFalloAnimal as! [Fallo]{
+                if (falloAnimal.tipo_animal == respuestaCorrecta){
+                    numFallosAnimal = falloAnimal.fallos
+                    tipoAnimalFallo = falloAnimal.tipo_animal
+                }
+            }*/
+            
+            
+            if (resultsFalloAnimal.count != 0){
+                let resultado = resultsFalloAnimal[0]
+                var fallosAnteriores = resultado.valueForKey("fallos") as? Int
+                if (fallosAnteriores == nil ){
+                    fallosAnteriores = 1
+                }else{
+                    fallosAnteriores=fallosAnteriores!+1
+                }
+                resultado.setValue(fallosAnteriores, forKey: "fallos")
+                print("Guardado fallo: Nombre = ",resultado.valueForKey("tipo_animal")as! String," Nº fallos = ",fallosAnteriores!)
+            }
+            
+            try managedContext.save()
+            
+        }catch{
+            print("Error")
+        }
+        
+        //Añadir un fallo al tipo de animal
+        /*let entity = NSEntityDescription.entityForName("Fallo", inManagedObjectContext: managedContext)
+        
+        let fallo = Fallo(entity:entity!, insertIntoManagedObjectContext: managedContext)
+        fallo.fallos = numFallosAnimal
+        fallo.tipo_animal = tipoAnimalFallo
+        
+        do{
+            try managedContext.save()
+            
+        }
+        catch{
+            
+            print("error")
+        }*/
         
     }
 }

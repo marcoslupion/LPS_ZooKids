@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 
 @objc(Fallo)
-final class Fallo: NSManagedObject {
+
+class Fallo: NSManagedObject {
 
     @NSManaged var fallos: Int
     @NSManaged var tipo_animal: String

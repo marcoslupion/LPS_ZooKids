@@ -10,7 +10,8 @@ import UIKit
 import CoreData
 
 @objc(Partida)
-final class Partida: NSManagedObject {
+
+class Partida: NSManagedObject {
     
     @NSManaged var id_partida: Int
     @NSManaged var num_aciertos: Int

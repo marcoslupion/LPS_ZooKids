@@ -41,7 +41,7 @@ class Estadisticas_ViewController: ViewController {
         var preguntasTotales:Int
         do{
             let resultsPartidas = try managedContext.executeFetchRequest(fetchRequestPartidas)
-            preguntasTotales = resultsPartidas.count * 5
+            preguntasTotales = resultsPartidas.count * 25
             print("Preguntas totales = ",preguntasTotales)
                         
         }catch{
@@ -54,10 +54,32 @@ class Estadisticas_ViewController: ViewController {
         var tipoAnimalMap = Dictionary<String,Int>()
         do{
             let resultsFallos = try managedContext.executeFetchRequest(fetchRequestFallos)
-            fallosTotales = resultsFallos.count
-            for fallo in resultsFallos as! [Fallo]{
+            fallosTotales = 0
+            /*for fallo_animal in resultsFallos as! [Fallo]{
+                fallosTotales += fallo_animal.fallos
+            }*/
+            
+            /*for fallo in resultsFallos as! [Fallo]{
+                fallosTotales += fallo.fallos
                 tipoAnimalMap[fallo.tipo_animal] = (tipoAnimalMap[fallo.tipo_animal])!+1
+            }*/
+            if (resultsFallos.count != 0){
+                var i = 0
+                for _ in resultsFallos{
+                    let resultado = resultsFallos[i]
+                    print("nombre = ",resultado.valueForKey("tipo_animal") as! String)
+                    var fallosResultado = resultado.valueForKey("fallos") as? Int
+                    if (fallosResultado == nil ){
+                        fallosTotales = 0
+                    }else{
+                        fallosTotales=fallosResultado!+1
+                    }
+                    print("fallos = ",fallosTotales)
+                    i += 1
+                }
+                
             }
+
             
             print("Fallos totales = ",fallosTotales)
             
