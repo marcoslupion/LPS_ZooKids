@@ -86,13 +86,67 @@ class ResultadosViewController: ViewController {
             print("Error")
         }
         
+        //Variables para guardar la partida en Core Data
+        var numAciertos = 0
+        var numFallos = 0
+        
+        for animal in animales{
+            //Aciertos y fallos en las preguntas
+            for respuestas in animal.respuestas_dadas{
+                if (respuestas == true){
+                    numAciertos+=1
+                }else{
+                    numFallos+=1
+                }
+            }
+            
+            //Fallos en la respuesta final
+            if(animal.resultado == false){
+                //Almacenar fallo en Core Data
+                var numFallosAnimal = 0
+                var tipoAnimalFallo = ""
+                
+                //Cargar el tipo de animal para añadir los valores
+                let fetchRequestFalloAnimal = NSFetchRequest(entityName: "Fallo")
+                do{
+                    let resultsFalloAnimal = try managedContext.executeFetchRequest(fetchRequestFalloAnimal)
+                    for falloAnimal in resultsFalloAnimal as! [Fallo]{
+                        if (falloAnimal.tipo_animal == animal.respuesta_verdadera){
+                            numFallosAnimal = falloAnimal.fallos
+                            tipoAnimalFallo = falloAnimal.tipo_animal
+                        }
+                    }
+                    
+                }catch{
+                    print("Error")
+                }
+
+                //Añadir un fallo al tipo de animal
+                let entity = NSEntityDescription.entityForName("Fallo", inManagedObjectContext: managedContext)
+                
+                let fallo = Fallo(entity:entity!, insertIntoManagedObjectContext: managedContext)
+                fallo.fallos = numFallosAnimal
+                fallo.tipo_animal = tipoAnimalFallo
+                
+                do{
+                    try managedContext.save()
+                    
+                }
+                catch{
+                    
+                    print("error")
+                }
+
+            }
+        }
+        
         //Guardar partida
         let partida = Partida(entity:entity!, insertIntoManagedObjectContext: managedContext)
         
         partida.fecha = NSDate()
         partida.id_partida = idPartida
-        //partida.num_aciertos = 0
-        //partia.num_fallos = 0
+        partida.num_aciertos = numAciertos
+        partida.num_fallos = numFallos
         
         
         do{
