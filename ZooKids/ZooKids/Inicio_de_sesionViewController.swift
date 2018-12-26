@@ -161,4 +161,14 @@ class Inicio_de_sesionViewController: UIViewController {
      }
      */
     
+    @IBAction func btnPerfil(sender: AnyObject) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let storyboard = UIStoryboard(name: "nino", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+        
+        
+    }
 }
