@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2948082521C81DCA00178DC7 /* nino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2948082421C81DCA00178DC7 /* nino.storyboard */; };
 		299C533C21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 299C533B21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift */; };
 		29B9A82621C8052000F1CED9 /* Profesor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82521C8052000F1CED9 /* Profesor.swift */; };
 		29B9A82821C8092800F1CED9 /* Alumno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82721C8092800F1CED9 /* Alumno.swift */; };
@@ -18,6 +17,11 @@
 		29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82D21C81C7500F1CED9 /* TestViewController.swift */; };
 		843B817521B9C4B20051146F /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843B817421B9C4B20051146F /* Admin.storyboard */; };
 		843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */; };
+		84412EC821D3FE7F002DA550 /* nino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84412EC721D3FE7F002DA550 /* nino.storyboard */; };
+		84412ECB21D3FEA1002DA550 /* BarraPartidasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412EC921D3FEA1002DA550 /* BarraPartidasViewController.swift */; };
+		84412ECC21D3FEA1002DA550 /* BarrasAciertos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */; };
+		84412ECE21D3FEBC002DA550 /* PerfilNinioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECD21D3FEBC002DA550 /* PerfilNinioViewController.swift */; };
+		84412ED021D3FF1A002DA550 /* TableviewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */; };
 		8D696DFB21D15EEC00AECD45 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D696DFA21D15EEC00AECD45 /* Animal.swift */; };
 		8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448A21B6EBD300F7986A /* AppDelegate.swift */; };
 		8D87448D21B6EBD300F7986A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448C21B6EBD300F7986A /* ViewController.swift */; };
@@ -39,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2948082421C81DCA00178DC7 /* nino.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = nino.storyboard; path = ../../../../LPS_ZooKids/ZooKids/ZooKids/nino.storyboard; sourceTree = "<group>"; };
 		299C533B21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recuperar_contraseniaViewController.swift; sourceTree = "<group>"; };
 		29B9A82521C8052000F1CED9 /* Profesor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Profesor.swift; sourceTree = "<group>"; };
 		29B9A82721C8092800F1CED9 /* Alumno.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alumno.swift; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		29B9A82D21C81C7500F1CED9 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		843B817421B9C4B20051146F /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inicio_de_sesionViewController.swift; sourceTree = "<group>"; };
+		84412EC721D3FE7F002DA550 /* nino.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = nino.storyboard; sourceTree = "<group>"; };
+		84412EC921D3FEA1002DA550 /* BarraPartidasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarraPartidasViewController.swift; sourceTree = "<group>"; };
+		84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarrasAciertos.swift; sourceTree = "<group>"; };
+		84412ECD21D3FEBC002DA550 /* PerfilNinioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilNinioViewController.swift; sourceTree = "<group>"; };
+		84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableviewCell1.swift; sourceTree = "<group>"; };
 		8D696DFA21D15EEC00AECD45 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		8D87448721B6EBD300F7986A /* ZooKids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooKids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D87448A21B6EBD300F7986A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,9 +120,13 @@
 				299C533B21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift */,
 				8D87448C21B6EBD300F7986A /* ViewController.swift */,
 				8D87448E21B6EBD300F7986A /* Main.storyboard */,
-				2948082421C81DCA00178DC7 /* nino.storyboard */,
 				843B817421B9C4B20051146F /* Admin.storyboard */,
 				8DF58F2321BC5460004ACFC5 /* Juego.storyboard */,
+				84412EC721D3FE7F002DA550 /* nino.storyboard */,
+				84412ECD21D3FEBC002DA550 /* PerfilNinioViewController.swift */,
+				84412EC921D3FEA1002DA550 /* BarraPartidasViewController.swift */,
+				84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */,
+				84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */,
 				843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */,
 				29B9A82721C8092800F1CED9 /* Alumno.swift */,
 				29B9A82521C8052000F1CED9 /* Profesor.swift */,
@@ -219,8 +231,8 @@
 				843B817521B9C4B20051146F /* Admin.storyboard in Resources */,
 				29B9A82921C80FFB00F1CED9 /* Juego.storyboard in Resources */,
 				8D87449821B6EBD300F7986A /* LaunchScreen.storyboard in Resources */,
-				2948082521C81DCA00178DC7 /* nino.storyboard in Resources */,
 				8D87449521B6EBD300F7986A /* Assets.xcassets in Resources */,
+				84412EC821D3FE7F002DA550 /* nino.storyboard in Resources */,
 				8D87449021B6EBD300F7986A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -242,12 +254,16 @@
 				29B9A82821C8092800F1CED9 /* Alumno.swift in Sources */,
 				299C533C21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift in Sources */,
 				29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */,
+				84412ED021D3FF1A002DA550 /* TableviewCell1.swift in Sources */,
 				29B9A82E21C81C7500F1CED9 /* PartidaViewController.swift in Sources */,
 				29B9A82F21C81C7500F1CED9 /* PreguntaViewController.swift in Sources */,
 				8D696DFB21D15EEC00AECD45 /* Animal.swift in Sources */,
+				84412ECB21D3FEA1002DA550 /* BarraPartidasViewController.swift in Sources */,
 				29B9A83021C81C7500F1CED9 /* ResultadosViewController.swift in Sources */,
+				84412ECE21D3FEBC002DA550 /* PerfilNinioViewController.swift in Sources */,
 				8D87448D21B6EBD300F7986A /* ViewController.swift in Sources */,
 				843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */,
+				84412ECC21D3FEA1002DA550 /* BarrasAciertos.swift in Sources */,
 				8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */,
 				8D87449321B6EBD300F7986A /* ZooKids.xcdatamodeld in Sources */,
 				29B9A82621C8052000F1CED9 /* Profesor.swift in Sources */,
