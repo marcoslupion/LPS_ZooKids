@@ -91,9 +91,7 @@ class Inicio_de_sesionViewController: UIViewController {
         
         for str in opciones_totales{
             let fallos = Fallo(entity:entity!, insertIntoManagedObjectContext: managedContext)
-            /*var f:Int16
-            f=0*/
-            fallos.fallos = 0 as Int!
+            fallos.fallos = 0 as Int16!
             fallos.tipo_animal = str
             
             do{

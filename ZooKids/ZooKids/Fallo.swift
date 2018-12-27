@@ -13,7 +13,7 @@ import CoreData
 
 class Fallo: NSManagedObject {
 
-    @NSManaged var fallos: Int
+    @NSManaged var fallos: Int16
     @NSManaged var tipo_animal: String
     
 }

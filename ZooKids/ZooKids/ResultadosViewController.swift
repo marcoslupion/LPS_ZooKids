@@ -50,12 +50,12 @@ class ResultadosViewController: ViewController {
     }
     func insertar_datos_bd(){
         //se tiene que recorrer el array de animales, en el que se tienen todos los datos.
-        print("UN EJEMPLO DEL PRIMER ANIMAL ES ")
+        /*print("UN EJEMPLO DEL PRIMER ANIMAL ES ")
         print(animales[0].respuesta_dada);
         print(animales[0].respuesta_verdadera);
         print(animales[0].imagen);
         print(animales[0].respuestas_dadas);
-        print(animales[0].resultado);
+        print(animales[0].resultado);*/
         
         //se tiene que meter en la base de datos todos los datos que hay recogidos en animales
         
@@ -67,7 +67,7 @@ class ResultadosViewController: ViewController {
         
         //Cargar partidas para coger el id de la última
         
-        var idPartida:Int
+        var idPartida:Int16
         idPartida = -1
         
         
@@ -87,13 +87,13 @@ class ResultadosViewController: ViewController {
         }
         
         //Variables para guardar la partida en Core Data
-        var numAciertos = 0
-        var numFallos = 0
+        var numAciertos = 0 as Int16
+        var numFallos = 0 as Int16
         
         for animal in animales{
+            //print("Animal = ",animal.respuesta_verdadera, " respuesta dada = ",animal.respuesta_dada)
             //Aciertos y fallos en las preguntas
             for respuestas in animal.respuestas_dadas{
-                print("Respuesta = ",respuestas.description)
                 if (respuestas == true){
                     numAciertos+=1
                 }else{
@@ -157,13 +157,6 @@ class ResultadosViewController: ViewController {
         fetchRequestFalloAnimal.predicate = NSPredicate(format: "tipo_animal == %@",respuestaCorrecta)
         do{
             let resultsFalloAnimal = try managedContext.executeFetchRequest(fetchRequestFalloAnimal)
-            /*for falloAnimal in resultsFalloAnimal as! [Fallo]{
-                if (falloAnimal.tipo_animal == respuestaCorrecta){
-                    numFallosAnimal = falloAnimal.fallos
-                    tipoAnimalFallo = falloAnimal.tipo_animal
-                }
-            }*/
-            
             
             if (resultsFalloAnimal.count != 0){
                 let resultado = resultsFalloAnimal[0]
@@ -174,7 +167,12 @@ class ResultadosViewController: ViewController {
                     fallosAnteriores=fallosAnteriores!+1
                 }
                 resultado.setValue(fallosAnteriores, forKey: "fallos")
-                print("Guardado fallo: Nombre = ",resultado.valueForKey("tipo_animal")as! String," Nº fallos = ",fallosAnteriores!)
+                
+                /*
+                var fallosAnteriores = resultado.valueForKey("fallos") as! Int
+                fallosAnteriores=fallosAnteriores+1
+                resultado.setValue(NSNumber(short:fallosAnteriores), forKey: "fallos")
+                print("Guardado fallo: Nombre = ",resultado.valueForKey("tipo_animal")as! String," Nº fallos = ",fallosAnteriores)*/
             }
             
             try managedContext.save()

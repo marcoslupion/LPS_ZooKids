@@ -42,7 +42,12 @@ class Estadisticas_ViewController: ViewController {
         do{
             let resultsPartidas = try managedContext.executeFetchRequest(fetchRequestPartidas)
             preguntasTotales = resultsPartidas.count * 25
-            print("Preguntas totales = ",preguntasTotales)
+            //Errores
+            var erroresTotales = 0 as Int16
+            for partida in resultsPartidas as! [Partida]{
+                erroresTotales += partida.num_fallos
+            }
+            print("Errores totales = ",String(erroresTotales))
                         
         }catch{
             print("Error")
@@ -50,43 +55,31 @@ class Estadisticas_ViewController: ViewController {
         
         //Fallos totales
         let fetchRequestFallos = NSFetchRequest(entityName: "Fallo")
-        var fallosTotales : Int
-        var tipoAnimalMap = Dictionary<String,Int>()
+        var fallosTotales : Int16
+        var tipoAnimalMap = Dictionary<String,Int16>()
+        tipoAnimalMap = initializeDictionary()
         do{
             let resultsFallos = try managedContext.executeFetchRequest(fetchRequestFallos)
             fallosTotales = 0
-            /*for fallo_animal in resultsFallos as! [Fallo]{
-                fallosTotales += fallo_animal.fallos
-            }*/
             
-            /*for fallo in resultsFallos as! [Fallo]{
+            for fallo in resultsFallos as! [Fallo]{
+                print("Fallo ",fallo.tipo_animal," total de ",fallo.fallos)
                 fallosTotales += fallo.fallos
-                tipoAnimalMap[fallo.tipo_animal] = (tipoAnimalMap[fallo.tipo_animal])!+1
-            }*/
-            if (resultsFallos.count != 0){
-                var i = 0
-                for _ in resultsFallos{
-                    let resultado = resultsFallos[i]
-                    print("nombre = ",resultado.valueForKey("tipo_animal") as! String)
-                    var fallosResultado = resultado.valueForKey("fallos") as? Int
-                    if (fallosResultado == nil ){
-                        fallosTotales = 0
-                    }else{
-                        fallosTotales=fallosResultado!+1
-                    }
-                    print("fallos = ",fallosTotales)
-                    i += 1
-                }
+                //tipoAnimalMap[fallo.tipo_animal] = (tipoAnimalMap[fallo.tipo_animal])!+1
+                tipoAnimalMap[fallo.tipo_animal] = fallo.fallos
                 
             }
 
             
-            print("Fallos totales = ",fallosTotales)
+            //print("Fallos totales = ",fallosTotales)
             
         }
         catch{
             print("error")
         }
+        
+        
+        //Por género
         
         
     }
@@ -101,6 +94,24 @@ class Estadisticas_ViewController: ViewController {
         }else{
             print("error, valor = ",segment.selectedSegmentIndex)
         }
+    }
+    
+    func initializeDictionary() -> Dictionary<String,Int16>{
+     
+        var map = Dictionary<String,Int16>()
+        var opciones_totales = [String]();
+        opciones_totales.append("Mamífero");
+        opciones_totales.append("Pez");
+        opciones_totales.append("Anfibio");
+        opciones_totales.append("Reptil");
+        opciones_totales.append("Invertebrado");
+        opciones_totales.append("Insecto");
+        opciones_totales.append("Ave");
+        
+        for str in opciones_totales{
+            map[str] = 0
+        }
+        return map;
     }
     
 
