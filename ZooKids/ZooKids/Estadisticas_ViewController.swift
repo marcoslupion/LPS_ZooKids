@@ -47,7 +47,7 @@ class Estadisticas_ViewController: ViewController {
             for partida in resultsPartidas as! [Partida]{
                 erroresTotales += partida.num_fallos
             }
-            print("Errores totales = ",String(erroresTotales))
+            //print("Errores totales = ",String(erroresTotales))
                         
         }catch{
             print("Error")
@@ -63,7 +63,7 @@ class Estadisticas_ViewController: ViewController {
             fallosTotales = 0
             
             for fallo in resultsFallos as! [Fallo]{
-                print("Fallo ",fallo.tipo_animal," total de ",fallo.fallos)
+                //print("Fallo ",fallo.tipo_animal," total de ",fallo.fallos, "fallos")
                 fallosTotales += fallo.fallos
                 //tipoAnimalMap[fallo.tipo_animal] = (tipoAnimalMap[fallo.tipo_animal])!+1
                 tipoAnimalMap[fallo.tipo_animal] = fallo.fallos
