@@ -11,7 +11,7 @@ import CoreData
 
 @objc(Profesor)
 
-final class Profesor: NSManagedObject {
+class Profesor: NSManagedObject {
 
     @NSManaged var nombre_usuario: String
     @NSManaged var contrasenia: String
