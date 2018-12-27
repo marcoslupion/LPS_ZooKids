@@ -35,7 +35,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Juego" translatesAutoresizingMaskIntoConstraints="NO" id="ZOd-Ea-2KY">
-                                        <rect key="frame" x="0.0" y="102" width="200" height="200"/>
+                                        <rect key="frame" x="35" y="102" width="131" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="Dnk-i6-SCS"/>
                                             <constraint firstAttribute="width" secondItem="ZOd-Ea-2KY" secondAttribute="height" multiplier="1:1" id="eQd-Nz-yCU"/>
@@ -43,7 +43,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktS-DO-JbG">
-                                        <rect key="frame" x="81" y="332" width="39" height="164"/>
+                                        <rect key="frame" x="81" y="382" width="39" height="114"/>
                                         <state key="normal" title="Jugar"/>
                                         <connections>
                                             <action selector="jugar:" destination="sq7-ZI-7Pe" eventType="touchUpInside" id="CMI-dI-yly"/>

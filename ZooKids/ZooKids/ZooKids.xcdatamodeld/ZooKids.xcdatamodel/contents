@@ -9,11 +9,11 @@
         <relationship name="partidas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Partida" inverseName="alumno" inverseEntity="Partida" syncable="YES"/>
         <relationship name="profesor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profesor" inverseName="alumnos" inverseEntity="Profesor" syncable="YES"/>
     </entity>
-    <entity name="Fallo" syncable="YES">
+    <entity name="Fallo" representedClassName="Fallo" syncable="YES">
         <attribute name="fallos" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="tipo_animal" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Partida" syncable="YES">
+    <entity name="Partida" representedClassName="Partida" syncable="YES">
         <attribute name="fecha" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id_partida" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="num_aciertos" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
@@ -26,9 +26,9 @@
         <relationship name="alumnos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Alumno" inverseName="profesor" inverseEntity="Alumno" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Profesor" positionX="-63" positionY="-18" width="128" height="90"/>
         <element name="Alumno" positionX="-54" positionY="-9" width="128" height="150"/>
-        <element name="Partida" positionX="-36" positionY="9" width="128" height="120"/>
         <element name="Fallo" positionX="-18" positionY="27" width="128" height="75"/>
+        <element name="Partida" positionX="-36" positionY="9" width="128" height="120"/>
+        <element name="Profesor" positionX="-63" positionY="-18" width="128" height="90"/>
     </elements>
 </model>

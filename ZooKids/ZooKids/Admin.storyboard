@@ -210,7 +210,7 @@
         <!--Estadistica Resultados-->
         <scene sceneID="5na-ab-mWe">
             <objects>
-                <viewController title="Estadistica Resultados" id="KMQ-0V-8PW" sceneMemberID="viewController">
+                <viewController title="Estadistica Resultados" id="KMQ-0V-8PW" customClass="Estadisticas_ViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3Ip-Qa-9iK"/>
                         <viewControllerLayoutGuide type="bottom" id="GWO-15-Jee"/>
@@ -219,7 +219,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-ZJ-JaL">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-ZJ-JaL">
                                 <rect key="frame" x="40" y="100" width="520" height="29"/>
                                 <segments>
                                     <segment title="Resultados"/>
@@ -227,7 +227,7 @@
                                     <segment title="Fallos totales"/>
                                 </segments>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="% aciertos y fallos de los usuarios" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHv-gm-Mig">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% aciertos y fallos de los usuarios" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHv-gm-Mig">
                                 <rect key="frame" x="40" y="190" width="520" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -245,6 +245,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Estadísticas" id="b1H-HD-9Ub"/>
+                    <connections>
+                        <outlet property="selectorEstadistica" destination="QpI-ZJ-JaL" id="uRT-om-cYs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03E-S7-Ngk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
