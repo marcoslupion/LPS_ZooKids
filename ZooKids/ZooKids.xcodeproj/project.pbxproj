@@ -30,11 +30,11 @@
 		8D87449521B6EBD300F7986A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D87449421B6EBD300F7986A /* Assets.xcassets */; };
 		8D87449821B6EBD300F7986A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D87449621B6EBD300F7986A /* LaunchScreen.storyboard */; };
 		8D8744A321B6EBD300F7986A /* ZooKidsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8744A221B6EBD300F7986A /* ZooKidsTests.swift */; };
-		D230EC0121D5507B001F9631 /* Partida.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0021D5507B001F9631 /* Partida.swift */; };
 		D230EC0621D550B6001F9631 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0221D550B6001F9631 /* AdminViewController.swift */; };
 		D230EC0721D550B6001F9631 /* AlumnosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0321D550B6001F9631 /* AlumnosTableViewController.swift */; };
 		D230EC0821D550B6001F9631 /* Estadisticas_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0421D550B6001F9631 /* Estadisticas_ViewController.swift */; };
 		D230EC0921D550B6001F9631 /* Fallo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0521D550B6001F9631 /* Fallo.swift */; };
+		D230EC2421D580E5001F9631 /* Partida.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC2321D580E5001F9631 /* Partida.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,11 +75,11 @@
 		8D8744A221B6EBD300F7986A /* ZooKidsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZooKidsTests.swift; sourceTree = "<group>"; };
 		8D8744A421B6EBD300F7986A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DF58F2321BC5460004ACFC5 /* Juego.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Juego.storyboard; sourceTree = "<group>"; };
-		D230EC0021D5507B001F9631 /* Partida.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Partida.swift; path = ../Partida.swift; sourceTree = "<group>"; };
 		D230EC0221D550B6001F9631 /* AdminViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		D230EC0321D550B6001F9631 /* AlumnosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlumnosTableViewController.swift; sourceTree = "<group>"; };
 		D230EC0421D550B6001F9631 /* Estadisticas_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estadisticas_ViewController.swift; sourceTree = "<group>"; };
 		D230EC0521D550B6001F9631 /* Fallo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fallo.swift; sourceTree = "<group>"; };
+		D230EC2321D580E5001F9631 /* Partida.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Partida.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,10 +142,10 @@
 				84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */,
 				84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */,
 				843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */,
+				D230EC2321D580E5001F9631 /* Partida.swift */,
 				29B9A82721C8092800F1CED9 /* Alumno.swift */,
 				29B9A82521C8052000F1CED9 /* Profesor.swift */,
 				8D87449421B6EBD300F7986A /* Assets.xcassets */,
-				D230EC0021D5507B001F9631 /* Partida.swift */,
 				8D87449621B6EBD300F7986A /* LaunchScreen.storyboard */,
 				8D87449921B6EBD300F7986A /* Info.plist */,
 				8D87449121B6EBD300F7986A /* ZooKids.xcdatamodeld */,
@@ -277,6 +277,7 @@
 				29B9A82F21C81C7500F1CED9 /* PreguntaViewController.swift in Sources */,
 				8D696DFB21D15EEC00AECD45 /* Animal.swift in Sources */,
 				D230EC0821D550B6001F9631 /* Estadisticas_ViewController.swift in Sources */,
+				D230EC2421D580E5001F9631 /* Partida.swift in Sources */,
 				84412ECB21D3FEA1002DA550 /* BarraPartidasViewController.swift in Sources */,
 				29B9A83021C81C7500F1CED9 /* ResultadosViewController.swift in Sources */,
 				84412ECE21D3FEBC002DA550 /* PerfilNinioViewController.swift in Sources */,
@@ -284,7 +285,6 @@
 				843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */,
 				84412ECC21D3FEA1002DA550 /* BarrasAciertos.swift in Sources */,
 				8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */,
-				D230EC0121D5507B001F9631 /* Partida.swift in Sources */,
 				8D87449321B6EBD300F7986A /* ZooKids.xcdatamodeld in Sources */,
 				29B9A82621C8052000F1CED9 /* Profesor.swift in Sources */,
 			);

@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="16A323" minimumToolsVersion="Automatic">
-    <entity name="Alumno" syncable="YES">
+    <entity name="Alumno" representedClassName=".Alumno" syncable="YES">
         <attribute name="contrasenia" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fecha_nacimiento" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="foto" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nombre_usuario" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="sexo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="partidas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Partida" inverseName="alumno" inverseEntity="Partida" syncable="YES"/>
+        <relationship name="partidas" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Partida" inverseName="alumno" inverseEntity="Partida" syncable="YES"/>
         <relationship name="profesor" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profesor" inverseName="alumnos" inverseEntity="Profesor" syncable="YES"/>
     </entity>
-    <entity name="Fallo" representedClassName="Fallo" syncable="YES">
+    <entity name="Fallo" representedClassName=".Fallo" syncable="YES">
         <attribute name="fallos" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="tipo_animal" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="Partida" representedClassName="Partida" syncable="YES">
+    <entity name="Partida" representedClassName=".Partida" syncable="YES">
         <attribute name="fecha" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="id_partida" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="num_aciertos" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="num_fallos" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <relationship name="alumno" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alumno" inverseName="partidas" inverseEntity="Alumno" syncable="YES"/>
     </entity>
-    <entity name="Profesor" syncable="YES">
+    <entity name="Profesor" representedClassName=".Profesor" syncable="YES">
         <attribute name="contrasenia" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nombre_usuario" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="alumnos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Alumno" inverseName="profesor" inverseEntity="Alumno" syncable="YES"/>
+        <relationship name="alumnos" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Alumno" inverseName="profesor" inverseEntity="Alumno" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Alumno" positionX="-54" positionY="-9" width="128" height="150"/>
-        <element name="Fallo" positionX="-18" positionY="27" width="128" height="75"/>
-        <element name="Partida" positionX="-36" positionY="9" width="128" height="120"/>
-        <element name="Profesor" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Alumno" positionX="-200" positionY="129" width="128" height="148"/>
+        <element name="Fallo" positionX="-18" positionY="27" width="128" height="73"/>
+        <element name="Partida" positionX="-200" positionY="-37" width="128" height="118"/>
+        <element name="Profesor" positionX="-443" positionY="101" width="128" height="88"/>
     </elements>
 </model>

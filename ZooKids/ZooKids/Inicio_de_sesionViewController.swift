@@ -22,6 +22,7 @@ class Inicio_de_sesionViewController: UIViewController {
         //self.crear_profesor_por_defecto()
         //self.crear_alumno()
         //self.crear_fallos()
+        self.prueba()
     }
     
     func crear_profesor_por_defecto(){
@@ -34,6 +35,7 @@ class Inicio_de_sesionViewController: UIViewController {
         let profesor = Profesor(entity:entity!, insertIntoManagedObjectContext: managedContext)
         profesor.nombre_usuario = "admin"
         profesor.contrasenia = "admin"
+        
         
         do{
             try managedContext.save()
@@ -58,6 +60,19 @@ class Inicio_de_sesionViewController: UIViewController {
         alumno.foto = ""
         alumno.sexo = "M"
         alumno.fecha_nacimiento = NSDate()
+        
+        //Asignar el primer profesor
+        //Crear uno cualquiera
+        let entityProfe = NSEntityDescription.entityForName("Profesor", inManagedObjectContext: managedContext)
+        
+        let profe = Profesor(entity:entityProfe!, insertIntoManagedObjectContext: managedContext)
+        //profe.alumnos.append(alumno)
+        profe.nombre_usuario="prueba"
+        profe.contrasenia="prueba"
+        
+        alumno.profesor=profe
+
+        
         
         do{
             try managedContext.save()
@@ -168,6 +183,7 @@ class Inicio_de_sesionViewController: UIViewController {
         catch{
             print("error")
         }
+
         
         //AlertController error comprobar usuario
         let alertController = UIAlertController(title: "¡Cuidado!", message: "Usuario y/o contraseña incorrecto", preferredStyle: .Alert)
@@ -209,6 +225,78 @@ class Inicio_de_sesionViewController: UIViewController {
         
         self.presentViewController(controller, animated: true, completion: nil)
         
+        
+    }
+    
+    func prueba(){
+        //Mostrar todos los objetos del Core Data
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        //Profesor
+        
+        let fetchRequestProfesor = NSFetchRequest(entityName: "Profesor")
+        
+        do{
+            let resultsProfesor = try managedContext.executeFetchRequest(fetchRequestProfesor)
+            for profesor in resultsProfesor as! [Profesor]{
+                print("Profesor: Nombre = ",profesor.nombre_usuario," ; contraseña = ",profesor.contrasenia," ; número alumnos = ",profesor.alumnos.count)
+                for elements in profesor.alumnos{
+                    print("nombre alumno = ",elements.nombre_usuario)
+                }
+            }
+            
+        }
+        catch{
+            print("error")
+        }
+
+        
+        //Alumno
+        
+        let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
+        
+        do{
+            let resultsAlumno = try managedContext.executeFetchRequest(fetchRequestAlumno)
+            for alumno in resultsAlumno as! [Alumno]{
+                print("Alumno: Nombre = ",alumno.nombre_usuario," ; contraseña = ",alumno.contrasenia,
+                      " ; sexo = ",alumno.sexo, " ; profesor asignado = ",alumno.profesor.nombre_usuario,
+                      " ; nº partidas = ",alumno.partidas.count)
+                for part in alumno.partidas{
+                    print("Partida = ",part.id_partida," del alumno ", part.alumno.nombre_usuario)
+                }
+            }
+            
+        }
+        catch{
+            print("error")
+        }
+        
+        //Partida
+        let fetchRequestPartidas = NSFetchRequest(entityName: "Partida")
+        do{
+            let resultsPartidas = try managedContext.executeFetchRequest(fetchRequestPartidas)
+            for partida in resultsPartidas as! [Partida]{
+                print("Partida: id = ",partida.id_partida," aciertos = ",partida.num_aciertos," fallos = ",partida.num_fallos, "; pertenece al alumno = ",partida.alumno.nombre_usuario)
+            }
+            
+        }catch{
+            print("Error")
+        }
+
+        //Fallo
+        
+        let fetchRequestFallos = NSFetchRequest(entityName: "Fallo")
+        do{
+            let resultsFallos = try managedContext.executeFetchRequest(fetchRequestFallos)
+            for fallo in resultsFallos{
+                print("Fallo: fallos = ",fallo.fallos," tipo de animal = ",fallo.tipo_animal)
+            }
+        }catch{
+            print("Error")
+        }
         
     }
 }

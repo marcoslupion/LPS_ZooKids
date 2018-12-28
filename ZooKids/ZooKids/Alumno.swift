@@ -9,8 +9,6 @@
 import UIKit
 import CoreData
 
-@objc(Alumno)
-
 class Alumno: NSManagedObject {
     
     @NSManaged var contrasenia: String
@@ -18,5 +16,7 @@ class Alumno: NSManagedObject {
     @NSManaged var foto: String
     @NSManaged var nombre_usuario: String
     @NSManaged var sexo: String
+    @NSManaged var partidas: [Partida]
+    @NSManaged var profesor: Profesor
 
 }

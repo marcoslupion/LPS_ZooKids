@@ -13,7 +13,7 @@ class PartidaViewController: ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("Entra en la clase")
+        //print("Entra en la clase")
         if estadoAnimal==(-1){
             escoger_animales_aleatoriamente();
             estadoAnimal = 0;
@@ -21,8 +21,8 @@ class PartidaViewController: ViewController {
             animalActual.text = "Animal "+String(estadoAnimal+1)+"/5";
         }
         
-        print("Se ejecuta ek accesi a ka varuavke de numeros")
-        print(String(numeros[estadoAnimal]));
+        //print("Se ejecuta ek accesi a ka varuavke de numeros")
+        //print(String(numeros[estadoAnimal]));
         fotoAnimal.image=UIImage(named: "Animal"+String(numeros[estadoAnimal]))
         
         

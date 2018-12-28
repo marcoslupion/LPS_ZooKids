@@ -9,14 +9,13 @@
 import UIKit
 import CoreData
 
-@objc(Partida)
-
 class Partida: NSManagedObject {
     
-    @NSManaged var id_partida: Int
-    @NSManaged var num_aciertos: Int
-    @NSManaged var num_fallos: Int
+    @NSManaged var id_partida: Int16
+    @NSManaged var num_aciertos: Int16
+    @NSManaged var num_fallos: Int16
     @NSManaged var fecha: NSDate
+    @NSManaged var alumno: Alumno
 
 
 }

@@ -38,24 +38,23 @@ class Estadisticas_ViewController: ViewController {
         
         //Partidas totales
         let fetchRequestPartidas = NSFetchRequest(entityName: "Partida")
-        var preguntasTotales:Int
+        var preguntasTotales:Int = 0
+        var erroresTotales = 0 as Int16
         do{
             let resultsPartidas = try managedContext.executeFetchRequest(fetchRequestPartidas)
             preguntasTotales = resultsPartidas.count * 25
             //Errores
-            var erroresTotales = 0 as Int16
             for partida in resultsPartidas as! [Partida]{
                 erroresTotales += partida.num_fallos
             }
-            //print("Errores totales = ",String(erroresTotales))
-                        
+            
         }catch{
             print("Error")
         }
         
         //Fallos totales
         let fetchRequestFallos = NSFetchRequest(entityName: "Fallo")
-        var fallosTotales : Int16
+        var fallosTotales : Int16 = 0
         var tipoAnimalMap = Dictionary<String,Int16>()
         tipoAnimalMap = initializeDictionary()
         do{
@@ -65,13 +64,9 @@ class Estadisticas_ViewController: ViewController {
             for fallo in resultsFallos as! [Fallo]{
                 //print("Fallo ",fallo.tipo_animal," total de ",fallo.fallos, "fallos")
                 fallosTotales += fallo.fallos
-                //tipoAnimalMap[fallo.tipo_animal] = (tipoAnimalMap[fallo.tipo_animal])!+1
                 tipoAnimalMap[fallo.tipo_animal] = fallo.fallos
                 
             }
-
-            
-            //print("Fallos totales = ",fallosTotales)
             
         }
         catch{
@@ -80,7 +75,47 @@ class Estadisticas_ViewController: ViewController {
         
         
         //Por género
+        let fetchRequestGenero = NSFetchRequest(entityName: "Partida")
+        var numAciertosH:Int16 = 0
+        var numFallosH:Int16 = 0
+        var numAciertosM:Int16 = 0
+        var numFallosM:Int16 = 0
         
+        do{
+            
+            let resultsFallosGenero = try managedContext.executeFetchRequest(fetchRequestGenero)
+            
+            for partida in resultsFallosGenero as! [Partida]{
+                //print("partida id = ",partida.id_partida)
+                if(partida.alumno.sexo == "M"){
+                    //print("género = M")
+                    numAciertosM += partida.num_aciertos
+                    numFallosM += partida.num_fallos
+                }else{
+                    //print("género = H")
+                    numAciertosH += partida.num_aciertos
+                    numFallosH += partida.num_fallos
+                }
+            }
+            
+            
+        }
+        catch{
+            print("error")
+        }
+
+        
+        //Datos para las estadísticas
+        let aciertosTotales = numAciertosM + numFallosH
+        
+        print("Errores totales = ",String(erroresTotales))
+        print("Preguntas totales = ",preguntasTotales)
+        print("Fallos totales = ",fallosTotales," ; fallos H = ",numFallosH," ; fallos M = ",numFallosM)
+        print("Aciertos totales = ",aciertosTotales," ; aciertos H = ",numAciertosH,
+              " ; aciertos M = ",numAciertosM)
+        
+        
+
         
     }
     

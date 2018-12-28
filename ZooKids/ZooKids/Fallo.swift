@@ -9,8 +9,6 @@
 import UIKit
 import CoreData
 
-@objc(Fallo)
-
 class Fallo: NSManagedObject {
 
     @NSManaged var fallos: Int16
