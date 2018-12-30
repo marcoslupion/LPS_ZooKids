@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 class AlumnosTableViewController: UITableViewController {
-
+    var listaAlumnos = [Alumno]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +26,18 @@ class AlumnosTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Alumno")
+        do {
+            let resultados = try managedContext.executeFetchRequest(fetchRequest)
+            listaAlumnos = resultados as! [Alumno]
+        }
+        catch {
+            print("Error al cargar los alumnos")
+        }
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -34,14 +47,15 @@ class AlumnosTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return listaAlumnos.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("celdaAlumno", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCellWithIdentifier("celdaAlumno") as! AlumnoTableViewCell
+        let alumno = listaAlumnos[indexPath.row]
+        cell.nombre.text = (alumno.valueForKey("nombre_usuario") as! String)
+        cell.fecha.text = "1/1/1995"
+        cell.foto.image = UIImage(named: "fotoPredeterminada")
         return cell
     }
     

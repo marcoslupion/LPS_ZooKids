@@ -154,7 +154,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="celdaAlumno" rowHeight="129" id="OM6-rC-HcI">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="celdaAlumno" rowHeight="129" id="OM6-rC-HcI" customClass="AlumnoTableViewCell" customModule="ZooKids" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="600" height="129"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OM6-rC-HcI" id="Dwg-ae-0i4">
@@ -167,10 +167,6 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="nmS-av-YmM">
-                                            <rect key="frame" x="151" y="102" width="208" height="2"/>
-                                            <color key="tintColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </progressView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fotoPredeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="YvO-tC-OkU">
                                             <rect key="frame" x="8" y="0.0" width="120" height="120"/>
                                             <constraints>
@@ -183,6 +179,10 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OV3-hz-3kF" customClass="BarrasAciertos" customModule="ZooKids" customModuleProvider="target">
+                                            <rect key="frame" x="151" y="91" width="210" height="29"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
                                     </subviews>
                                     <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
@@ -194,6 +194,11 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="fecha" destination="at4-mk-2d9" id="9kR-El-XfH"/>
+                                    <outlet property="foto" destination="YvO-tC-OkU" id="LIV-mt-3C7"/>
+                                    <outlet property="nombre" destination="onn-GK-4cc" id="ZyC-py-XQZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
