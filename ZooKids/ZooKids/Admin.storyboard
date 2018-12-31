@@ -261,7 +261,7 @@
         <!--Registro-->
         <scene sceneID="Bvv-LB-WmL">
             <objects>
-                <viewController title="Registro" id="fkp-bQ-R8m" sceneMemberID="viewController">
+                <viewController title="Registro" id="fkp-bQ-R8m" customClass="RegistroViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1Sl-2x-80d"/>
                         <viewControllerLayoutGuide type="bottom" id="qYv-pQ-k6e"/>
@@ -271,7 +271,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UL5-Eg-q1N">
-                                <rect key="frame" x="20" y="84" width="550" height="211"/>
+                                <rect key="frame" x="20" y="84" width="550" height="91"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vD7-9M-e9d">
                                         <rect key="frame" x="0.0" y="0.0" width="550" height="30"/>
@@ -284,38 +284,36 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="QrW-io-NUI">
-                                        <rect key="frame" x="0.0" y="61" width="550" height="150"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introducir fecha de nacimiento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XeD-rd-5jf">
+                                        <rect key="frame" x="0.0" y="61" width="550" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="150" id="I8r-AG-Hwd"/>
+                                            <constraint firstAttribute="width" constant="550" id="s5V-6b-1Fg"/>
                                         </constraints>
-                                        <date key="date" timeIntervalSinceReferenceDate="566494186.72457695">
-                                            <!--2018-12-14 15:29:46 +0000-->
-                                        </date>
-                                        <locale key="locale" localeIdentifier="es_ES"/>
-                                    </datePicker>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <action selector="fecha_nacimiento:" destination="fkp-bQ-R8m" eventType="editingDidBegin" id="eom-fT-PsM"/>
+                                        </connections>
+                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="vD7-9M-e9d" secondAttribute="trailing" id="6zS-JS-g5P"/>
-                                    <constraint firstItem="QrW-io-NUI" firstAttribute="top" secondItem="7HS-6J-hII" secondAttribute="bottom" id="HzL-JT-haT"/>
-                                    <constraint firstItem="QrW-io-NUI" firstAttribute="trailing" secondItem="vD7-9M-e9d" secondAttribute="trailing" id="n3n-fI-1d4"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="HzL-JT-haT"/>
-                                    </mask>
-                                </variation>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="exj-Ai-Bn8">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="exj-Ai-Bn8">
                                 <rect key="frame" x="20" y="295" width="560" height="331"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fotoPredeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="yF5-DR-Ug1">
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fotoPredeterminada" translatesAutoresizingMaskIntoConstraints="NO" id="yF5-DR-Ug1">
                                         <rect key="frame" x="210" y="0.0" width="140" height="140"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="3t8-pI-xTa"/>
                                             <constraint firstAttribute="height" constant="140" id="ycV-l7-kUy"/>
                                         </constraints>
                                         <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="GOa-jE-9MK" appends="YES" id="eSS-Li-9F6"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sexo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k95-7G-Xxf">
                                         <rect key="frame" x="261" y="145" width="38" height="21"/>
@@ -326,30 +324,38 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="xQO-xt-r7c">
                                         <rect key="frame" x="210" y="171" width="140" height="55"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="verEstadisticas" translatesAutoresizingMaskIntoConstraints="NO" id="sdU-Md-y1X">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sexo Femenino" translatesAutoresizingMaskIntoConstraints="NO" id="sdU-Md-y1X">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="55" id="7Ks-6W-x25"/>
                                                     <constraint firstAttribute="height" constant="55" id="Fdo-ux-A4t"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="Wjd-Nb-Mu5" appends="YES" id="fRb-ds-dIt"/>
+                                                </connections>
                                             </imageView>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Item Bar" translatesAutoresizingMaskIntoConstraints="NO" id="rf7-v2-Itp">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sexo Masculino" translatesAutoresizingMaskIntoConstraints="NO" id="rf7-v2-Itp">
                                                 <rect key="frame" x="85" y="0.0" width="55" height="55"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="55" id="9yP-fX-edH"/>
                                                 </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="LYX-UN-Scv" appends="YES" id="dQt-Yo-T3h"/>
+                                                </connections>
                                             </imageView>
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OWl-rN-QEF">
                                         <rect key="frame" x="0.0" y="231" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Repetir contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zBR-oA-Txp">
                                         <rect key="frame" x="0.0" y="266" width="560" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gq8-0a-WfZ">
                                         <rect key="frame" x="180" y="301" width="200" height="30"/>
@@ -359,9 +365,13 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="Añadir"/>
+                                        <connections>
+                                            <action selector="nuevo_alumno:" destination="fkp-bQ-R8m" eventType="touchUpInside" id="inG-IM-5N0"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="yF5-DR-Ug1" firstAttribute="top" secondItem="exj-Ai-Bn8" secondAttribute="top" constant="40" id="Vxd-rD-c1q"/>
                                     <constraint firstItem="OWl-rN-QEF" firstAttribute="leading" secondItem="exj-Ai-Bn8" secondAttribute="leading" id="hmE-Fd-eHu"/>
                                     <constraint firstItem="OWl-rN-QEF" firstAttribute="leading" secondItem="zBR-oA-Txp" secondAttribute="leading" id="x3G-aD-0FB"/>
                                 </constraints>
@@ -378,11 +388,39 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Registrar alumno" id="BFY-QF-TRG">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="eZe-Bc-oLJ"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="eZe-Bc-oLJ">
+                            <connections>
+                                <action selector="salir:" destination="fkp-bQ-R8m" id="GkL-9v-Cjm"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Añadir alumno" id="ui3-5i-l1B"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contrasenia" destination="OWl-rN-QEF" id="A4Y-P2-Ega"/>
+                        <outlet property="contrasenia2" destination="zBR-oA-Txp" id="RtC-Uv-cuN"/>
+                        <outlet property="fecha" destination="XeD-rd-5jf" id="PCc-DN-2nf"/>
+                        <outlet property="femenino" destination="sdU-Md-y1X" id="4du-nD-k3s"/>
+                        <outlet property="imgView" destination="yF5-DR-Ug1" id="ckN-6A-vkz"/>
+                        <outlet property="masculino" destination="rf7-v2-Itp" id="otb-ts-vj1"/>
+                        <outlet property="nombre_usuario" destination="vD7-9M-e9d" id="Cjp-ws-Tzw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DFh-fA-bHq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="GOa-jE-9MK">
+                    <connections>
+                        <action selector="seleccionarImagen:" destination="fkp-bQ-R8m" id="XnC-tc-zhp"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="Wjd-Nb-Mu5">
+                    <connections>
+                        <action selector="seleccionarSF:" destination="fkp-bQ-R8m" id="T69-Zz-T3c"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="LYX-UN-Scv">
+                    <connections>
+                        <action selector="seleccionarSM:" destination="fkp-bQ-R8m" id="adQ-wi-6KZ"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1424" y="905"/>
         </scene>
@@ -461,7 +499,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Logo Item Bar" width="177" height="158"/>
+        <image name="Sexo Femenino" width="266" height="237"/>
+        <image name="Sexo Masculino" width="266" height="237"/>
         <image name="anadirAlumno" width="266" height="237"/>
         <image name="cerrarSesion" width="131" height="96"/>
         <image name="fotoPredeterminada" width="133" height="140"/>
