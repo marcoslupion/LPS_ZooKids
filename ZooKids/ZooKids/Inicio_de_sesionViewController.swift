@@ -26,7 +26,8 @@ class Inicio_de_sesionViewController: UIViewController {
     }
     
     func crear_profesor_por_defecto(){
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        //Ya se crea el profesor al crear el alumno
+        /*let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
@@ -44,7 +45,7 @@ class Inicio_de_sesionViewController: UIViewController {
         catch{
             
             print("error")
-        }
+        }*/
     }
     
     func crear_alumno(){
@@ -57,7 +58,7 @@ class Inicio_de_sesionViewController: UIViewController {
         let alumno = Alumno(entity:entity!, insertIntoManagedObjectContext: managedContext)
         alumno.nombre_usuario = "alumno"
         alumno.contrasenia = "alumno"
-        alumno.foto = ""
+        alumno.foto = UIImage(named: "ninio")
         alumno.sexo = "M"
         alumno.fecha_nacimiento = NSDate()
         
@@ -67,13 +68,12 @@ class Inicio_de_sesionViewController: UIViewController {
         
         let profe = Profesor(entity:entityProfe!, insertIntoManagedObjectContext: managedContext)
         //profe.alumnos.append(alumno)
-        profe.nombre_usuario="prueba"
-        profe.contrasenia="prueba"
+        profe.nombre_usuario="admin"
+        profe.contrasenia="admin"
+        profe.email = "admin@email.es"
         
         alumno.profesor=profe
 
-        
-        
         do{
             try managedContext.save()
             
@@ -242,7 +242,7 @@ class Inicio_de_sesionViewController: UIViewController {
         do{
             let resultsProfesor = try managedContext.executeFetchRequest(fetchRequestProfesor)
             for profesor in resultsProfesor as! [Profesor]{
-                print("Profesor: Nombre = ",profesor.nombre_usuario," ; contraseña = ",profesor.contrasenia," ; número alumnos = ",profesor.alumnos.count)
+                print("Profesor: Nombre = ",profesor.nombre_usuario," ; contraseña = ",profesor.contrasenia," ; email = ",profesor.email," número alumnos = ",profesor.alumnos.count)
                 for elements in profesor.alumnos{
                     print("nombre alumno = ",elements.nombre_usuario)
                 }

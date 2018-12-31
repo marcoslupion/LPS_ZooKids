@@ -13,7 +13,7 @@ class Alumno: NSManagedObject {
     
     @NSManaged var contrasenia: String
     @NSManaged var fecha_nacimiento: NSDate
-    @NSManaged var foto: String
+    @NSManaged var foto: UIImage?
     @NSManaged var nombre_usuario: String
     @NSManaged var sexo: String
     @NSManaged var partidas: [Partida]

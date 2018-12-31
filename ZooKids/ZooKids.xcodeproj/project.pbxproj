@@ -35,6 +35,9 @@
 		D230EC0821D550B6001F9631 /* Estadisticas_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0421D550B6001F9631 /* Estadisticas_ViewController.swift */; };
 		D230EC0921D550B6001F9631 /* Fallo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0521D550B6001F9631 /* Fallo.swift */; };
 		D230EC2421D580E5001F9631 /* Partida.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC2321D580E5001F9631 /* Partida.swift */; };
+		D2FCB9BD21DA445E00EFEBA4 /* AlumnoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9B921DA445E00EFEBA4 /* AlumnoTableViewCell.swift */; };
+		D2FCB9BE21DA445E00EFEBA4 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9BA21DA445E00EFEBA4 /* RegistroViewController.swift */; };
+		D2FCB9BF21DA445E00EFEBA4 /* ZooKids.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9BB21DA445E00EFEBA4 /* ZooKids.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		D230EC0421D550B6001F9631 /* Estadisticas_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estadisticas_ViewController.swift; sourceTree = "<group>"; };
 		D230EC0521D550B6001F9631 /* Fallo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fallo.swift; sourceTree = "<group>"; };
 		D230EC2321D580E5001F9631 /* Partida.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Partida.swift; sourceTree = "<group>"; };
+		D2FCB9B921DA445E00EFEBA4 /* AlumnoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlumnoTableViewCell.swift; sourceTree = "<group>"; };
+		D2FCB9BA21DA445E00EFEBA4 /* RegistroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		D2FCB9BC21DA445E00EFEBA4 /* ZooKids.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZooKids.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,9 @@
 				843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */,
 				D230EC2321D580E5001F9631 /* Partida.swift */,
 				29B9A82721C8092800F1CED9 /* Alumno.swift */,
+				D2FCB9B921DA445E00EFEBA4 /* AlumnoTableViewCell.swift */,
+				D2FCB9BA21DA445E00EFEBA4 /* RegistroViewController.swift */,
+				D2FCB9BB21DA445E00EFEBA4 /* ZooKids.xcdatamodeld */,
 				29B9A82521C8052000F1CED9 /* Profesor.swift */,
 				8D87449421B6EBD300F7986A /* Assets.xcassets */,
 				8D87449621B6EBD300F7986A /* LaunchScreen.storyboard */,
@@ -267,8 +276,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D230EC0721D550B6001F9631 /* AlumnosTableViewController.swift in Sources */,
+				D2FCB9BE21DA445E00EFEBA4 /* RegistroViewController.swift in Sources */,
 				D230EC0621D550B6001F9631 /* AdminViewController.swift in Sources */,
 				29B9A82821C8092800F1CED9 /* Alumno.swift in Sources */,
+				D2FCB9BD21DA445E00EFEBA4 /* AlumnoTableViewCell.swift in Sources */,
 				299C533C21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift in Sources */,
 				29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */,
 				84412ED021D3FF1A002DA550 /* TableviewCell1.swift in Sources */,
@@ -287,6 +298,7 @@
 				8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */,
 				8D87449321B6EBD300F7986A /* ZooKids.xcdatamodeld in Sources */,
 				29B9A82621C8052000F1CED9 /* Profesor.swift in Sources */,
+				D2FCB9BF21DA445E00EFEBA4 /* ZooKids.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -498,6 +510,16 @@
 				8D87449221B6EBD300F7986A /* ZooKids.xcdatamodel */,
 			);
 			currentVersion = 8D87449221B6EBD300F7986A /* ZooKids.xcdatamodel */;
+			path = ZooKids.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		D2FCB9BB21DA445E00EFEBA4 /* ZooKids.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2FCB9BC21DA445E00EFEBA4 /* ZooKids.xcdatamodel */,
+			);
+			currentVersion = D2FCB9BC21DA445E00EFEBA4 /* ZooKids.xcdatamodel */;
 			path = ZooKids.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

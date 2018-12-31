@@ -14,5 +14,5 @@ class Profesor: NSManagedObject {
     @NSManaged var nombre_usuario: String
     @NSManaged var contrasenia: String
     @NSManaged var alumnos: [Alumno]
-    
+    @NSManaged var email: String
 }

@@ -116,7 +116,7 @@ class ResultadosViewController: ViewController {
         let alumno = Alumno(entity:entity2!, insertIntoManagedObjectContext: managedContext)
         alumno.contrasenia = "prueba"
         alumno.fecha_nacimiento = NSDate()
-        alumno.foto=""
+        alumno.foto = UIImage(named: "ninio")
         alumno.sexo="M"
         alumno.nombre_usuario="prueba"
         
