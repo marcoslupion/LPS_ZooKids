@@ -15,6 +15,7 @@ class Inicio_de_sesionViewController: UIViewController {
     
     @IBOutlet weak var userTxtField: UITextField!
     @IBOutlet weak var passTxtField: UITextField!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,6 +156,7 @@ class Inicio_de_sesionViewController: UIViewController {
                     let controller = storyboard.instantiateViewControllerWithIdentifier("admin") as UIViewController
                     
                     self.presentViewController(controller, animated: true, completion: nil)
+                    
                 }
             }
             
@@ -218,8 +220,8 @@ class Inicio_de_sesionViewController: UIViewController {
      */
     
     @IBAction func btnPerfil(sender: AnyObject) {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
+        //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        //let managedContext = appDelegate.managedObjectContext
         let storyboard = UIStoryboard(name: "nino", bundle: nil)
         let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
         
@@ -263,7 +265,7 @@ class Inicio_de_sesionViewController: UIViewController {
             for alumno in resultsAlumno as! [Alumno]{
                 print("Alumno: Nombre = ",alumno.nombre_usuario," ; contraseña = ",alumno.contrasenia,
                       " ; sexo = ",alumno.sexo, " ; profesor asignado = ",alumno.profesor.nombre_usuario,
-                      " ; nº partidas = ",alumno.partidas.count)
+                      " ; fecha = ",alumno.fecha_nacimiento.description," ; nº partidas = ",alumno.partidas.count)
                 for part in alumno.partidas{
                     print("Partida = ",part.id_partida," del alumno ", part.alumno.nombre_usuario)
                 }
