@@ -35,7 +35,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Juego" translatesAutoresizingMaskIntoConstraints="NO" id="ZOd-Ea-2KY">
-                                        <rect key="frame" x="35" y="102" width="131" height="250"/>
+                                        <rect key="frame" x="0.0" y="102" width="200" height="200"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="Dnk-i6-SCS"/>
                                             <constraint firstAttribute="width" secondItem="ZOd-Ea-2KY" secondAttribute="height" multiplier="1:1" id="eQd-Nz-yCU"/>
@@ -43,7 +43,7 @@
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktS-DO-JbG">
-                                        <rect key="frame" x="81" y="382" width="39" height="114"/>
+                                        <rect key="frame" x="81" y="332" width="39" height="164"/>
                                         <state key="normal" title="Jugar"/>
                                         <connections>
                                             <action selector="jugar:" destination="sq7-ZI-7Pe" eventType="touchUpInside" id="CMI-dI-yly"/>
@@ -103,7 +103,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Nbj-oL-iDd">
-                                <rect key="frame" x="182" y="95" width="520" height="462"/>
+                                <rect key="frame" x="182" y="95" width="520" height="546"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-3v-UIw">
                                         <rect key="frame" x="211" y="0.0" width="98" height="21"/>
@@ -135,20 +135,42 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4F-NL-g3j">
-                                        <rect key="frame" x="245" y="362" width="30" height="30"/>
-                                        <state key="normal" title="Sí"/>
-                                        <connections>
-                                            <action selector="yes_answer:" destination="cmI-jo-HTk" eventType="touchUpInside" id="Nmx-ps-vdf"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0og-CG-ezo">
-                                        <rect key="frame" x="245" y="432" width="30" height="30"/>
-                                        <state key="normal" title="No"/>
-                                        <connections>
-                                            <action selector="no_answer:" destination="cmI-jo-HTk" eventType="touchUpInside" id="axN-ei-jB5"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="4o3-JZ-8Nv">
+                                        <rect key="frame" x="245" y="362" width="30" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4F-NL-g3j">
+                                                <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                <state key="normal" title="Sí"/>
+                                                <connections>
+                                                    <action selector="yes_answer:" destination="cmI-jo-HTk" eventType="touchUpInside" id="Nmx-ps-vdf"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0og-CG-ezo">
+                                                <rect key="frame" x="0.0" y="42" width="30" height="30"/>
+                                                <state key="normal" title="No"/>
+                                                <connections>
+                                                    <action selector="no_answer:" destination="cmI-jo-HTk" eventType="touchUpInside" id="axN-ei-jB5"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rPi-mp-Lja">
+                                        <rect key="frame" x="237" y="474" width="46" height="72"/>
+                                        <subviews>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b8y-8O-gAJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="46" height="30"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJO-oc-5kg">
+                                                <rect key="frame" x="0.0" y="42" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="avanzar_tf:" destination="cmI-jo-HTk" eventType="touchUpInside" id="d0v-zQ-0of"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uYx-wQ-bO2">
@@ -170,10 +192,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="Pregunta" id="Ant-93-76J"/>
                     <connections>
+                        <outlet property="avanzar" destination="bJO-oc-5kg" id="Lh6-hV-hlX"/>
                         <outlet property="foto" destination="uDy-6R-1yQ" id="qJs-DT-hjf"/>
                         <outlet property="no_button" destination="0og-CG-ezo" id="fgN-sc-B83"/>
                         <outlet property="num_pregunta" destination="BeX-Sk-5ZI" id="0RK-Hn-q87"/>
                         <outlet property="pregunta" destination="miH-0J-QNF" id="92Z-hu-db6"/>
+                        <outlet property="stack_botones" destination="4o3-JZ-8Nv" id="JH1-db-xiK"/>
+                        <outlet property="stack_tf" destination="rPi-mp-Lja" id="Y31-fl-Q2g"/>
+                        <outlet property="tf" destination="b8y-8O-gAJ" id="qWZ-aq-yLF"/>
                         <outlet property="yes_button" destination="L4F-NL-g3j" id="nAA-Tv-hFB"/>
                     </connections>
                 </viewController>
@@ -258,6 +284,13 @@
                                     <constraint firstItem="lKv-EQ-Zst" firstAttribute="top" secondItem="t9G-mO-m67" secondAttribute="bottom" constant="120" id="krU-OM-NOM"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-Sb-RjA">
+                                <rect key="frame" x="244" y="285" width="113" height="30"/>
+                                <state key="normal" title="Siguiente animal"/>
+                                <connections>
+                                    <action selector="siguiente_animal:" destination="vQa-DU-T54" eventType="touchUpInside" id="1nm-8n-szF"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recordar animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-Km-AMb">
                                 <rect key="frame" x="105" y="571" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

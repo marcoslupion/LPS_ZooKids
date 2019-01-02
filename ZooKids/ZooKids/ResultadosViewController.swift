@@ -93,6 +93,10 @@ class ResultadosViewController: ViewController {
         for animal in animales{
             //print("Animal = ",animal.respuesta_verdadera, " respuesta dada = ",animal.respuesta_dada)
             //Aciertos y fallos en las preguntas
+            
+            //ATENCIOOOOOOOOOOOOOOOOOOOOON JOSEF
+            //este bucle creo que esta mal, respuestas_dadas contiene lo que se va  contestnado a las preguntas del animal... creo que aqui tienes que hacer el for de arriba comprobando la propiedad de resultado.. de todas formas creo que está hecho en el constructor. Solo habria que comprobar si la respuesta dada es igual que la respuesta verdadera y eso es si ha acertado o no..... seria como he puesto abajo creo
+            /*
             for respuestas in animal.respuestas_dadas{
                 if (respuestas == true){
                     numAciertos+=1
@@ -100,13 +104,23 @@ class ResultadosViewController: ViewController {
                     numFallos+=1
                 }
             }
+ */
+            if animal.resultado{
+                numAciertos+=1
+            }else{
+                numFallos+=1
+                self.guardarFallo(animal.respuesta_verdadera)
+
+            }
             
             //Fallos en la respuesta final
+            /*
             if(animal.resultado == false){
                 //Se almacena el animal que ha fallado
                 self.guardarFallo(animal.respuesta_verdadera)
                 
             }
+ */
         }
         
         //Guardar partida

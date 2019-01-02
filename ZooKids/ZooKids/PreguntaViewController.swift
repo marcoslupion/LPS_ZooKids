@@ -8,19 +8,29 @@
 
 import UIKit
 
-class PreguntaViewController: ViewController {
+
+
+class PreguntaViewController: ViewController,UITextFieldDelegate {
     var preguntaActual=0;
-    var respuestas=[Bool]();
+    var respuestas=[Int]();
+    
     var preguntas = [String]();
     @IBOutlet weak var yes_button: UIButton!
     @IBOutlet weak var foto: UIImageView!
     @IBOutlet weak var no_button: UIButton!
     @IBOutlet weak var num_pregunta: UILabel!
     @IBOutlet weak var pregunta: UILabel!
+    @IBOutlet weak var stack_botones: UIStackView!
+    @IBOutlet weak var stack_tf: UIStackView!
+    @IBOutlet weak var tf: UITextField!
+    @IBOutlet weak var avanzar: UIButton!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        tf.hidden = true;
+        avanzar.hidden = true;
+
         rellenar_preguntas()
         print("Entra en la clase")
         num_pregunta.text = String(preguntaActual+1)+"/5";
@@ -37,9 +47,24 @@ class PreguntaViewController: ViewController {
     }
     
     
+    
+    @IBAction func avanzar_tf(sender: UIButton) {
+        let patas = tf.text;
+        if (patas != "" && Int(patas!) != nil){
+            respuestas.append(Int(patas!)!);
+            siguientePregunta();
+            //respuestas.append(patas);
+        }else{
+        
+        }
+        
+        
+    }
+    
+    
     @IBAction func yes_answer(sender: UIButton) {
         print("Se ejecuta la respuesta de yes");
-        respuestas.append(true);
+        respuestas.append(1);
         if !comprobar_fin(){
             siguientePregunta();
         }else{
@@ -51,7 +76,7 @@ class PreguntaViewController: ViewController {
     
     
     @IBAction func no_answer(sender: AnyObject) {
-        respuestas.append(false);
+        respuestas.append(0);
         if !comprobar_fin(){
             siguientePregunta();
         }else{
@@ -89,7 +114,7 @@ class PreguntaViewController: ViewController {
         preguntas.append(pregunta2);
         let pregunta3 = "¿Este animal respira?";
         preguntas.append(pregunta3);
-        let pregunta4 = "¿Este animal tiene patas?";
+        let pregunta4 = "¿Este animal cuantas patas tiene?";
         preguntas.append(pregunta4);
         let pregunta5 = "¿Este animal tiene dientes?";
         preguntas.append(pregunta5);
@@ -106,7 +131,19 @@ class PreguntaViewController: ViewController {
         num_pregunta.text = String(preguntaActual+1)+"/5";
         foto.image=UIImage(named: "Pregunta"+String(preguntaActual+1))
         pregunta.text = preguntas[preguntaActual];
-        
+        if preguntaActual+1 == 4{
+            //se ocultan los botones y se añade el textField y el botón de aceptar
+            yes_button.hidden = true;
+            no_button.hidden = true;
+            tf.hidden = false;
+            avanzar.hidden = false;
+        }else {
+            yes_button.hidden = false;
+            no_button.hidden = false;
+            tf.hidden = true;
+            avanzar.hidden = true;
+            
+        }
     }
     func navegar_test(){
         preguntaActual = 0;

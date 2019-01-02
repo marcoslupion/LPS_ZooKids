@@ -5,7 +5,7 @@ class Animal{
     var imagen: Int
     var respuesta_dada: String
     var respuesta_verdadera: String
-    var respuestas_dadas = [Bool]();
+    var respuestas_dadas = [Int]();
     var resultado : Bool;
     //MARK: Inicialización
     init(){
