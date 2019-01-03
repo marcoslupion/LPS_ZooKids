@@ -22,6 +22,9 @@
 		84412ECC21D3FEA1002DA550 /* BarrasAciertos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */; };
 		84412ECE21D3FEBC002DA550 /* PerfilNinioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECD21D3FEBC002DA550 /* PerfilNinioViewController.swift */; };
 		84412ED021D3FF1A002DA550 /* TableviewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */; };
+		84F03F1521DE8E17002DBCF9 /* grafica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F03F1421DE8E17002DBCF9 /* grafica.swift */; };
+		84F03F6521DE9628002DBCF9 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F03F6421DE9628002DBCF9 /* Charts.framework */; };
+		84F03F6621DE9628002DBCF9 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 84F03F6421DE9628002DBCF9 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8D696DFB21D15EEC00AECD45 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D696DFA21D15EEC00AECD45 /* Animal.swift */; };
 		8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448A21B6EBD300F7986A /* AppDelegate.swift */; };
 		8D87448D21B6EBD300F7986A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448C21B6EBD300F7986A /* ViewController.swift */; };
@@ -41,6 +44,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		84F03F5E21DE95F6002DBCF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84F03F4A21DE958C002DBCF9 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5BA8EC401A9D14DC00CE82E1;
+			remoteInfo = "Charts-iOS";
+		};
+		84F03F6021DE95F6002DBCF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84F03F4A21DE958C002DBCF9 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A52C5C371BAC5CA400594CDD;
+			remoteInfo = "Charts-TV";
+		};
+		84F03F6221DE95F6002DBCF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84F03F4A21DE958C002DBCF9 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 06AEE7A21BDC3F8B009875AE;
+			remoteInfo = ChartsTests;
+		};
 		8D87449F21B6EBD300F7986A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 8D87447F21B6EBD300F7986A /* Project object */;
@@ -49,6 +73,20 @@
 			remoteInfo = ZooKids;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84F03F4921DE93E9002DBCF9 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				84F03F6621DE9628002DBCF9 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		299C533B21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recuperar_contraseniaViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +103,9 @@
 		84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarrasAciertos.swift; sourceTree = "<group>"; };
 		84412ECD21D3FEBC002DA550 /* PerfilNinioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilNinioViewController.swift; sourceTree = "<group>"; };
 		84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableviewCell1.swift; sourceTree = "<group>"; };
+		84F03F1421DE8E17002DBCF9 /* grafica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = grafica.swift; sourceTree = "<group>"; };
+		84F03F4A21DE958C002DBCF9 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = ../../Charts/Charts/Charts.xcodeproj; sourceTree = "<group>"; };
+		84F03F6421DE9628002DBCF9 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Charts.framework; path = ../Charts.framework; sourceTree = "<group>"; };
 		8D696DFA21D15EEC00AECD45 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		8D87448721B6EBD300F7986A /* ZooKids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooKids.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D87448A21B6EBD300F7986A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F03F6521DE9628002DBCF9 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +148,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84F03F5921DE95F6002DBCF9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84F03F5F21DE95F6002DBCF9 /* Charts.framework */,
+				84F03F6121DE95F6002DBCF9 /* Charts.framework */,
+				84F03F6321DE95F6002DBCF9 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		8D87447E21B6EBD300F7986A = {
 			isa = PBXGroup;
 			children = (
@@ -127,7 +179,10 @@
 		8D87448921B6EBD300F7986A /* ZooKids */ = {
 			isa = PBXGroup;
 			children = (
+				84F03F6421DE9628002DBCF9 /* Charts.framework */,
+				84F03F4A21DE958C002DBCF9 /* Charts.xcodeproj */,
 				D230EC0221D550B6001F9631 /* AdminViewController.swift */,
+				84F03F1421DE8E17002DBCF9 /* grafica.swift */,
 				D230EC0321D550B6001F9631 /* AlumnosTableViewController.swift */,
 				D230EC0521D550B6001F9631 /* Fallo.swift */,
 				D230EC0421D550B6001F9631 /* Estadisticas_ViewController.swift */,
@@ -181,6 +236,7 @@
 				8D87448321B6EBD300F7986A /* Sources */,
 				8D87448421B6EBD300F7986A /* Frameworks */,
 				8D87448521B6EBD300F7986A /* Resources */,
+				84F03F4921DE93E9002DBCF9 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -239,6 +295,12 @@
 			mainGroup = 8D87447E21B6EBD300F7986A;
 			productRefGroup = 8D87448821B6EBD300F7986A /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 84F03F5921DE95F6002DBCF9 /* Products */;
+					ProjectRef = 84F03F4A21DE958C002DBCF9 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8D87448621B6EBD300F7986A /* ZooKids */,
@@ -246,6 +308,30 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		84F03F5F21DE95F6002DBCF9 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 84F03F5E21DE95F6002DBCF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84F03F6121DE95F6002DBCF9 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 84F03F6021DE95F6002DBCF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		84F03F6321DE95F6002DBCF9 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 84F03F6221DE95F6002DBCF9 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D87448521B6EBD300F7986A /* Resources */ = {
@@ -282,6 +368,7 @@
 				D2FCB9BD21DA445E00EFEBA4 /* AlumnoTableViewCell.swift in Sources */,
 				299C533C21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift in Sources */,
 				29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */,
+				84F03F1521DE8E17002DBCF9 /* grafica.swift in Sources */,
 				84412ED021D3FF1A002DA550 /* TableviewCell1.swift in Sources */,
 				29B9A82E21C81C7500F1CED9 /* PartidaViewController.swift in Sources */,
 				D230EC0921D550B6001F9631 /* Fallo.swift in Sources */,
@@ -429,6 +516,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ZooKids/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ual.ZooKids;
@@ -440,6 +531,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ZooKids/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ual.ZooKids;

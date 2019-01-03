@@ -112,6 +112,13 @@
                                     <action selector="btnPerfil:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V5j-Nn-po9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVG-jW-EZt">
+                                <rect key="frame" x="172" y="520" width="58" height="30"/>
+                                <state key="normal" title="grafica"/>
+                                <connections>
+                                    <segue destination="T0w-QB-HSB" kind="show" id="yDx-Nz-szv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -242,6 +249,40 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hdr-g1-SAx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1353" y="46"/>
+        </scene>
+        <!--Grafica-->
+        <scene sceneID="3SK-Dk-en4">
+            <objects>
+                <viewController id="T0w-QB-HSB" customClass="grafica" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3w-qk-lio"/>
+                        <viewControllerLayoutGuide type="bottom" id="iCH-kx-VK1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hyU-Sh-3vg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8EL-lN-cmy">
+                                <rect key="frame" x="195" y="62" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QcA-xB-Uiw" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="96" y="171" width="421" height="257"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="nombre" destination="8EL-lN-cmy" id="Bo6-U5-iQP"/>
+                        <outlet property="pieView" destination="QcA-xB-Uiw" id="CMV-DI-fSA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oRQ-dW-zrq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="788" y="801"/>
         </scene>
     </scenes>
     <resources>

@@ -34,16 +34,16 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Juego" translatesAutoresizingMaskIntoConstraints="NO" id="ZOd-Ea-2KY">
-                                        <rect key="frame" x="0.0" y="102" width="200" height="200"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Juego" translatesAutoresizingMaskIntoConstraints="NO" id="ZOd-Ea-2KY">
+                                        <rect key="frame" x="0.0" y="102" width="200" height="250"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="250" id="Dnk-i6-SCS"/>
                                             <constraint firstAttribute="width" secondItem="ZOd-Ea-2KY" secondAttribute="height" multiplier="1:1" id="eQd-Nz-yCU"/>
                                             <constraint firstAttribute="width" constant="250" id="ypy-6F-pnq"/>
                                         </constraints>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktS-DO-JbG">
-                                        <rect key="frame" x="81" y="332" width="39" height="164"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ktS-DO-JbG">
+                                        <rect key="frame" x="81" y="382" width="39" height="114"/>
                                         <state key="normal" title="Jugar"/>
                                         <connections>
                                             <action selector="jugar:" destination="sq7-ZI-7Pe" eventType="touchUpInside" id="CMI-dI-yly"/>
@@ -154,7 +154,7 @@
                                             </button>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rPi-mp-Lja">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rPi-mp-Lja">
                                         <rect key="frame" x="237" y="474" width="46" height="72"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b8y-8O-gAJ">
@@ -162,7 +162,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJO-oc-5kg">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJO-oc-5kg">
                                                 <rect key="frame" x="0.0" y="42" width="46" height="30"/>
                                                 <state key="normal" title="Button"/>
                                                 <connections>

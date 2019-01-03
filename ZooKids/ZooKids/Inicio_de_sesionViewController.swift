@@ -11,6 +11,8 @@ import CoreData
 
 
 
+
+
 class Inicio_de_sesionViewController: UIViewController {
     
     @IBOutlet weak var userTxtField: UITextField!
