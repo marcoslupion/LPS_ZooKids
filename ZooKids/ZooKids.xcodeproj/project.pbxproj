@@ -17,15 +17,16 @@
 		29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82D21C81C7500F1CED9 /* TestViewController.swift */; };
 		843B817521B9C4B20051146F /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 843B817421B9C4B20051146F /* Admin.storyboard */; };
 		843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */; };
-		84412EC821D3FE7F002DA550 /* nino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84412EC721D3FE7F002DA550 /* nino.storyboard */; };
 		84412ECB21D3FEA1002DA550 /* BarraPartidasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412EC921D3FEA1002DA550 /* BarraPartidasViewController.swift */; };
 		84412ECC21D3FEA1002DA550 /* BarrasAciertos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */; };
-		84412ECE21D3FEBC002DA550 /* PerfilNinioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECD21D3FEBC002DA550 /* PerfilNinioViewController.swift */; };
 		84412ED021D3FF1A002DA550 /* TableviewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */; };
 		8473A71021DFA78B007E6B7C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A70F21DFA78A007E6B7C /* Realm.framework */; };
 		8473A71121DFA78C007E6B7C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A70F21DFA78A007E6B7C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8473A71321DFABA7007E6B7C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A71221DFABA7007E6B7C /* Charts.framework */; };
 		8473A71421DFABA7007E6B7C /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A71221DFABA7007E6B7C /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		84AAE48021DFBF8F00AB6C28 /* PerfilNinioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AAE47D21DFBF8F00AB6C28 /* PerfilNinioViewController.swift */; };
+		84AAE48121DFBF8F00AB6C28 /* nino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AAE47E21DFBF8F00AB6C28 /* nino.storyboard */; };
+		84AAE48221DFBF8F00AB6C28 /* graficaResumen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AAE47F21DFBF8F00AB6C28 /* graficaResumen.swift */; };
 		84F03F1521DE8E17002DBCF9 /* grafica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F03F1421DE8E17002DBCF9 /* grafica.swift */; };
 		8D696DFB21D15EEC00AECD45 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D696DFA21D15EEC00AECD45 /* Animal.swift */; };
 		8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448A21B6EBD300F7986A /* AppDelegate.swift */; };
@@ -80,13 +81,14 @@
 		29B9A82D21C81C7500F1CED9 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		843B817421B9C4B20051146F /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inicio_de_sesionViewController.swift; sourceTree = "<group>"; };
-		84412EC721D3FE7F002DA550 /* nino.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = nino.storyboard; sourceTree = "<group>"; };
 		84412EC921D3FEA1002DA550 /* BarraPartidasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarraPartidasViewController.swift; sourceTree = "<group>"; };
 		84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarrasAciertos.swift; sourceTree = "<group>"; };
-		84412ECD21D3FEBC002DA550 /* PerfilNinioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilNinioViewController.swift; sourceTree = "<group>"; };
 		84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableviewCell1.swift; sourceTree = "<group>"; };
 		8473A70F21DFA78A007E6B7C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		8473A71221DFABA7007E6B7C /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = "<group>"; };
+		84AAE47D21DFBF8F00AB6C28 /* PerfilNinioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerfilNinioViewController.swift; path = ZooKids/PerfilNinioViewController.swift; sourceTree = "<group>"; };
+		84AAE47E21DFBF8F00AB6C28 /* nino.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = nino.storyboard; path = ZooKids/nino.storyboard; sourceTree = "<group>"; };
+		84AAE47F21DFBF8F00AB6C28 /* graficaResumen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = graficaResumen.swift; path = ZooKids/graficaResumen.swift; sourceTree = "<group>"; };
 		84F03F1421DE8E17002DBCF9 /* grafica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = grafica.swift; sourceTree = "<group>"; };
 		8D696DFA21D15EEC00AECD45 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		8D87448721B6EBD300F7986A /* ZooKids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooKids.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,9 @@
 		8D87447E21B6EBD300F7986A = {
 			isa = PBXGroup;
 			children = (
+				84AAE47D21DFBF8F00AB6C28 /* PerfilNinioViewController.swift */,
+				84AAE47E21DFBF8F00AB6C28 /* nino.storyboard */,
+				84AAE47F21DFBF8F00AB6C28 /* graficaResumen.swift */,
 				8473A71221DFABA7007E6B7C /* Charts.framework */,
 				8473A70F21DFA78A007E6B7C /* Realm.framework */,
 				8D87448921B6EBD300F7986A /* ZooKids */,
@@ -170,8 +175,6 @@
 				8D87448E21B6EBD300F7986A /* Main.storyboard */,
 				843B817421B9C4B20051146F /* Admin.storyboard */,
 				8DF58F2321BC5460004ACFC5 /* Juego.storyboard */,
-				84412EC721D3FE7F002DA550 /* nino.storyboard */,
-				84412ECD21D3FEBC002DA550 /* PerfilNinioViewController.swift */,
 				84412EC921D3FEA1002DA550 /* BarraPartidasViewController.swift */,
 				84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */,
 				84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */,
@@ -285,7 +288,7 @@
 				29B9A82921C80FFB00F1CED9 /* Juego.storyboard in Resources */,
 				8D87449821B6EBD300F7986A /* LaunchScreen.storyboard in Resources */,
 				8D87449521B6EBD300F7986A /* Assets.xcassets in Resources */,
-				84412EC821D3FE7F002DA550 /* nino.storyboard in Resources */,
+				84AAE48121DFBF8F00AB6C28 /* nino.storyboard in Resources */,
 				8D87449021B6EBD300F7986A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,8 +324,9 @@
 				D230EC2421D580E5001F9631 /* Partida.swift in Sources */,
 				84412ECB21D3FEA1002DA550 /* BarraPartidasViewController.swift in Sources */,
 				29B9A83021C81C7500F1CED9 /* ResultadosViewController.swift in Sources */,
-				84412ECE21D3FEBC002DA550 /* PerfilNinioViewController.swift in Sources */,
+				84AAE48221DFBF8F00AB6C28 /* graficaResumen.swift in Sources */,
 				8D87448D21B6EBD300F7986A /* ViewController.swift in Sources */,
+				84AAE48021DFBF8F00AB6C28 /* PerfilNinioViewController.swift in Sources */,
 				843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */,
 				84412ECC21D3FEA1002DA550 /* BarrasAciertos.swift in Sources */,
 				8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */,

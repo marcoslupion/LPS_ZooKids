@@ -18,11 +18,14 @@ class PerfilNinioViewController: UIViewController {
    
     @IBOutlet weak var btonJuega: UIButton!
 
+    @IBOutlet weak var graficaResumen: UIView!
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        graficaResumen.hidden=true
         graficaBarraPartidas.hidden = true;
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,16 +42,21 @@ class PerfilNinioViewController: UIViewController {
         {
         case 0:
             btonJuega.hidden=false
+            graficaResumen.hidden=true
             graficaBarraPartidas.hidden=true
+            
+            
             
         case 1:
             
             btonJuega.hidden=true
+            graficaResumen.hidden=false
             graficaBarraPartidas.hidden=true
             
             
         case 2:
             btonJuega.hidden=true
+            graficaResumen.hidden=true
             graficaBarraPartidas.hidden=false
             
             
