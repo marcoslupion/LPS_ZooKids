@@ -22,10 +22,10 @@
 		84412ECC21D3FEA1002DA550 /* BarrasAciertos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */; };
 		84412ECE21D3FEBC002DA550 /* PerfilNinioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECD21D3FEBC002DA550 /* PerfilNinioViewController.swift */; };
 		84412ED021D3FF1A002DA550 /* TableviewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */; };
-		8473A70D21DFA50E007E6B7C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A70C21DFA50E007E6B7C /* Charts.framework */; };
-		8473A70E21DFA50E007E6B7C /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A70C21DFA50E007E6B7C /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8473A71021DFA78B007E6B7C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A70F21DFA78A007E6B7C /* Realm.framework */; };
 		8473A71121DFA78C007E6B7C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A70F21DFA78A007E6B7C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		8473A71321DFABA7007E6B7C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A71221DFABA7007E6B7C /* Charts.framework */; };
+		8473A71421DFABA7007E6B7C /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A71221DFABA7007E6B7C /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		84F03F1521DE8E17002DBCF9 /* grafica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F03F1421DE8E17002DBCF9 /* grafica.swift */; };
 		8D696DFB21D15EEC00AECD45 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D696DFA21D15EEC00AECD45 /* Animal.swift */; };
 		8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448A21B6EBD300F7986A /* AppDelegate.swift */; };
@@ -63,7 +63,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				8473A71121DFA78C007E6B7C /* Realm.framework in Embed Frameworks */,
-				8473A70E21DFA50E007E6B7C /* Charts.framework in Embed Frameworks */,
+				8473A71421DFABA7007E6B7C /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,8 +85,8 @@
 		84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarrasAciertos.swift; sourceTree = "<group>"; };
 		84412ECD21D3FEBC002DA550 /* PerfilNinioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PerfilNinioViewController.swift; sourceTree = "<group>"; };
 		84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableviewCell1.swift; sourceTree = "<group>"; };
-		8473A70C21DFA50E007E6B7C /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = "<group>"; };
 		8473A70F21DFA78A007E6B7C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		8473A71221DFABA7007E6B7C /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = "<group>"; };
 		84F03F1421DE8E17002DBCF9 /* grafica.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = grafica.swift; sourceTree = "<group>"; };
 		8D696DFA21D15EEC00AECD45 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 		8D87448721B6EBD300F7986A /* ZooKids.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooKids.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -117,7 +117,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8473A71021DFA78B007E6B7C /* Realm.framework in Frameworks */,
-				8473A70D21DFA50E007E6B7C /* Charts.framework in Frameworks */,
+				8473A71321DFABA7007E6B7C /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,8 +134,8 @@
 		8D87447E21B6EBD300F7986A = {
 			isa = PBXGroup;
 			children = (
+				8473A71221DFABA7007E6B7C /* Charts.framework */,
 				8473A70F21DFA78A007E6B7C /* Realm.framework */,
-				8473A70C21DFA50E007E6B7C /* Charts.framework */,
 				8D87448921B6EBD300F7986A /* ZooKids */,
 				8D8744A121B6EBD300F7986A /* ZooKidsTests */,
 				8D87448821B6EBD300F7986A /* Products */,
