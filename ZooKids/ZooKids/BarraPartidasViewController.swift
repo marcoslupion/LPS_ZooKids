@@ -10,19 +10,13 @@ import UIKit
 
 class BarraPartidasViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
-   
-
-    var teams = [String]()
-    var arrayFecha = [String]()
-    
+    var partidas = [Partida]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-       
-        teams = [ "Partida #1", "Partida #2", "Partida #3"]
-        arrayFecha = [ "1/1/2018", "2/1/2018", "3/1/2018"]
         // Do any additional setup after loading the view.
+        //partidas.count
+        partidas = partidas.reverse()
     }
 
     
@@ -33,7 +27,8 @@ class BarraPartidasViewController:  UIViewController, UITableViewDataSource, UIT
     
     func tableView(tableView:UITableView, numberOfRowsInSection section:Int) -> Int
     {
-        return teams.count
+        
+        return partidas.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
@@ -42,8 +37,17 @@ class BarraPartidasViewController:  UIViewController, UITableViewDataSource, UIT
        
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! TableviewCell1
      
-        cell.numeroPartida.text = teams[indexPath.row]
-        cell.fecha.text = arrayFecha[indexPath.row]
+        /*cell.numeroPartida.text = teams[indexPath.row]
+        cell.fecha.text = arrayFecha[indexPath.row]*/
+        cell.numeroPartida.text = "Partida #"+String(indexPath.row+1)
+        let fecha = partidas[indexPath.row].fecha
+        let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+        let dd = calendar.component(.Day, fromDate: fecha)
+        let mm = calendar.component(.Month, fromDate: fecha)
+        let yy = calendar.component(.Year, fromDate: fecha)
+        let fechaString = String(dd)+" / "+String(mm)+" / "+String(yy)
+        //print("fecha = ",dd," / ",mm," / ",yy)
+        cell.fecha.text = fechaString
         
         return cell
     }

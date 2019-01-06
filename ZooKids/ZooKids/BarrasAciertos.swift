@@ -18,21 +18,33 @@ class BarrasAciertos: UIView {
     }
     */
     
+    var nErrores: Int16 = 0
+    var nAciertos: Int16 = 0
     
     // MARK: atributos
     var botones = [UIButton]()
     let tamanio = CGRect(x: 0, y: 0, width: 96.8, height: 30)
-    var gradoAfinidad = 0 {
-        didSet{
-          //  actualizaEstrellas()
-        }
-    }
     
     // MARK: inicialización
+
+    /*override init(frame: CGRect){
+        super.init(frame: frame)
+        
+        
+    }*/
+    
     required init?(coder aDecoder: NSCoder) {
         
         super.init(coder: aDecoder)
         
+        /*let nTotal = Int(nErrores + nAciertos)
+         var erroresPorcentaje:Int = (5*Int(nErrores)) / nTotal
+         var aciertosPorcentaje:Int = (5*Int(nAciertos)) / nTotal
+         
+         print("erroresP = ",String(erroresPorcentaje)," aciertosP = ",String(aciertosPorcentaje))
+         */
+        
+        print("nfallos = ",nErrores," ; nAciertos = ",nAciertos)
         for i in 0..<5{
             let boton = UIButton(frame: tamanio)
             
@@ -43,11 +55,12 @@ class BarrasAciertos: UIView {
             }
             
             boton.adjustsImageWhenHighlighted = false
-           
+            
             boton.tag = i
             botones += [boton]
             addSubview(boton)
         }
+
         
     }
     

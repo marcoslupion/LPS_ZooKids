@@ -53,9 +53,26 @@ class AlumnosTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("celdaAlumno") as! AlumnoTableViewCell
         let alumno = listaAlumnos[indexPath.row]
-        cell.nombre.text = (alumno.valueForKey("nombre_usuario") as! String)
-        cell.fecha.text = "1/1/1995"
-        cell.foto.image = UIImage(named: "fotoPredeterminada")
+        //cell.nombre.text = (alumno.valueForKey("nombre_usuario") as! String)
+        cell.nombre.text = alumno.nombre_usuario
+        let fecha = alumno.fecha_nacimiento
+        let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+        let dd = calendar.component(.Day, fromDate: fecha)
+        let mm = calendar.component(.Month, fromDate: fecha)
+        let yy = calendar.component(.Year, fromDate: fecha)
+        let fechaString = String(dd)+" / "+String(mm)+" / "+String(yy)
+        cell.fecha.text = fechaString
+        //cell.foto.image = UIImage(named: "fotoPredeterminada")
+        cell.foto.image = alumno.foto
+        
+        //Barras aciertos
+        //let barrasAciertos = BarrasAciertos()
+        //Prueba
+        //barrasAciertos.nAciertos = 10
+        //barrasAciertos.nErrores = 10
+        //barrasAciertos.reloadInputViews()
+        //self.reloadInputViews()
+        
         return cell
     }
     

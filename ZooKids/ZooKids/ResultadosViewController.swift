@@ -126,7 +126,7 @@ class ResultadosViewController: ViewController {
         //Guardar partida
         
         //Primero crear alumno mock
-        let entity2 = NSEntityDescription.entityForName("Alumno", inManagedObjectContext: managedContext)
+        /*let entity2 = NSEntityDescription.entityForName("Alumno", inManagedObjectContext: managedContext)
         let alumno = Alumno(entity:entity2!, insertIntoManagedObjectContext: managedContext)
         alumno.contrasenia = "prueba"
         alumno.fecha_nacimiento = NSDate()
@@ -141,7 +141,25 @@ class ResultadosViewController: ViewController {
         catch{
             
             print("error")
+        }*/
+        
+        var alumno: Alumno!
+        let nombreAlumno = "prueba"
+        let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
+        fetchRequestAlumno.predicate = NSPredicate(format: "nombre_usuario == %@",nombreAlumno)
+        do{
+            let resultsAlumnoEncontrado = try managedContext.executeFetchRequest(fetchRequestAlumno)
+            
+            if (resultsAlumnoEncontrado.count != 0){
+                    alumno = resultsAlumnoEncontrado[0] as! Alumno
+            }
+            
+            try managedContext.save()
+            
+        }catch{
+            print("Error")
         }
+
 
         //Segundo guardar partida y asociar alumno
         let partida = Partida(entity:entity!, insertIntoManagedObjectContext: managedContext)

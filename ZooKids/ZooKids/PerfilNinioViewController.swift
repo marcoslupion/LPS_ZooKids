@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class PerfilNinioViewController: UIViewController {
 
@@ -19,12 +20,27 @@ class PerfilNinioViewController: UIViewController {
     @IBOutlet weak var btonJuega: UIButton!
 
     @IBOutlet weak var graficaResumen: UIView!
-   
+    
+    var alumno: Alumno!
+    var numFallos:Int16=0
+    var numAciertos:Int16=0
+    var partidasTotales:[Partida]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         graficaResumen.hidden=true
         graficaBarraPartidas.hidden = true;
+        cargarDatos()
+        
+        let barrasPartida = self.childViewControllers[0] as! BarraPartidasViewController
+        barrasPartida.partidas=partidasTotales
+        barrasPartida.viewDidLoad()
+        
+        let graficaFinal = self.childViewControllers[1] as! ZooKids.graficaResumen
+        graficaFinal.numAciertos = numAciertos
+        graficaFinal.numFallos = numFallos
+        graficaFinal.viewDidLoad()
+        
         
         // Do any additional setup after loading the view.
     }
@@ -32,6 +48,7 @@ class PerfilNinioViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
     }
     
     
@@ -55,6 +72,7 @@ class PerfilNinioViewController: UIViewController {
             
             
         case 2:
+            
             btonJuega.hidden=true
             graficaResumen.hidden=true
             graficaBarraPartidas.hidden=false
@@ -73,6 +91,45 @@ class PerfilNinioViewController: UIViewController {
         let controller = storyboard.instantiateViewControllerWithIdentifier("juego") as UIViewController
         
         self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
+    func cargarDatos(){
+        
+        //Aciertos y fallos de un alumno
+        //TODO
+        //let nombreAlumno = alumno.nombre_usuario
+        let nombreAlumno = "prueba"
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
+        fetchRequestAlumno.predicate = NSPredicate(format: "nombre_usuario == %@",nombreAlumno)
+        do{
+            let resultsAlumno = try managedContext.executeFetchRequest(fetchRequestAlumno)
+            
+            if (resultsAlumno.count != 0){
+                print("alumno encontrado")
+                let alumno = resultsAlumno[0] as! Alumno
+                partidasTotales = alumno.partidas
+                print("partidas totales = ",partidasTotales.count)
+                for partidas in alumno.partidas{
+                    numFallos += partidas.num_fallos
+                    numAciertos += partidas.num_aciertos
+                }
+            }else{
+                print("No se ha encontrado ningún alumno")
+            }
+            
+            try managedContext.save()
+            
+        }catch{
+            print("Error")
+        }
+
+        //Resultados por partida
+
     }
 
     

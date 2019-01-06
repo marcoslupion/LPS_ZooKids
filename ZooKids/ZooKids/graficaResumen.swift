@@ -20,7 +20,8 @@ class graficaResumen: UIViewController {
     */
 
     @IBOutlet weak var subtituloAciertos: UILabel!
-    
+    var numAciertos:Int16 = 0
+    var numFallos:Int16 = 0
     
     
     @IBOutlet var pieView: PieChartView!
@@ -36,10 +37,8 @@ class graficaResumen: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
         let months = ["Aciertos", "Fallos"]
-        let unitsSold = [4.0, 5.0]
-        
+        let unitsSold = [Double(numAciertos), Double(numFallos)]
         setChart(months, values: unitsSold)
         
     }
