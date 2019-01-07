@@ -17,7 +17,7 @@ class Inicio_de_sesionViewController: UIViewController {
     
     @IBOutlet weak var userTxtField: UITextField!
     @IBOutlet weak var passTxtField: UITextField!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -177,8 +177,9 @@ class Inicio_de_sesionViewController: UIViewController {
             for alumno in resultsAlumno{
                 if(alumno.nombre_usuario == userTxtField.text && alumno.contrasenia == passTxtField.text){
                     print("Usuario y contraseña correcto: ALUMNO")
-                    let storyboard = UIStoryboard(name: "Juego", bundle: nil)
-                    let controller = storyboard.instantiateViewControllerWithIdentifier("juego") as UIViewController
+                    PerfilNinioViewController.ninioIniciado = alumno as! Alumno
+                    let storyboard = UIStoryboard(name: "nino", bundle: nil)
+                    let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
                     
                     self.presentViewController(controller, animated: true, completion: nil)
                 }

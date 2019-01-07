@@ -9,8 +9,12 @@
 import UIKit
 import CoreData
 
-class PerfilNinioViewController: UIViewController {
+public var ninio:String!
 
+class PerfilNinioViewController: UIViewController {
+    @IBOutlet weak var foto: UIImageView!
+    @IBOutlet weak var nombre: UILabel!
+    @IBOutlet weak var fecha: UILabel!
     @IBOutlet weak var imagenjugar: UIImageView!
     @IBOutlet weak var partidas: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -20,7 +24,7 @@ class PerfilNinioViewController: UIViewController {
     @IBOutlet weak var btonJuega: UIButton!
 
     @IBOutlet weak var graficaResumen: UIView!
-    
+    static var ninioIniciado : Alumno!
     var alumno: Alumno!
     var numFallos:Int16=0
     var numAciertos:Int16=0
@@ -28,6 +32,17 @@ class PerfilNinioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        nombre.text = PerfilNinioViewController.ninioIniciado.nombre_usuario
+        let fechaN = PerfilNinioViewController.ninioIniciado.fecha_nacimiento
+        let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+        let dd = calendar.component(.Day, fromDate: fechaN)
+        let mm = calendar.component(.Month, fromDate: fechaN)
+        let yy = calendar.component(.Year, fromDate: fechaN)
+        let fechaString = String(dd)+" / "+String(mm)+" / "+String(yy)
+        fecha.text = fechaString
+        foto.image = PerfilNinioViewController.ninioIniciado.foto
+        
         graficaResumen.hidden=true
         graficaBarraPartidas.hidden = true;
         cargarDatos()
@@ -40,8 +55,7 @@ class PerfilNinioViewController: UIViewController {
         graficaFinal.numAciertos = numAciertos
         graficaFinal.numFallos = numFallos
         graficaFinal.viewDidLoad()
-        
-        
+        print(PerfilNinioViewController.ninioIniciado.nombre_usuario)
         // Do any additional setup after loading the view.
     }
 
