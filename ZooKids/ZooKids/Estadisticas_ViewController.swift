@@ -12,6 +12,12 @@ import CoreData
 class Estadisticas_ViewController: ViewController {
 
     @IBOutlet weak var selectorEstadistica: UISegmentedControl!
+    @IBOutlet weak var estadisticaResultado: UIView!
+    @IBOutlet weak var textoGrafica: UILabel!
+    @IBOutlet weak var EstadisticaGenero: UIView!
+    
+    @IBOutlet weak var EstadisticaFallosTotales: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +26,15 @@ class Estadisticas_ViewController: ViewController {
         self.cargarEstadisticas()
         
         //Actualizar valores al cambiar de pestaña
-        selectorEstadistica.addTarget(self, action: #selector(self.changeValue(_:)), forControlEvents: .ValueChanged)
+        //selectorEstadistica.addTarget(self, action: #selector(self.changeValue(_:)), forControlEvents: .ValueChanged)
+        
+        
+        estadisticaResultado.hidden=false
+        EstadisticaGenero.hidden=true
+        textoGrafica.hidden = false
+        EstadisticaFallosTotales.hidden=true
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -119,17 +133,42 @@ class Estadisticas_ViewController: ViewController {
         
     }
     
-    func changeValue(segment: UISegmentedControl){
-        if(segment.selectedSegmentIndex == 0){
-            print("segment = 0")
-        }else if(segment.selectedSegmentIndex == 1){
-            print("segment = 1")
-        }else if(segment.selectedSegmentIndex == 2){
-            print("segment = 2")
-        }else{
-            print("error, valor = ",segment.selectedSegmentIndex)
+    
+    @IBAction func indexChanged(sender: AnyObject) {
+        
+        
+        switch selectorEstadistica.selectedSegmentIndex
+        {
+        case 0:
+            estadisticaResultado.hidden=false
+            EstadisticaGenero.hidden=true
+            textoGrafica.hidden = false
+            EstadisticaFallosTotales.hidden=true
+            
+        case 1:
+            estadisticaResultado.hidden=true
+            EstadisticaGenero.hidden=false
+            textoGrafica.hidden = true
+            EstadisticaFallosTotales.hidden=true
+           
+            
+        case 2:
+      
+             estadisticaResultado.hidden=true
+             EstadisticaGenero.hidden=true
+            textoGrafica.hidden = true
+            EstadisticaFallosTotales.hidden=false
+
+            
+        default:
+            break
         }
+        
+        
     }
+    
+    
+    
     
     func initializeDictionary() -> Dictionary<String,Int16>{
      

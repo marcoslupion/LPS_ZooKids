@@ -224,34 +224,70 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-ZJ-JaL">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-ZJ-JaL">
                                 <rect key="frame" x="40" y="100" width="520" height="29"/>
                                 <segments>
                                     <segment title="Resultados"/>
                                     <segment title="Género"/>
                                     <segment title="Fallos totales"/>
                                 </segments>
+                                <connections>
+                                    <action selector="indexChanged:" destination="KMQ-0V-8PW" eventType="valueChanged" id="pSG-qn-uHX"/>
+                                </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="% aciertos y fallos de los usuarios" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHv-gm-Mig">
-                                <rect key="frame" x="40" y="190" width="520" height="21"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qxa-wR-cwa">
+                                <rect key="frame" x="36" y="153" width="528" height="315"/>
+                                <connections>
+                                    <segue destination="QED-LL-IGT" kind="embed" id="a2M-RN-R8K"/>
+                                </connections>
+                            </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Fantástico puedes mejorar tu puntuación." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Iu-AR-spq">
+                                <rect key="frame" x="49" y="501" width="434" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUQ-Ij-EBL">
+                                <rect key="frame" x="36" y="153" width="528" height="394"/>
+                                <connections>
+                                    <segue destination="O4t-xs-N5C" kind="embed" id="TBL-Vo-plQ"/>
+                                </connections>
+                            </containerView>
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95L-oa-YgS">
+                                <rect key="frame" x="36" y="153" width="528" height="394"/>
+                                <connections>
+                                    <segue destination="Mtd-NO-KZU" kind="embed" id="ap6-4G-fjF"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="2Iu-AR-spq" firstAttribute="leading" secondItem="4tu-W8-ewi" secondAttribute="leadingMargin" constant="29" id="8DD-na-eGT"/>
                             <constraint firstItem="QpI-ZJ-JaL" firstAttribute="leading" secondItem="4tu-W8-ewi" secondAttribute="leadingMargin" constant="20" id="FA7-8n-e6O"/>
-                            <constraint firstItem="SHv-gm-Mig" firstAttribute="leading" secondItem="4tu-W8-ewi" secondAttribute="leadingMargin" constant="20" id="MxI-fO-qmx"/>
-                            <constraint firstItem="SHv-gm-Mig" firstAttribute="top" secondItem="QpI-ZJ-JaL" secondAttribute="bottom" constant="62" id="N1L-Yw-hjP"/>
+                            <constraint firstAttribute="trailing" secondItem="95L-oa-YgS" secondAttribute="trailing" constant="36" id="Fiu-g3-qVg"/>
+                            <constraint firstItem="Qxa-wR-cwa" firstAttribute="leading" secondItem="4tu-W8-ewi" secondAttribute="leading" constant="30" id="L55-sf-95Z"/>
+                            <constraint firstAttribute="trailing" secondItem="Qxa-wR-cwa" secondAttribute="trailing" constant="30" id="LON-Tf-Ek8"/>
+                            <constraint firstItem="GWO-15-Jee" firstAttribute="top" secondItem="95L-oa-YgS" secondAttribute="bottom" constant="53" id="Mbb-30-xbm"/>
+                            <constraint firstItem="GWO-15-Jee" firstAttribute="top" secondItem="sUQ-Ij-EBL" secondAttribute="bottom" constant="53" id="NgR-Zv-OMK"/>
+                            <constraint firstItem="95L-oa-YgS" firstAttribute="leading" secondItem="4tu-W8-ewi" secondAttribute="leading" constant="36" id="SeU-AC-HGc"/>
+                            <constraint firstItem="2Iu-AR-spq" firstAttribute="top" secondItem="Qxa-wR-cwa" secondAttribute="bottom" constant="33" id="WfW-Cl-8hA"/>
+                            <constraint firstItem="Qxa-wR-cwa" firstAttribute="top" secondItem="QpI-ZJ-JaL" secondAttribute="bottom" constant="25" id="WqI-La-0CW"/>
                             <constraint firstItem="QpI-ZJ-JaL" firstAttribute="top" secondItem="3Ip-Qa-9iK" secondAttribute="bottom" constant="36" id="YLq-y3-RIj"/>
+                            <constraint firstAttribute="trailing" secondItem="sUQ-Ij-EBL" secondAttribute="trailing" constant="36" id="ZQf-Tx-1nV"/>
                             <constraint firstAttribute="trailingMargin" secondItem="QpI-ZJ-JaL" secondAttribute="trailing" constant="20" id="i1v-lJ-1BQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SHv-gm-Mig" secondAttribute="trailing" constant="20" id="q6a-2z-xan"/>
+                            <constraint firstItem="95L-oa-YgS" firstAttribute="top" secondItem="QpI-ZJ-JaL" secondAttribute="bottom" constant="25" id="l8V-Je-ZE9"/>
+                            <constraint firstItem="sUQ-Ij-EBL" firstAttribute="top" secondItem="QpI-ZJ-JaL" secondAttribute="bottom" constant="25" id="tfM-23-SRY"/>
+                            <constraint firstItem="sUQ-Ij-EBL" firstAttribute="leading" secondItem="4tu-W8-ewi" secondAttribute="leading" constant="36" id="uEN-B7-vl7"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2Iu-AR-spq" secondAttribute="trailing" constant="97" id="yq8-gj-p7Z"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Estadísticas" id="b1H-HD-9Ub"/>
                     <connections>
-                        <outlet property="selectorEstadistica" destination="QpI-ZJ-JaL" id="uRT-om-cYs"/>
+                        <outlet property="EstadisticaFallosTotales" destination="95L-oa-YgS" id="2wg-pp-Li6"/>
+                        <outlet property="EstadisticaGenero" destination="sUQ-Ij-EBL" id="tXR-Dh-JOS"/>
+                        <outlet property="estadisticaResultado" destination="Qxa-wR-cwa" id="4Cl-8h-Nx4"/>
+                        <outlet property="selectorEstadistica" destination="QpI-ZJ-JaL" id="8XY-WR-9N0"/>
+                        <outlet property="textoGrafica" destination="2Iu-AR-spq" id="eVi-Yx-8F3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03E-S7-Ngk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -477,7 +513,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YDn-pk-d4Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2884" y="1517"/>
+            <point key="canvasLocation" x="2792" y="1672"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="445-Tf-Yaz">
@@ -496,6 +532,134 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0YW-gh-zmd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="688" y="700"/>
+        </scene>
+        <!--Grafica Resultados View Controller-->
+        <scene sceneID="Hg3-RU-dub">
+            <objects>
+                <viewController id="QED-LL-IGT" customClass="GraficaResultadosViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yvq-xE-DIJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="22T-Ub-XTs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="7wd-yp-zmm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBO-Bq-Qll">
+                                <rect key="frame" x="0.0" y="0.0" width="528" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="% aciertos y fallos de los usuarios" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHv-gm-Mig">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="SHv-gm-Mig" secondAttribute="trailing" id="Hju-nd-xq3"/>
+                                    <constraint firstItem="SHv-gm-Mig" firstAttribute="top" secondItem="QBO-Bq-Qll" secondAttribute="top" id="Zmi-b2-5Py"/>
+                                    <constraint firstItem="SHv-gm-Mig" firstAttribute="leading" secondItem="QBO-Bq-Qll" secondAttribute="leading" constant="20" id="nI5-MX-81n"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXN-9G-8cW" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="47" width="528" height="268"/>
+                                <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="SXN-9G-8cW" secondAttribute="trailing" id="GyF-mG-EKY"/>
+                            <constraint firstItem="SXN-9G-8cW" firstAttribute="leading" secondItem="7wd-yp-zmm" secondAttribute="leadingMargin" id="XFc-6a-ewh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pieView" destination="SXN-9G-8cW" id="07O-3l-LDl"/>
+                        <outlet property="subtituloAciertos" destination="SHv-gm-Mig" id="Xtw-ya-XKy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gXo-uq-Yj9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4250" y="213"/>
+        </scene>
+        <!--Grafica Genero View Controller-->
+        <scene sceneID="AjQ-Y6-UOW">
+            <objects>
+                <viewController id="O4t-xs-N5C" customClass="GraficaGeneroViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gJ0-uA-OT2"/>
+                        <viewControllerLayoutGuide type="bottom" id="w2V-Yk-9XY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sTA-Pk-IhL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03r-bv-RVP" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="528" height="394"/>
+                                <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="03r-bv-RVP" secondAttribute="trailing" id="A5r-Sl-4oS"/>
+                            <constraint firstItem="03r-bv-RVP" firstAttribute="leading" secondItem="sTA-Pk-IhL" secondAttribute="leading" id="kEr-vZ-ZVK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pieView" destination="03r-bv-RVP" id="kab-3e-Z7S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xkg-tj-uKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4275" y="958"/>
+        </scene>
+        <!--Grafica Fallos Totales View Controller-->
+        <scene sceneID="r3r-pa-8cW">
+            <objects>
+                <viewController id="Mtd-NO-KZU" customClass="GraficaFallosTotalesViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Udn-7M-2KI"/>
+                        <viewControllerLayoutGuide type="bottom" id="1kF-aq-FIh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KZm-F8-sgL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ydb-gF-iba" customClass="PieChartView" customModule="Charts">
+                                <rect key="frame" x="0.0" y="0.0" width="528" height="394"/>
+                                <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ydb-gF-iba" firstAttribute="leading" secondItem="KZm-F8-sgL" secondAttribute="leading" id="9bx-X9-NMK"/>
+                            <constraint firstAttribute="trailing" secondItem="Ydb-gF-iba" secondAttribute="trailing" id="B9E-pu-mSS"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pieView" destination="Ydb-gF-iba" id="TMH-X7-Jxh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O7v-6D-kNQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3597" y="1504"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="3C4-pe-DUs">
+            <objects>
+                <viewController id="GgL-bS-olH" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="D6r-T6-mj2"/>
+                        <viewControllerLayoutGuide type="bottom" id="gJI-0W-9Ku"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Knx-r9-dt6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q8I-GZ-NIK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
         </scene>
     </scenes>
     <resources>
