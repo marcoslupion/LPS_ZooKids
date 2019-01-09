@@ -128,8 +128,8 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
         
     }
     @IBAction func salir(sender: UIBarButtonItem) {
-        let storyboard = UIStoryboard(name: "Juego", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
+        let storyboard = UIStoryboard(name: "nino", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
         
         self.presentViewController(controller, animated: true, completion: nil)
     }
@@ -143,7 +143,7 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
         num_pregunta.text = String(preguntaActual+1)+"/8";
         foto.image=UIImage(named: "Pregunta"+String(preguntaActual+1))
         pregunta.text = preguntas[preguntaActual];
-        if preguntaActual+1 == 9{
+        if preguntaActual+1 == 4{
             //se ocultan los botones y se añade el textField y el botón de aceptar
             yes_button.hidden = true;
             no_button.hidden = true;
