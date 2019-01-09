@@ -15,15 +15,15 @@
 		29B9A82F21C81C7500F1CED9 /* PreguntaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82B21C81C7500F1CED9 /* PreguntaViewController.swift */; };
 		29B9A83021C81C7500F1CED9 /* ResultadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82C21C81C7500F1CED9 /* ResultadosViewController.swift */; };
 		29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82D21C81C7500F1CED9 /* TestViewController.swift */; };
-		840311E821E549DF007AA445 /* GraficaResultadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840311E321E549DF007AA445 /* GraficaResultadosViewController.swift */; };
-		840311E921E549DF007AA445 /* GraficaGeneroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840311E421E549DF007AA445 /* GraficaGeneroViewController.swift */; };
-		840311EA21E549DF007AA445 /* GraficaFallosTotalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840311E521E549DF007AA445 /* GraficaFallosTotalesViewController.swift */; };
 		840311EB21E549DF007AA445 /* Estadisticas_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840311E621E549DF007AA445 /* Estadisticas_ViewController.swift */; };
-		840311EC21E549DF007AA445 /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 840311E721E549DF007AA445 /* Admin.storyboard */; };
 		843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */; };
 		84412ECB21D3FEA1002DA550 /* BarraPartidasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412EC921D3FEA1002DA550 /* BarraPartidasViewController.swift */; };
 		84412ECC21D3FEA1002DA550 /* BarrasAciertos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */; };
 		84412ED021D3FF1A002DA550 /* TableviewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */; };
+		844E4BF521E6773300ADD1DB /* GraficaResultadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E4BF121E6773300ADD1DB /* GraficaResultadosViewController.swift */; };
+		844E4BF621E6773300ADD1DB /* GraficaGeneroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E4BF221E6773300ADD1DB /* GraficaGeneroViewController.swift */; };
+		844E4BF721E6773300ADD1DB /* GraficaFallosTotalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E4BF321E6773300ADD1DB /* GraficaFallosTotalesViewController.swift */; };
+		844E4BF821E6773300ADD1DB /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844E4BF421E6773300ADD1DB /* Admin.storyboard */; };
 		8473A71021DFA78B007E6B7C /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A70F21DFA78A007E6B7C /* Realm.framework */; };
 		8473A71121DFA78C007E6B7C /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A70F21DFA78A007E6B7C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		8473A71321DFABA7007E6B7C /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A71221DFABA7007E6B7C /* Charts.framework */; };
@@ -82,15 +82,15 @@
 		29B9A82B21C81C7500F1CED9 /* PreguntaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreguntaViewController.swift; sourceTree = "<group>"; };
 		29B9A82C21C81C7500F1CED9 /* ResultadosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultadosViewController.swift; sourceTree = "<group>"; };
 		29B9A82D21C81C7500F1CED9 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
-		840311E321E549DF007AA445 /* GraficaResultadosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraficaResultadosViewController.swift; sourceTree = "<group>"; };
-		840311E421E549DF007AA445 /* GraficaGeneroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraficaGeneroViewController.swift; sourceTree = "<group>"; };
-		840311E521E549DF007AA445 /* GraficaFallosTotalesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraficaFallosTotalesViewController.swift; sourceTree = "<group>"; };
 		840311E621E549DF007AA445 /* Estadisticas_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Estadisticas_ViewController.swift; sourceTree = "<group>"; };
-		840311E721E549DF007AA445 /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Admin.storyboard; sourceTree = "<group>"; };
 		843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Inicio_de_sesionViewController.swift; sourceTree = "<group>"; };
 		84412EC921D3FEA1002DA550 /* BarraPartidasViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarraPartidasViewController.swift; sourceTree = "<group>"; };
 		84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarrasAciertos.swift; sourceTree = "<group>"; };
 		84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableviewCell1.swift; sourceTree = "<group>"; };
+		844E4BF121E6773300ADD1DB /* GraficaResultadosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraficaResultadosViewController.swift; path = ZooKids/GraficaResultadosViewController.swift; sourceTree = "<group>"; };
+		844E4BF221E6773300ADD1DB /* GraficaGeneroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraficaGeneroViewController.swift; path = ZooKids/GraficaGeneroViewController.swift; sourceTree = "<group>"; };
+		844E4BF321E6773300ADD1DB /* GraficaFallosTotalesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GraficaFallosTotalesViewController.swift; path = ZooKids/GraficaFallosTotalesViewController.swift; sourceTree = "<group>"; };
+		844E4BF421E6773300ADD1DB /* Admin.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Admin.storyboard; path = ZooKids/Admin.storyboard; sourceTree = "<group>"; };
 		8473A70F21DFA78A007E6B7C /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
 		8473A71221DFABA7007E6B7C /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = "<group>"; };
 		84AAE47D21DFBF8F00AB6C28 /* PerfilNinioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PerfilNinioViewController.swift; path = ZooKids/PerfilNinioViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +142,10 @@
 		8D87447E21B6EBD300F7986A = {
 			isa = PBXGroup;
 			children = (
+				844E4BF121E6773300ADD1DB /* GraficaResultadosViewController.swift */,
+				844E4BF221E6773300ADD1DB /* GraficaGeneroViewController.swift */,
+				844E4BF321E6773300ADD1DB /* GraficaFallosTotalesViewController.swift */,
+				844E4BF421E6773300ADD1DB /* Admin.storyboard */,
 				84AAE47D21DFBF8F00AB6C28 /* PerfilNinioViewController.swift */,
 				84AAE47E21DFBF8F00AB6C28 /* nino.storyboard */,
 				84AAE47F21DFBF8F00AB6C28 /* graficaResumen.swift */,
@@ -165,11 +169,7 @@
 		8D87448921B6EBD300F7986A /* ZooKids */ = {
 			isa = PBXGroup;
 			children = (
-				840311E321E549DF007AA445 /* GraficaResultadosViewController.swift */,
-				840311E421E549DF007AA445 /* GraficaGeneroViewController.swift */,
-				840311E521E549DF007AA445 /* GraficaFallosTotalesViewController.swift */,
 				840311E621E549DF007AA445 /* Estadisticas_ViewController.swift */,
-				840311E721E549DF007AA445 /* Admin.storyboard */,
 				D230EC0221D550B6001F9631 /* AdminViewController.swift */,
 				84F03F1421DE8E17002DBCF9 /* grafica.swift */,
 				D230EC0321D550B6001F9631 /* AlumnosTableViewController.swift */,
@@ -297,7 +297,7 @@
 				8D87449821B6EBD300F7986A /* LaunchScreen.storyboard in Resources */,
 				8D87449521B6EBD300F7986A /* Assets.xcassets in Resources */,
 				84AAE48121DFBF8F00AB6C28 /* nino.storyboard in Resources */,
-				840311EC21E549DF007AA445 /* Admin.storyboard in Resources */,
+				844E4BF821E6773300ADD1DB /* Admin.storyboard in Resources */,
 				8D87449021B6EBD300F7986A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,12 +325,11 @@
 				299C533C21BED06C00AD7395 /* Recuperar_contraseniaViewController.swift in Sources */,
 				29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */,
 				84F03F1521DE8E17002DBCF9 /* grafica.swift in Sources */,
-				840311EA21E549DF007AA445 /* GraficaFallosTotalesViewController.swift in Sources */,
 				84412ED021D3FF1A002DA550 /* TableviewCell1.swift in Sources */,
 				29B9A82E21C81C7500F1CED9 /* PartidaViewController.swift in Sources */,
 				D230EC0921D550B6001F9631 /* Fallo.swift in Sources */,
+				844E4BF621E6773300ADD1DB /* GraficaGeneroViewController.swift in Sources */,
 				29B9A82F21C81C7500F1CED9 /* PreguntaViewController.swift in Sources */,
-				840311E921E549DF007AA445 /* GraficaGeneroViewController.swift in Sources */,
 				8D696DFB21D15EEC00AECD45 /* Animal.swift in Sources */,
 				D230EC2421D580E5001F9631 /* Partida.swift in Sources */,
 				84412ECB21D3FEA1002DA550 /* BarraPartidasViewController.swift in Sources */,
@@ -339,8 +338,9 @@
 				8D87448D21B6EBD300F7986A /* ViewController.swift in Sources */,
 				84AAE48021DFBF8F00AB6C28 /* PerfilNinioViewController.swift in Sources */,
 				843B817721B9C52F0051146F /* Inicio_de_sesionViewController.swift in Sources */,
-				840311E821E549DF007AA445 /* GraficaResultadosViewController.swift in Sources */,
 				84412ECC21D3FEA1002DA550 /* BarrasAciertos.swift in Sources */,
+				844E4BF721E6773300ADD1DB /* GraficaFallosTotalesViewController.swift in Sources */,
+				844E4BF521E6773300ADD1DB /* GraficaResultadosViewController.swift in Sources */,
 				8D87448B21B6EBD300F7986A /* AppDelegate.swift in Sources */,
 				8D87449321B6EBD300F7986A /* ZooKids.xcdatamodeld in Sources */,
 				29B9A82621C8052000F1CED9 /* Profesor.swift in Sources */,

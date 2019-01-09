@@ -224,7 +224,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-ZJ-JaL">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-ZJ-JaL">
                                 <rect key="frame" x="40" y="100" width="520" height="29"/>
                                 <segments>
                                     <segment title="Resultados"/>
@@ -247,13 +247,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUQ-Ij-EBL">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUQ-Ij-EBL">
                                 <rect key="frame" x="36" y="153" width="528" height="394"/>
                                 <connections>
                                     <segue destination="O4t-xs-N5C" kind="embed" id="TBL-Vo-plQ"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95L-oa-YgS">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95L-oa-YgS">
                                 <rect key="frame" x="36" y="153" width="528" height="394"/>
                                 <connections>
                                     <segue destination="Mtd-NO-KZU" kind="embed" id="ap6-4G-fjF"/>
@@ -542,7 +542,7 @@
                         <viewControllerLayoutGuide type="bottom" id="22T-Ub-XTs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7wd-yp-zmm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="528" height="315"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBO-Bq-Qll">
@@ -591,10 +591,10 @@
                         <viewControllerLayoutGuide type="bottom" id="w2V-Yk-9XY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sTA-Pk-IhL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="528" height="394"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03r-bv-RVP" customClass="PieChartView" customModule="Charts">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03r-bv-RVP" customClass="BarChartView" customModule="Charts">
                                 <rect key="frame" x="0.0" y="0.0" width="528" height="394"/>
                                 <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
@@ -606,7 +606,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="pieView" destination="03r-bv-RVP" id="kab-3e-Z7S"/>
+                        <outlet property="barChartView" destination="03r-bv-RVP" id="Be5-J9-afZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xkg-tj-uKD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -622,7 +622,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1kF-aq-FIh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KZm-F8-sgL">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="528" height="394"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ydb-gF-iba" customClass="PieChartView" customModule="Charts">

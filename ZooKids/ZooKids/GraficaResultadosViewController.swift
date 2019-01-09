@@ -39,10 +39,11 @@ class GraficaResultadosViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Units Sold")
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: " ")
         let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         
         pieView.data = pieChartData
+        pieView.descriptionText = " "
         
         
         var colors: [UIColor] = []
@@ -59,9 +60,7 @@ class GraficaResultadosViewController: UIViewController {
         pieChartDataSet.colors = colors
         
         
-        // let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
-        //  let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
-        // pieView.data = lineChartData
+   
         
     }
 }

@@ -8,68 +8,71 @@
 
 import UIKit
 import Charts
-class GraficaGeneroViewController: UIViewController {
+class GraficaGeneroViewController: UIViewController,ChartViewDelegate {
 
     
-    @IBOutlet var pieView: PieChartView!
+    @IBOutlet var barChartView: BarChartView!
+      
+    let months = ["Aciertos", "Fallos"]
+    let unitsSold = [8.0, 5.0]
+    let unitsBought = [5.0, 7.0]
     
-    /*
-     // Only override drawRect: if you perform custom drawing.
-     // An empty implementation adversely affects performance during animation.
-     override func drawRect(rect: CGRect) {
-     // Drawing code
-     }
-     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
-        
-        let months = ["Aciertos", "Fallos"]
-        let unitsSold = [4.0, 5.0]
-        
-        setChart(months, values: unitsSold)
+     
+        setChartBarGroupDataSet(months, values: unitsSold, values2: unitsBought, sortIndex: 1)
         
     }
     
-    func setChart(dataPoints: [String], values: [Double]) {
+    func setChartBarGroupDataSet(dataPoints: [String], values: [Double], values2: [Double],sortIndex:Int) {
         
-        var dataEntries: [ChartDataEntry] = []
+        var dataEntries: [BarChartDataEntry] = []
+        var dataEntries2: [BarChartDataEntry] = []
+        
         
         for i in 0..<dataPoints.count {
-            let dataEntry = ChartDataEntry(value: values[i], xIndex: i)
+            
+            let dataEntry = BarChartDataEntry(value: values[i], xIndex: i)
             dataEntries.append(dataEntry)
         }
         
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Units Sold")
-        let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
-        
-        pieView.data = pieChartData
-        
-        
-        var colors: [UIColor] = []
         
         for i in 0..<dataPoints.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
             
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
+            let dataEntry = BarChartDataEntry(value: values2[i], xIndex: i)
+            dataEntries2.append(dataEntry)
         }
         
-        pieChartDataSet.colors = colors
+        
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Acieros")
+        let chartDataSet2 = BarChartDataSet(yVals: dataEntries2, label: "Fallos")
+        
+        chartDataSet2.colors =  [UIColor(red: 255/255, green: 206/255, blue: 241/255, alpha: 1)]
+        
+        chartDataSet.colors =  [UIColor(red: 143/255, green: 214/255, blue: 128/255, alpha: 1)]
         
         
-        // let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
-        //  let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
-        // pieView.data = lineChartData
+        let dataSets: [BarChartDataSet] = [chartDataSet,chartDataSet2]
+        
+        let data = BarChartData(xVals: dataPoints, dataSets: dataSets)
+        
+        barChartView.data = data
+        
+        barChartView.descriptionText = " "
+        
+        
+        barChartView.rightAxis.drawGridLinesEnabled = false
+        barChartView.rightAxis.drawAxisLineEnabled = false
+        barChartView.rightAxis.drawLabelsEnabled = false
+        
+        
+        
+        barChartView.animate(xAxisDuration: 2.0, yAxisDuration: 2.0, easingOption: .EaseInBounce)
+        
         
     }
     
+    
+    
 
 }
-
-
-
-

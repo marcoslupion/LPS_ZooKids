@@ -41,11 +41,11 @@ class GraficaFallosTotalesViewController: UIViewController {
             dataEntries.append(dataEntry)
         }
         
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "Units Sold")
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: " ")
         let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         
         pieView.data = pieChartData
-        
+         pieView.descriptionText = " "
         
         var colors: [UIColor] = []
         
