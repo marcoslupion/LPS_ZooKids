@@ -19,6 +19,7 @@ class TestViewController: ViewController {
     @IBOutlet weak var opcion_2: UIButton!
     @IBOutlet weak var opcion_1: UIButton!
     override func viewDidLoad() {
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         super.viewDidLoad()
         calcular_correcta();
         

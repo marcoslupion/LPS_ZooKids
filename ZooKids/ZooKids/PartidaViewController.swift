@@ -7,11 +7,21 @@ var numeros = [Int]()
 class PartidaViewController: ViewController {
     
     
+    @IBAction func salir(sender: UIBarButtonItem) {
+        
+        let storyboard = UIStoryboard(name: "nino", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
+    
     @IBOutlet weak var jugarBtn: UIButton!
     @IBOutlet weak var animalActual: UILabel!
     @IBOutlet weak var fotoAnimal: UIImageView!
     
     override func viewDidLoad() {
+        
+         navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         super.viewDidLoad()
         //print("Entra en la clase")
         if estadoAnimal==(-1){
@@ -42,7 +52,7 @@ class PartidaViewController: ViewController {
         var contador = 0
         
         while contador<5 {
-            let numAleatorio=Int(arc4random_uniform(5))+1
+            let numAleatorio=Int(arc4random_uniform(20))+1
             if !numeros.contains(numAleatorio) {
                 numeros.append(numAleatorio);
                 let an = Animal();

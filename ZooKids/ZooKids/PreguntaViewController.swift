@@ -27,13 +27,14 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
     
     override func viewDidLoad() {
         
+         navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         super.viewDidLoad()
         tf.hidden = true;
         avanzar.hidden = true;
 
         rellenar_preguntas()
         print("Entra en la clase")
-        num_pregunta.text = String(preguntaActual+1)+"/5";
+        num_pregunta.text = String(preguntaActual+1)+"/8";
         foto.image=UIImage(named: "Pregunta"+String(preguntaActual+1))
         print("El valor de la imagen que coge es "+String(preguntaActual+1))
         pregunta.text = preguntas[preguntaActual];
@@ -90,7 +91,7 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
         print("ENTRA EN COMPROBAR FIN");
         print(String(respuestas.count));
         
-        return respuestas.count==5;
+        return respuestas.count==8;
     }
     
     @IBAction func cerrar_juego(sender: UIButton) {
@@ -118,8 +119,19 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
         preguntas.append(pregunta4);
         let pregunta5 = "¿Este animal tiene dientes?";
         preguntas.append(pregunta5);
+        let pregunta6 = "¿Este animal es acuatico?";
+        preguntas.append(pregunta6);
+        let pregunta7 = "¿Este animal tiene aletas?";
+        preguntas.append(pregunta7);
+        let pregunta8 = "¿Este animal tiene esqueleto?";
+        preguntas.append(pregunta8);
         
+    }
+    @IBAction func salir(sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Juego", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
         
+        self.presentViewController(controller, animated: true, completion: nil)
     }
     func rellenar_respuestas(){
         print(estadoAnimal);
@@ -128,10 +140,10 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
     }
     func siguientePregunta(){
         preguntaActual=preguntaActual+1;
-        num_pregunta.text = String(preguntaActual+1)+"/5";
+        num_pregunta.text = String(preguntaActual+1)+"/8";
         foto.image=UIImage(named: "Pregunta"+String(preguntaActual+1))
         pregunta.text = preguntas[preguntaActual];
-        if preguntaActual+1 == 4{
+        if preguntaActual+1 == 9{
             //se ocultan los botones y se añade el textField y el botón de aceptar
             yes_button.hidden = true;
             no_button.hidden = true;

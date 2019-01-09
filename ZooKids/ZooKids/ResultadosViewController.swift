@@ -14,6 +14,7 @@ class ResultadosViewController: ViewController {
     @IBOutlet weak var porcentaje: UILabel!
     @IBOutlet weak var mensaje: UILabel!
     override func viewDidLoad() {
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         super.viewDidLoad()
         let porcentaje_obtenido = calcular_correctas()
         self.porcentaje.text = String(Int(porcentaje_obtenido)) + " %";
