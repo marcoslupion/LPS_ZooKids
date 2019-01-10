@@ -82,16 +82,6 @@
                                     <constraint firstAttribute="height" constant="35" id="q4R-nV-Y73"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Juan_Rodriguez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeh-aJ-q36">
-                                <rect key="frame" x="173" y="89" width="194" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="EGM-dX-JzK"/>
-                                    <constraint firstAttribute="width" constant="194" id="aHY-70-4Gt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2mu-ry-YQT">
                                 <rect key="frame" x="30" y="288" width="528" height="235"/>
                                 <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -116,6 +106,16 @@
                                     <segue destination="hLO-tg-D9U" kind="embed" id="6k3-mY-RSR"/>
                                 </connections>
                             </containerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Juan_Rodriguez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeh-aJ-q36">
+                                <rect key="frame" x="173" y="86" width="194" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="EGM-dX-JzK"/>
+                                    <constraint firstAttribute="width" constant="194" id="aHY-70-4Gt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -151,8 +151,11 @@
                     <connections>
                         <outlet property="InterfazPorcentaje" destination="tlI-mJ-c9l" id="wpj-zD-sPS"/>
                         <outlet property="btonJuega" destination="7hv-w8-STM" id="JMF-mv-Pu7"/>
+                        <outlet property="fecha" destination="whj-vJ-tqk" id="Fmd-ry-0OR"/>
+                        <outlet property="foto" destination="jGp-QY-x0G" id="p7n-P8-EGA"/>
                         <outlet property="graficaBarraPartidas" destination="2mu-ry-YQT" id="FBC-Lc-404"/>
                         <outlet property="graficaResumen" destination="El5-eC-24A" id="z8t-QE-rp7"/>
+                        <outlet property="nombre" destination="zeh-aJ-q36" id="FbN-4G-b80"/>
                         <outlet property="segmentedControl" destination="Wdu-gK-ePU" id="uLQ-wI-FYn"/>
                     </connections>
                 </viewController>
@@ -343,7 +346,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="% acierto y fallos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIj-dM-SZ3">
                                 <rect key="frame" x="102" y="12" width="155" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>

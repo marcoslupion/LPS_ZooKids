@@ -176,7 +176,6 @@ class Inicio_de_sesionViewController: UIViewController {
             let resultsAlumno = try managedContext.executeFetchRequest(fetchRequestAlumno)
             for alumno in resultsAlumno{
                 if(alumno.nombre_usuario == userTxtField.text && alumno.contrasenia == passTxtField.text){
-                    print("Usuario y contraseña correcto: ALUMNO")
                     PerfilNinioViewController.ninioIniciado = alumno as! Alumno
                     let storyboard = UIStoryboard(name: "nino", bundle: nil)
                     let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController

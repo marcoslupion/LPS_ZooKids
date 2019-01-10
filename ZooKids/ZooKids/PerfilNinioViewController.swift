@@ -9,12 +9,11 @@
 import UIKit
 import CoreData
 
-public var ninio:String!
-
 class PerfilNinioViewController: UIViewController {
-    @IBOutlet weak var foto: UIImageView!
+
     @IBOutlet weak var nombre: UILabel!
     @IBOutlet weak var fecha: UILabel!
+    @IBOutlet weak var foto: UIImageView!
     @IBOutlet weak var imagenjugar: UIImageView!
     @IBOutlet weak var partidas: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
@@ -24,7 +23,7 @@ class PerfilNinioViewController: UIViewController {
     @IBOutlet weak var btonJuega: UIButton!
 
     @IBOutlet weak var graficaResumen: UIView!
-    static var ninioIniciado : Alumno!
+    static var ninioIniciado: Alumno!
     var alumno: Alumno!
     var numFallos:Int16=0
     var numAciertos:Int16=0
@@ -32,7 +31,6 @@ class PerfilNinioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         nombre.text = PerfilNinioViewController.ninioIniciado.nombre_usuario
         let fechaN = PerfilNinioViewController.ninioIniciado.fecha_nacimiento
         let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
