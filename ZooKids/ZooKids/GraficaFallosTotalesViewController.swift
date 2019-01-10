@@ -13,6 +13,8 @@ import Charts
 class GraficaFallosTotalesViewController: UIViewController {
     @IBOutlet var pieView: PieChartView!
     
+    var tipoAnimalMap = Dictionary<String,Int16>()
+    
     /*
      // Only override drawRect: if you perform custom drawing.
      // An empty implementation adversely affects performance during animation.
@@ -24,11 +26,22 @@ class GraficaFallosTotalesViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+
+        let tipoAnimal = [String](tipoAnimalMap.keys)
+        let errores = [Int16]((tipoAnimalMap.values))
         
-        let months = ["Aciertos", "Fallos"]
-        let unitsSold = [4.0, 5.0]
-        
-        setChart(months, values: unitsSold)
+        var tipoAnimalFinal = [String]()
+        var erroresFinal = [Double]()
+        var contador = 0
+        for err in errores{
+            if (err > 0){
+                tipoAnimalFinal.append(tipoAnimal[contador])
+                erroresFinal.append(Double(err))
+            }
+            
+            contador+=1
+        }
+        setChart(tipoAnimalFinal, values: erroresFinal)
         
     }
     

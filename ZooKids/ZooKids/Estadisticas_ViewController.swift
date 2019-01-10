@@ -18,12 +18,42 @@ class Estadisticas_ViewController: ViewController {
     
     @IBOutlet weak var EstadisticaFallosTotales: UIView!
     
+    var aciertosTotales : Int16 = 0
+    var fallosTotales : Int16 = 0
+    var numAciertosH:Int16 = 0
+    var numFallosH:Int16 = 0
+    var numAciertosM:Int16 = 0
+    var numFallosM:Int16 = 0
+    var tipoAnimalMap = Dictionary<String,Int16>()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //Cargar estadísticas al iniciar la ventana
         self.cargarEstadisticas()
+        
+        print("Childs = ", self.childViewControllers)
+        
+        //ChildViewController 0 = GraficaResultadosViewController
+        let graficaResultado = self.childViewControllers[0] as! GraficaResultadosViewController
+        graficaResultado.aciertos = aciertosTotales
+        graficaResultado.fallos = fallosTotales
+        graficaResultado.viewDidLoad()
+        
+        //ChildViewController 1 = GraficaGeneroViewController
+        let graficaGenero = self.childViewControllers[1] as! GraficaGeneroViewController
+        graficaGenero.aciertosM = self.numAciertosM
+        graficaGenero.fallosM = self.numFallosM
+        graficaGenero.aciertosH = self.numAciertosH
+        graficaGenero.fallosH = self.numFallosH
+        graficaGenero.viewDidLoad()
+        
+        //ChildViewController 2 = GraficaFallosTotalesViewController
+        let graficaFallos = self.childViewControllers[2] as! GraficaFallosTotalesViewController
+        graficaFallos.tipoAnimalMap = self.tipoAnimalMap
+        graficaFallos.viewDidLoad()
+        
         
         //Actualizar valores al cambiar de pestaña
         //selectorEstadistica.addTarget(self, action: #selector(self.changeValue(_:)), forControlEvents: .ValueChanged)
@@ -68,8 +98,8 @@ class Estadisticas_ViewController: ViewController {
         
         //Fallos totales
         let fetchRequestFallos = NSFetchRequest(entityName: "Fallo")
-        var fallosTotales : Int16 = 0
-        var tipoAnimalMap = Dictionary<String,Int16>()
+        //var fallosTotales : Int16 = 0
+        //var tipoAnimalMap = Dictionary<String,Int16>()
         tipoAnimalMap = initializeDictionary()
         do{
             let resultsFallos = try managedContext.executeFetchRequest(fetchRequestFallos)
@@ -90,10 +120,10 @@ class Estadisticas_ViewController: ViewController {
         
         //Por género
         let fetchRequestGenero = NSFetchRequest(entityName: "Partida")
-        var numAciertosH:Int16 = 0
+        /*var numAciertosH:Int16 = 0
         var numFallosH:Int16 = 0
         var numAciertosM:Int16 = 0
-        var numFallosM:Int16 = 0
+        var numFallosM:Int16 = 0*/
         
         do{
             
@@ -120,13 +150,15 @@ class Estadisticas_ViewController: ViewController {
 
         
         //Datos para las estadísticas
-        let aciertosTotales = numAciertosM + numFallosH
+        //let aciertosTotales = numAciertosM + numFallosH
+        aciertosTotales = numAciertosM + numAciertosH
         
         print("Errores totales = ",String(erroresTotales))
         print("Preguntas totales = ",preguntasTotales)
         print("Fallos totales = ",fallosTotales," ; fallos H = ",numFallosH," ; fallos M = ",numFallosM)
         print("Aciertos totales = ",aciertosTotales," ; aciertos H = ",numAciertosH,
               " ; aciertos M = ",numAciertosM)
+        print("Errores por animal: ",tipoAnimalMap)
         
         
 

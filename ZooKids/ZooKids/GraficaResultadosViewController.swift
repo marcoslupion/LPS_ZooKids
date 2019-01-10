@@ -13,7 +13,8 @@ class GraficaResultadosViewController: UIViewController {
 
     @IBOutlet weak var subtituloAciertos: UILabel!
     
-   
+    var aciertos: Int16 = 0
+    var fallos: Int16 = 0
     
     
     @IBOutlet var pieView: PieChartView!
@@ -24,7 +25,7 @@ class GraficaResultadosViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         let months = ["Aciertos", "Fallos"]
-        let unitsSold = [6.0, 3.0]
+        let unitsSold = [Double(aciertos), Double(fallos)]
         
         setChart(months, values: unitsSold)
         

@@ -36,7 +36,7 @@ class RegistroViewController: UIViewController, UITextFieldDelegate, UIImagePick
         masculino.layer.borderColor = UIColor(red: 0.0, green: 122.0/255.00, blue: 1.0, alpha: 1.0).CGColor
         masculino.layer.borderWidth = 4
         femenino.layer.borderWidth = 0
-        sexo = "masculino"
+        sexo = "H"
         
         imagenH = true
         imagenM = false
@@ -45,7 +45,7 @@ class RegistroViewController: UIViewController, UITextFieldDelegate, UIImagePick
         femenino.layer.borderColor = UIColor(red: 0.0, green: 122.0/255.00, blue: 1.0, alpha: 1.0).CGColor
         femenino.layer.borderWidth = 4
         masculino.layer.borderWidth = 0
-        sexo = "femenino"
+        sexo = "M"
         
         imagenM = true
         imagenH = false

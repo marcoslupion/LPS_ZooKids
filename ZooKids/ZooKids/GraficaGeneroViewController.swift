@@ -13,14 +13,18 @@ class GraficaGeneroViewController: UIViewController,ChartViewDelegate {
     
     @IBOutlet var barChartView: BarChartView!
       
-    let months = ["Aciertos", "Fallos"]
-    let unitsSold = [8.0, 5.0]
-    let unitsBought = [5.0, 7.0]
+    let generos = ["Aciertos", "Fallos"]
+    var aciertosM : Int16 = 0
+    var fallosM : Int16 = 0
+    var aciertosH : Int16 = 0
+    var fallosH : Int16 = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
      
-        setChartBarGroupDataSet(months, values: unitsSold, values2: unitsBought, sortIndex: 1)
+        let resultadosMasculino = [Double(aciertosH), Double(fallosH)] //Aciertos y fallos niños
+        let resultadosFemenino = [Double(aciertosM), Double(fallosM)]  //Aciertos y fallos niñas
+        setChartBarGroupDataSet(generos, values: resultadosMasculino, values2: resultadosFemenino, sortIndex: 1)
         
     }
     
@@ -44,8 +48,8 @@ class GraficaGeneroViewController: UIViewController,ChartViewDelegate {
         }
         
         
-        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Acieros")
-        let chartDataSet2 = BarChartDataSet(yVals: dataEntries2, label: "Fallos")
+        let chartDataSet = BarChartDataSet(yVals: dataEntries, label: "Masculino")
+        let chartDataSet2 = BarChartDataSet(yVals: dataEntries2, label: "Femenino")
         
         chartDataSet2.colors =  [UIColor(red: 255/255, green: 206/255, blue: 241/255, alpha: 1)]
         
