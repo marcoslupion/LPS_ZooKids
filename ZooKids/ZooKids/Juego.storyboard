@@ -110,11 +110,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recordar animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVw-DP-fdk">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recordar animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XVw-DP-fdk">
                                 <rect key="frame" x="425" y="509" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="qe1-tp-r78" appends="YES" id="mko-6p-gUo"/>
+                                </connections>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Nbj-oL-iDd">
                                 <rect key="frame" x="182" y="95" width="520" height="546"/>
@@ -240,6 +243,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K0q-uy-E3q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="qe1-tp-r78">
+                    <connections>
+                        <action selector="recordar_imagen:" destination="cmI-jo-HTk" id="I3S-Sc-bim"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2080" y="820"/>
         </scene>
@@ -344,6 +352,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Test" id="dt7-QB-LMK">
+                        <barButtonItem key="leftBarButtonItem" title="Salir" id="uUK-VC-d8l">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="salir_juego:" destination="vQa-DU-T54" id="qQ5-ZH-WM5"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="S6v-D9-LnH">
                             <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="GS1-pB-WIM">
                                 <rect key="frame" x="540" y="2" width="40" height="40"/>

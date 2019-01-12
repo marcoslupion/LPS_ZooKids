@@ -118,7 +118,15 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Administración" id="cIm-qd-6ao"/>
+                    <navigationItem key="navigationItem" title="Administración" id="cIm-qd-6ao">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="Xzf-P9-9zy">
+                            <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fBz-sl-Bbe">
+                                <rect key="frame" x="540" y="2" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Logo Item Bar"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j2X-x5-2gK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -194,6 +202,7 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="fecha" destination="at4-mk-2d9" id="9kR-El-XfH"/>
                                     <outlet property="foto" destination="YvO-tC-OkU" id="LIV-mt-3C7"/>
@@ -206,7 +215,14 @@
                             <outlet property="delegate" destination="j65-di-h17" id="Ott-Eh-sNV"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Alumnos" id="grD-zR-wia"/>
+                    <navigationItem key="navigationItem" title="Alumnos" id="grD-zR-wia">
+                        <barButtonItem key="leftBarButtonItem" title="Salir" id="Gyz-BT-QlT">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="salir:" destination="j65-di-h17" id="nqL-SB-NgL"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uxL-xJ-oVn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -281,7 +297,14 @@
                             <constraint firstAttribute="trailingMargin" secondItem="2Iu-AR-spq" secondAttribute="trailing" constant="97" id="yq8-gj-p7Z"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Estadísticas" id="b1H-HD-9Ub"/>
+                    <navigationItem key="navigationItem" title="Estadísticas" id="b1H-HD-9Ub">
+                        <barButtonItem key="leftBarButtonItem" title="Salir" id="pnx-Vz-4AI">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="salir:" destination="KMQ-0V-8PW" id="0e4-N9-3fQ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="EstadisticaFallosTotales" destination="95L-oa-YgS" id="2wg-pp-Li6"/>
                         <outlet property="EstadisticaGenero" destination="sUQ-Ij-EBL" id="tXR-Dh-JOS"/>
@@ -306,7 +329,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UL5-Eg-q1N">
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="UL5-Eg-q1N">
                                 <rect key="frame" x="20" y="84" width="550" height="91"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vD7-9M-e9d">
@@ -360,7 +383,7 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="xQO-xt-r7c">
                                         <rect key="frame" x="210" y="171" width="140" height="55"/>
                                         <subviews>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sexo Femenino" translatesAutoresizingMaskIntoConstraints="NO" id="sdU-Md-y1X">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chica" translatesAutoresizingMaskIntoConstraints="NO" id="sdU-Md-y1X">
                                                 <rect key="frame" x="0.0" y="0.0" width="55" height="55"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -371,7 +394,7 @@
                                                     <outletCollection property="gestureRecognizers" destination="Wjd-Nb-Mu5" appends="YES" id="fRb-ds-dIt"/>
                                                 </connections>
                                             </imageView>
-                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Sexo Masculino" translatesAutoresizingMaskIntoConstraints="NO" id="rf7-v2-Itp">
+                                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chico" translatesAutoresizingMaskIntoConstraints="NO" id="rf7-v2-Itp">
                                                 <rect key="frame" x="85" y="0.0" width="55" height="55"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
@@ -425,11 +448,18 @@
                     </view>
                     <navigationItem key="navigationItem" title="Registrar alumno" id="BFY-QF-TRG">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="eZe-Bc-oLJ">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
-                                <action selector="salir:" destination="fkp-bQ-R8m" id="GkL-9v-Cjm"/>
+                                <action selector="cancelar_registro:" destination="fkp-bQ-R8m" id="zOM-M5-tgd"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Añadir alumno" id="ui3-5i-l1B"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="rNc-N5-o2U">
+                            <button key="customView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="368-50-IJo">
+                                <rect key="frame" x="540" y="2" width="40" height="40"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="Logo Item Bar"/>
+                            </button>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="contrasenia" destination="OWl-rN-QEF" id="A4Y-P2-Ega"/>
@@ -458,12 +488,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1424" y="905"/>
+            <point key="canvasLocation" x="1432" y="897"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hhN-AW-9FI">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="rnO-Y8-siO" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="viewAdmin" automaticallyAdjustsScrollViewInsets="NO" id="rnO-Y8-siO" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="P1M-hh-fg6">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -663,10 +693,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Sexo Femenino" width="266" height="237"/>
-        <image name="Sexo Masculino" width="266" height="237"/>
+        <image name="Logo Item Bar" width="177" height="158"/>
         <image name="anadirAlumno" width="266" height="237"/>
         <image name="cerrarSesion" width="131" height="96"/>
+        <image name="chica" width="555" height="825"/>
+        <image name="chico" width="211" height="210"/>
         <image name="fotoPredeterminada" width="133" height="140"/>
         <image name="verAlumnos" width="266" height="237"/>
         <image name="verEstadisticas" width="133" height="140"/>

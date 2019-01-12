@@ -24,6 +24,12 @@ class RegistroViewController: UIViewController, UITextFieldDelegate, UIImagePick
     var fechaInsertar: NSDate!
     var profesor: Profesor!
     
+    @IBAction func cancelar_registro(sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Admin", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("viewAdmin") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
     @IBAction func seleccionarImagen(sender: UITapGestureRecognizer) {
         let imagePickerCtrl = UIImagePickerController()
         imagePickerCtrl.sourceType = .PhotoLibrary
@@ -33,18 +39,22 @@ class RegistroViewController: UIViewController, UITextFieldDelegate, UIImagePick
     }
    
     @IBAction func seleccionarSM(sender: UITapGestureRecognizer) {
-        masculino.layer.borderColor = UIColor(red: 0.0, green: 122.0/255.00, blue: 1.0, alpha: 1.0).CGColor
-        masculino.layer.borderWidth = 4
-        femenino.layer.borderWidth = 0
+        femenino.image = UIImage(named: "chica")
+        masculino.image = UIImage(named: "chicoS")
+        //masculino.layer.borderColor = UIColor(red: 0.0, green: 122.0/255.00, blue: 1.0, alpha: 1.0).CGColor
+        //masculino.layer.borderWidth = 4
+        //femenino.layer.borderWidth = 0
         sexo = "H"
         
         imagenH = true
         imagenM = false
     }
     @IBAction func seleccionarSF(sender: UITapGestureRecognizer) {
-        femenino.layer.borderColor = UIColor(red: 0.0, green: 122.0/255.00, blue: 1.0, alpha: 1.0).CGColor
-        femenino.layer.borderWidth = 4
-        masculino.layer.borderWidth = 0
+        femenino.image = UIImage(named: "chicaS")
+        masculino.image = UIImage(named: "chico")
+        //femenino.layer.borderColor = UIColor(red: 0.0, green: 122.0/255.00, blue: 1.0, alpha: 1.0).CGColor
+        //femenino.layer.borderWidth = 4
+        //masculino.layer.borderWidth = 0
         sexo = "M"
         
         imagenM = true
@@ -185,7 +195,10 @@ class RegistroViewController: UIViewController, UITextFieldDelegate, UIImagePick
         }
         
         print("Añadido alumno: Nombre = ",alumno.nombre_usuario, " ; pass = ",alumno.contrasenia," ; sexo = ",alumno.sexo," ; fecha = ",alumno.fecha_nacimiento.description)
+        let storyboard = UIStoryboard(name: "Admin", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("viewAdmin") as UIViewController
         
+        self.presentViewController(controller, animated: true, completion: nil)
         
         
     }

@@ -22,6 +22,12 @@ class PerfilNinioViewController: UIViewController {
    
     @IBOutlet weak var btonJuega: UIButton!
 
+    @IBAction func cerrar_sesion(sender: UITapGestureRecognizer) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("inicio") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
     @IBOutlet weak var graficaResumen: UIView!
     static var ninioIniciado: Alumno!
     var alumno: Alumno!
@@ -45,7 +51,7 @@ class PerfilNinioViewController: UIViewController {
         graficaBarraPartidas.hidden = true;
         cargarDatos()
         
-        let barrasPartida = self.childViewControllers[0] as! BarraPartidasViewController
+       let barrasPartida = self.childViewControllers[0] as! BarraPartidasViewController
         barrasPartida.partidas=partidasTotales
         barrasPartida.viewDidLoad()
         
@@ -100,7 +106,7 @@ class PerfilNinioViewController: UIViewController {
     @IBAction func btnJuega(sender: AnyObject) {
         
         let storyboard = UIStoryboard(name: "Juego", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier("juego") as UIViewController
+        let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
         
         self.presentViewController(controller, animated: true, completion: nil)
     }

@@ -14,6 +14,7 @@ import UIKit
 class AdminViewController: UIViewController {
 
     override func viewDidLoad() {
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -26,7 +27,7 @@ class AdminViewController: UIViewController {
     
     @IBAction func irAinicio(sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier("main") as UIViewController
+        let controller = storyboard.instantiateViewControllerWithIdentifier("inicio") as UIViewController
         
         self.presentViewController(controller, animated: true, completion: nil)
     }

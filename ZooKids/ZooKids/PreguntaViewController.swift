@@ -25,6 +25,16 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
     @IBOutlet weak var tf: UITextField!
     @IBOutlet weak var avanzar: UIButton!
     
+    @IBAction func recordar_imagen(sender: UITapGestureRecognizer) {
+        // FALTARIA RETOCARLO PARA QUE RECUERDE
+        
+        let storyboard = UIStoryboard(name: "Juego", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
+        // controller.jugarBtn.hidden = true
+        self.presentViewController(controller, animated: true, completion: nil)
+        
+        
+    }
     override func viewDidLoad() {
         
          navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)

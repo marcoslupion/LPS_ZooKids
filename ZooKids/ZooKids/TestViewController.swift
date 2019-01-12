@@ -18,6 +18,12 @@ class TestViewController: ViewController {
     @IBOutlet weak var opcion_3: UIButton!
     @IBOutlet weak var opcion_2: UIButton!
     @IBOutlet weak var opcion_1: UIButton!
+    @IBAction func salir_juego(sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "nino", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
         navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         super.viewDidLoad()

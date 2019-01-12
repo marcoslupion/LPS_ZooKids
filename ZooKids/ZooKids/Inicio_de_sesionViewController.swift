@@ -155,7 +155,7 @@ class Inicio_de_sesionViewController: UIViewController {
                 if(profesor.nombre_usuario == userTxtField.text && profesor.contrasenia == passTxtField.text){
                     print("Usuario y contraseña correcto: PROFESOR")
                     let storyboard = UIStoryboard(name: "Admin", bundle: nil)
-                    let controller = storyboard.instantiateViewControllerWithIdentifier("admin") as UIViewController
+                    let controller = storyboard.instantiateViewControllerWithIdentifier("viewAdmin") as UIViewController
                     
                     self.presentViewController(controller, animated: true, completion: nil)
                     

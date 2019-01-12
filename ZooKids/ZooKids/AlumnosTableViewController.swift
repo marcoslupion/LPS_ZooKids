@@ -12,6 +12,14 @@ import CoreData
 class AlumnosTableViewController: UITableViewController {
     var listaAlumnos = [Alumno]()
     override func viewDidLoad() {
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
+        let btnImage = UIButton()
+        btnImage.setImage(UIImage(named: "Logo Item Bar"), forState: .Normal)
+        btnImage.frame=CGRectMake(0,0,40,40)
+        btnImage.userInteractionEnabled = false
+        let rightBarButton = UIBarButtonItem()
+        rightBarButton.customView = btnImage
+        self.navigationItem.rightBarButtonItem = rightBarButton
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -21,6 +29,12 @@ class AlumnosTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
+    @IBAction func salir(sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Admin", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("viewAdmin") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

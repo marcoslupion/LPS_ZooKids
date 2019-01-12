@@ -27,7 +27,21 @@ class Estadisticas_ViewController: ViewController {
     var tipoAnimalMap = Dictionary<String,Int16>()
     
     
+    @IBAction func salir(sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Admin", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("viewAdmin") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+    }
     override func viewDidLoad() {
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
+        let btnImage = UIButton()
+        btnImage.setImage(UIImage(named: "Logo Item Bar"), forState: .Normal)
+        btnImage.frame=CGRectMake(0,0,40,40)
+        btnImage.userInteractionEnabled = false
+        let rightBarButton = UIBarButtonItem()
+        rightBarButton.customView = btnImage
+        self.navigationItem.rightBarButtonItem = rightBarButton
         super.viewDidLoad()
 
         //Cargar estadísticas al iniciar la ventana

@@ -58,30 +58,6 @@
                                     <action selector="indexChanged:" destination="6ts-3q-vDV" eventType="valueChanged" id="20Z-33-EKv"/>
                                 </connections>
                             </segmentedControl>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GUI-S0-jbK">
-                                <rect key="frame" x="438" y="545" width="142" height="35"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VDd-3i-bIa">
-                                        <rect key="frame" x="0.0" y="0.0" width="92" height="35"/>
-                                        <state key="normal" title="Cerrar sesión">
-                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cerrarSesion" translatesAutoresizingMaskIntoConstraints="NO" id="d6F-IT-NhZ">
-                                        <rect key="frame" x="92" y="0.0" width="50" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="d4U-VW-l5d"/>
-                                            <constraint firstAttribute="width" constant="50" id="ktj-Hc-uqr"/>
-                                        </constraints>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="142" id="K2K-A5-BKs"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="142" id="LYu-xe-9nD"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="Q8a-0r-0Q6"/>
-                                    <constraint firstAttribute="height" constant="35" id="q4R-nV-Y73"/>
-                                </constraints>
-                            </stackView>
                             <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2mu-ry-YQT">
                                 <rect key="frame" x="30" y="288" width="528" height="235"/>
                                 <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
@@ -89,11 +65,11 @@
                                     <segue destination="hHr-VS-kdW" kind="embed" id="Yhy-va-VUM"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hv-w8-STM">
-                                <rect key="frame" x="98" y="288" width="392" height="235"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hv-w8-STM">
+                                <rect key="frame" x="30" y="200" width="300" height="300"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="235" id="oSL-jQ-Kt3"/>
-                                    <constraint firstAttribute="width" constant="392" id="qQW-TB-KOG"/>
+                                    <constraint firstAttribute="width" constant="300" id="g08-1j-2hr"/>
+                                    <constraint firstAttribute="height" constant="300" id="gCx-WZ-yyN"/>
                                 </constraints>
                                 <state key="normal" title="Button" image="ContornoPata"/>
                                 <connections>
@@ -116,6 +92,26 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GUI-S0-jbK">
+                                <rect key="frame" x="525" y="530" width="65" height="50"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cerrarSesion" translatesAutoresizingMaskIntoConstraints="NO" id="d6F-IT-NhZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="65" height="50"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="d4U-VW-l5d"/>
+                                            <constraint firstAttribute="width" constant="50" id="ktj-Hc-uqr"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="TWt-gk-e0J" appends="YES" id="BdD-Tp-ml3"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="lDE-5F-QRp"/>
+                                    <constraint firstAttribute="height" constant="50" id="u31-Xl-v7H"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -128,10 +124,9 @@
                             <constraint firstItem="jGp-QY-x0G" firstAttribute="top" secondItem="eJz-X9-9yO" secondAttribute="bottom" constant="30" id="D3a-Yy-z6b"/>
                             <constraint firstAttribute="trailing" secondItem="El5-eC-24A" secondAttribute="trailing" constant="30" id="DTu-hf-ckj"/>
                             <constraint firstItem="jGp-QY-x0G" firstAttribute="top" secondItem="eJz-X9-9yO" secondAttribute="bottom" constant="30" id="DVd-ME-RzA"/>
-                            <constraint firstAttribute="trailing" secondItem="GUI-S0-jbK" secondAttribute="trailing" constant="20" id="Jnp-Oy-5zk"/>
+                            <constraint firstItem="7hv-w8-STM" firstAttribute="top" secondItem="Hda-Fi-sdi" secondAttribute="topMargin" constant="200" id="HeI-S4-5QG"/>
                             <constraint firstItem="PrH-VW-xup" firstAttribute="top" secondItem="GUI-S0-jbK" secondAttribute="bottom" constant="20" id="Kao-UW-JMo"/>
                             <constraint firstItem="2mu-ry-YQT" firstAttribute="top" secondItem="Wdu-gK-ePU" secondAttribute="bottom" constant="10" id="O9p-cf-0In"/>
-                            <constraint firstItem="PrH-VW-xup" firstAttribute="top" secondItem="GUI-S0-jbK" secondAttribute="bottom" constant="5" id="W8P-if-HJf"/>
                             <constraint firstAttribute="trailing" secondItem="Wdu-gK-ePU" secondAttribute="trailing" constant="30" id="WNW-7a-b8i"/>
                             <constraint firstAttribute="trailing" secondItem="7hv-w8-STM" secondAttribute="trailing" constant="30" id="Y09-NK-ytN"/>
                             <constraint firstItem="jGp-QY-x0G" firstAttribute="leading" secondItem="Hda-Fi-sdi" secondAttribute="leading" constant="10" id="ayo-fT-E1M"/>
@@ -160,6 +155,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DyA-oH-H8M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="TWt-gk-e0J">
+                    <connections>
+                        <action selector="cerrar_sesion:" destination="6ts-3q-vDV" id="c5f-tr-zOH"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1070" y="238"/>
         </scene>
