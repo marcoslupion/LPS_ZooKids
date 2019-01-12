@@ -197,13 +197,13 @@ class Inicio_de_sesionViewController: UIViewController {
         
     }
     
-    @IBAction func ir_a_juego(sender: UIButton) {
+    /*@IBAction func ir_a_juego(sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Juego", bundle: nil)
         let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
         
         self.presentViewController(controller, animated: true, completion: nil)
-    }
+    }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -221,7 +221,7 @@ class Inicio_de_sesionViewController: UIViewController {
      }
      */
     
-    @IBAction func btnPerfil(sender: AnyObject) {
+    /*@IBAction func btnPerfil(sender: AnyObject) {
         //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         //let managedContext = appDelegate.managedObjectContext
         let storyboard = UIStoryboard(name: "nino", bundle: nil)
@@ -229,8 +229,8 @@ class Inicio_de_sesionViewController: UIViewController {
         
         self.presentViewController(controller, animated: true, completion: nil)
         
-        
-    }
+ 
+    }*/
     
     func prueba(){
         //Mostrar todos los objetos del Core Data

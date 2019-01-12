@@ -21,10 +21,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="FKH-S7-ju6">
                                 <rect key="frame" x="40" y="84" width="520" height="399"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lHG-6p-V41">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="lHG-6p-V41">
                                         <rect key="frame" x="127" y="0.0" width="266" height="237"/>
                                     </imageView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="y88-A5-v0r">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="y88-A5-v0r">
                                         <rect key="frame" x="116" y="267" width="289" height="72"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="42" translatesAutoresizingMaskIntoConstraints="NO" id="3DA-b2-gZf">
@@ -71,7 +71,7 @@
                                             </stackView>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yg1-8w-Dik">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="yg1-8w-Dik">
                                         <rect key="frame" x="160" y="369" width="200" height="30"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pfj-DD-5u2">
@@ -96,27 +96,6 @@
                                 <state key="normal" title="Recuperar Contraseña"/>
                                 <connections>
                                     <segue destination="aqw-AM-wxo" kind="presentation" id="R5S-6c-BFy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kwy-Uz-FnF">
-                                <rect key="frame" x="277" y="506" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="ir_a_juego:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bh2-Nf-BSg"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SBd-p7-Wj2">
-                                <rect key="frame" x="105" y="500" width="46" height="30"/>
-                                <state key="normal" title="perfil"/>
-                                <connections>
-                                    <action selector="btnPerfil:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V5j-Nn-po9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QVG-jW-EZt">
-                                <rect key="frame" x="172" y="520" width="58" height="30"/>
-                                <state key="normal" title="grafica"/>
-                                <connections>
-                                    <segue destination="T0w-QB-HSB" kind="show" id="yDx-Nz-szv"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -217,7 +196,7 @@
         <!--Navigation Controller-->
         <scene sceneID="tCx-LG-79Z">
             <objects>
-                <navigationController storyboardIdentifier="inicio" automaticallyAdjustsScrollViewInsets="NO" id="IDT-vy-3u9" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="inicio" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="IDT-vy-3u9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="cKp-yy-fSA">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
