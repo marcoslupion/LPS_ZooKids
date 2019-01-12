@@ -11,6 +11,10 @@ import CoreData
 
 class AlumnosTableViewController: UITableViewController {
     var listaAlumnos = [Alumno]()
+    var listaPartidas = [Partida]()
+    var nAciertos: Int16 = 0
+    var nErrores: Int16 = 0
+    static var cantAciertos: Double = 0.0
     override func viewDidLoad() {
         navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         let btnImage = UIButton()
@@ -51,6 +55,14 @@ class AlumnosTableViewController: UITableViewController {
         catch {
             print("Error al cargar los alumnos")
         }
+        let fetchRequestPartida = NSFetchRequest(entityName: "Partida")
+        do {
+            let resultadosPartidas = try managedContext.executeFetchRequest(fetchRequestPartida)
+            listaPartidas = resultadosPartidas as! [Partida]
+        }
+        catch {
+            print("Error al cargar las partidas")
+        }
     }
     // MARK: - Table view data source
 
@@ -65,9 +77,27 @@ class AlumnosTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("celdaAlumno") as! AlumnoTableViewCell
         let alumno = listaAlumnos[indexPath.row]
-        //cell.nombre.text = (alumno.valueForKey("nombre_usuario") as! String)
+        nAciertos = 0
+        nErrores = 0
+        AlumnosTableViewController.cantAciertos = 0.0
+        var i: Int16 = 0
+        for partida in listaPartidas{
+            print("partida :", i)
+            print("nombre partida : ", partida.alumno.nombre_usuario, "nombre user: ", alumno.nombre_usuario)
+            if partida.alumno.nombre_usuario == alumno.nombre_usuario{
+                print("coincide")
+                print("aciertos: ", partida.num_aciertos, " errores: ", partida.num_fallos)
+                nAciertos += partida.num_aciertos
+                nErrores += partida.num_fallos
+                i+=1
+            }
+        }
+        let total = nAciertos + nErrores
+        AlumnosTableViewController.cantAciertos = (Double(nAciertos) / Double(total))*10
+        print(AlumnosTableViewController.cantAciertos)
+        let cell = tableView.dequeueReusableCellWithIdentifier("celdaAlumno") as! AlumnoTableViewCell
+        
         cell.nombre.text = alumno.nombre_usuario
         let fecha = alumno.fecha_nacimiento
         let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
@@ -76,17 +106,7 @@ class AlumnosTableViewController: UITableViewController {
         let yy = calendar.component(.Year, fromDate: fecha)
         let fechaString = String(dd)+" / "+String(mm)+" / "+String(yy)
         cell.fecha.text = fechaString
-        //cell.foto.image = UIImage(named: "fotoPredeterminada")
         cell.foto.image = alumno.foto
-        
-        //Barras aciertos
-        //let barrasAciertos = BarrasAciertos()
-        //Prueba
-        //barrasAciertos.nAciertos = 10
-        //barrasAciertos.nErrores = 10
-        //barrasAciertos.reloadInputViews()
-        //self.reloadInputViews()
-        
         return cell
     }
     

@@ -153,8 +153,8 @@ class ResultadosViewController: ViewController {
             print("error")
         }*/
         
-        var alumno: Alumno!
-        let nombreAlumno = "prueba"
+       /* var alumno: Alumno!
+        let nombreAlumno = PerfilNinioViewController.ninioIniciado
         let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
         fetchRequestAlumno.predicate = NSPredicate(format: "nombre_usuario == %@",nombreAlumno)
         do{
@@ -168,7 +168,7 @@ class ResultadosViewController: ViewController {
             
         }catch{
             print("Error")
-        }
+        }*/
 
 
         //Segundo guardar partida y asociar alumno
@@ -178,7 +178,7 @@ class ResultadosViewController: ViewController {
         partida.id_partida = idPartida
         partida.num_aciertos = numAciertos
         partida.num_fallos = numFallos
-        partida.alumno = alumno
+        partida.alumno = PerfilNinioViewController.ninioIniciado
         
         //partida.setValue(alumno, forKey: "alumno")
         

@@ -187,8 +187,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OV3-hz-3kF" customClass="BarrasAciertos" customModule="ZooKids" customModuleProvider="target">
-                                            <rect key="frame" x="151" y="91" width="210" height="29"/>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OV3-hz-3kF" customClass="BarrasAciertosTabla" customModule="ZooKids" customModuleProvider="target">
+                                            <rect key="frame" x="151" y="95" width="183" height="25"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
