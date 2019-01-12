@@ -10,7 +10,7 @@
         <!--Juego-->
         <scene sceneID="9Ds-5E-tEE">
             <objects>
-                <viewController storyboardIdentifier="juego" id="sq7-ZI-7Pe" customClass="PartidaViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="juego" id="sq7-ZI-7Pe" customClass="PartidaViewController" customModule="ZooKids" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oFL-SL-2rq"/>
                         <viewControllerLayoutGuide type="bottom" id="rKr-Nv-7xK"/>
@@ -92,6 +92,7 @@
                         <outlet property="animalActual" destination="DJ7-l1-0PS" id="qyH-BC-fmP"/>
                         <outlet property="fotoAnimal" destination="ZOd-Ea-2KY" id="jdj-w0-PyE"/>
                         <outlet property="jugarBtn" destination="ktS-DO-JbG" id="6CJ-Fp-qNF"/>
+                        <outlet property="salir_btn" destination="7Rh-kj-THn" id="wO7-YJ-048"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lmY-bn-20m" userLabel="First Responder" sceneMemberID="firstResponder"/>

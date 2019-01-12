@@ -27,7 +27,9 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
     
     @IBAction func recordar_imagen(sender: UITapGestureRecognizer) {
         // FALTARIA RETOCARLO PARA QUE RECUERDE
-        
+        recordar = 1;
+        print("Recordar es : ")
+        print(recordar)
         let storyboard = UIStoryboard(name: "Juego", bundle: nil)
         let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
         // controller.jugarBtn.hidden = true
@@ -137,7 +139,14 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
         preguntas.append(pregunta8);
         
     }
+    func resetear_variables_globales(){
+        animales.removeAll();
+        numeros.removeAll();
+        estadoAnimal = (-1);
+        
+    }
     @IBAction func salir(sender: UIBarButtonItem) {
+        resetear_variables_globales()
         let storyboard = UIStoryboard(name: "nino", bundle: nil)
         let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
         

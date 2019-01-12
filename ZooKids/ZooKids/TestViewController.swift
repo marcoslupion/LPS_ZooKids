@@ -18,7 +18,16 @@ class TestViewController: ViewController {
     @IBOutlet weak var opcion_3: UIButton!
     @IBOutlet weak var opcion_2: UIButton!
     @IBOutlet weak var opcion_1: UIButton!
+    
+    
+    func resetear_variables_globales(){
+        animales.removeAll();
+        numeros.removeAll();
+        estadoAnimal = (-1);
+        
+    }
     @IBAction func salir_juego(sender: UIBarButtonItem) {
+        resetear_variables_globales()
         let storyboard = UIStoryboard(name: "nino", bundle: nil)
         let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
         

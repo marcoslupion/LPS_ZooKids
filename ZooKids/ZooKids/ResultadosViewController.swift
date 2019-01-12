@@ -44,10 +44,19 @@ class ResultadosViewController: ViewController {
     
     @IBAction func ir_perfil(sender: UIButton) {
         resetear_variables_globales();
+        let storyboard = UIStoryboard(name: "nino", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
     }
     
     @IBAction func nueva_partida(sender: UIButton) {
         resetear_variables_globales();
+        
+        let storyboard = UIStoryboard(name: "Juego", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
     }
     func insertar_datos_bd(){
         //se tiene que recorrer el array de animales, en el que se tienen todos los datos.
