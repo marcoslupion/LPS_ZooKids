@@ -30,7 +30,7 @@ class PerfilNinioViewController: UIViewController {
     }
     @IBOutlet weak var graficaResumen: UIView!
     static var ninioIniciado: Alumno!
-    var alumno: Alumno!
+    //var alumno: Alumno!
     var numFallos:Int16=0
     var numAciertos:Int16=0
     var partidasTotales:[Partida]!
@@ -114,9 +114,14 @@ class PerfilNinioViewController: UIViewController {
     func cargarDatos(){
         
         //Aciertos y fallos de un alumno
-        //TODO
-        //let nombreAlumno = alumno.nombre_usuario
-        let nombreAlumno = "prueba"
+
+        let alumno = PerfilNinioViewController.ninioIniciado
+        partidasTotales = alumno.partidas
+        for partidas in alumno.partidas{
+            numFallos += partidas.num_fallos
+            numAciertos += partidas.num_aciertos
+        }
+        /*let nombreAlumno = PerfilNinioViewController.ninioIniciado.nombre_usuario
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -144,7 +149,7 @@ class PerfilNinioViewController: UIViewController {
             
         }catch{
             print("Error")
-        }
+        }*/
 
         //Resultados por partida
 

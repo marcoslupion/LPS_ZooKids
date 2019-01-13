@@ -11,6 +11,7 @@ import UIKit
 class BarraPartidasViewController:  UIViewController, UITableViewDataSource, UITableViewDelegate  {
 
     var partidas = [Partida]()
+    static var cantAciertos: Double = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,11 @@ class BarraPartidasViewController:  UIViewController, UITableViewDataSource, UIT
         let fechaString = String(dd)+" / "+String(mm)+" / "+String(yy)
         //print("fecha = ",dd," / ",mm," / ",yy)
         cell.fecha.text = fechaString
+        BarraPartidasViewController.cantAciertos = 0.0
+        let nAciertos = partidas[indexPath.row].num_aciertos
+        let total = nAciertos + partidas[indexPath.row].num_fallos
+        BarraPartidasViewController.cantAciertos = (Double(nAciertos) / Double(total))*10
+        
         
         return cell
     }

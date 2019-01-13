@@ -25,7 +25,7 @@ class Inicio_de_sesionViewController: UIViewController {
         //self.crear_profesor_por_defecto()
         //self.crear_alumno()
         //self.crear_fallos()
-        self.prueba()
+        //self.prueba()
     }
     
     func crear_profesor_por_defecto(){
