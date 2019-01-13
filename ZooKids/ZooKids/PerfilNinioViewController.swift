@@ -18,10 +18,22 @@ class PerfilNinioViewController: UIViewController {
     @IBOutlet weak var partidas: UIView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
+    @IBOutlet weak var cerrar_admin: UIBarButtonItem!
     @IBOutlet weak var graficaBarraPartidas: UIView!
    
     @IBOutlet weak var btonJuega: UIButton!
 
+    @IBAction func cerrar_niño(sender: UIBarButtonItem) {
+        if administrador {
+            if presentingViewController is UINavigationController{
+                dismissViewControllerAnimated(true, completion: nil)
+            } else {
+                navigationController!.popViewControllerAnimated(true)
+            }
+        }
+       
+        
+    }
     @IBAction func cerrar_sesion(sender: UITapGestureRecognizer) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyboard.instantiateViewControllerWithIdentifier("inicio") as UIViewController
@@ -37,6 +49,8 @@ class PerfilNinioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
+
         nombre.text = PerfilNinioViewController.ninioIniciado.nombre_usuario
         let fechaN = PerfilNinioViewController.ninioIniciado.fecha_nacimiento
         let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
@@ -47,8 +61,20 @@ class PerfilNinioViewController: UIViewController {
         fecha.text = fechaString
         foto.image = PerfilNinioViewController.ninioIniciado.foto
         
-        graficaResumen.hidden=true
-        graficaBarraPartidas.hidden = true;
+        if administrador {
+            
+            segmentedControl.removeSegmentAtIndex(0, animated: false)
+            segmentedControl.selectedSegmentIndex = 0
+            btonJuega.hidden=true
+            graficaResumen.hidden=false
+            graficaBarraPartidas.hidden = true;
+        }else{
+            cerrar_admin.title = ""
+            btonJuega.hidden=false
+            graficaResumen.hidden=true
+            graficaBarraPartidas.hidden = true;
+        }
+        
         cargarDatos()
         
        let barrasPartida = self.childViewControllers[0] as! BarraPartidasViewController
@@ -72,33 +98,61 @@ class PerfilNinioViewController: UIViewController {
     
     @IBAction func indexChanged(sender: AnyObject) {
         
-        
-        switch segmentedControl.selectedSegmentIndex
-        {
-        case 0:
-            btonJuega.hidden=false
-            graficaResumen.hidden=true
-            graficaBarraPartidas.hidden=true
+        if administrador {
             
             
+            switch segmentedControl.selectedSegmentIndex
+            {
+            case 0:
+                
+                btonJuega.hidden=true
+                graficaResumen.hidden=false
+                graficaBarraPartidas.hidden=true
+                
+                
+            case 1:
+                
+                btonJuega.hidden=true
+                graficaResumen.hidden=true
+                graficaBarraPartidas.hidden=false
+                
+                
+            default:
+                break
+            }
             
-        case 1:
-            
-            btonJuega.hidden=true
-            graficaResumen.hidden=false
-            graficaBarraPartidas.hidden=true
+        }else{
             
             
-        case 2:
+            switch segmentedControl.selectedSegmentIndex
+            {
+            case 0:
+                btonJuega.hidden=false
+                graficaResumen.hidden=true
+                graficaBarraPartidas.hidden=true
+                
+                
+                
+            case 1:
+                
+                btonJuega.hidden=true
+                graficaResumen.hidden=false
+                graficaBarraPartidas.hidden=true
+                
+                
+            case 2:
+                
+                btonJuega.hidden=true
+                graficaResumen.hidden=true
+                graficaBarraPartidas.hidden=false
+                
+                
+            default:
+                break
+            }
             
-            btonJuega.hidden=true
-            graficaResumen.hidden=true
-            graficaBarraPartidas.hidden=false
-            
-            
-        default:
-            break
         }
+        
  
  
     }

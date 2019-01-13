@@ -9,7 +9,7 @@
         <!--Ver_niño-->
         <scene sceneID="J0Q-1F-7WH">
             <objects>
-                <viewController storyboardIdentifier="perfilNinio" title="Ver_niño" id="6ts-3q-vDV" customClass="PerfilNinioViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Ver_niño" id="6ts-3q-vDV" customClass="PerfilNinioViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eJz-X9-9yO"/>
                         <viewControllerLayoutGuide type="bottom" id="PrH-VW-xup"/>
@@ -35,12 +35,6 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZOg-lK-Dff">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Perfil" id="KJs-fi-0Qo"/>
-                                </items>
-                            </navigationBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="300" placeholderIntrinsicHeight="28" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wdu-gK-ePU">
                                 <rect key="frame" x="30" y="214" width="540" height="29"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -65,8 +59,8 @@
                                     <segue destination="hHr-VS-kdW" kind="embed" id="Yhy-va-VUM"/>
                                 </connections>
                             </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hv-w8-STM">
-                                <rect key="frame" x="30" y="200" width="300" height="300"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hv-w8-STM">
+                                <rect key="frame" x="42" y="256" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="300" id="g08-1j-2hr"/>
                                     <constraint firstAttribute="height" constant="300" id="gCx-WZ-yyN"/>
@@ -76,12 +70,6 @@
                                     <action selector="btnJuega:" destination="6ts-3q-vDV" eventType="touchUpInside" id="Uag-ty-NRn"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="El5-eC-24A">
-                                <rect key="frame" x="30" y="288" width="528" height="235"/>
-                                <connections>
-                                    <segue destination="hLO-tg-D9U" kind="embed" id="6k3-mY-RSR"/>
-                                </connections>
-                            </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Juan_Rodriguez" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zeh-aJ-q36">
                                 <rect key="frame" x="173" y="86" width="194" height="21"/>
                                 <constraints>
@@ -112,6 +100,12 @@
                                     <constraint firstAttribute="height" constant="50" id="u31-Xl-v7H"/>
                                 </constraints>
                             </stackView>
+                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="El5-eC-24A">
+                                <rect key="frame" x="30" y="288" width="528" height="235"/>
+                                <connections>
+                                    <segue destination="hLO-tg-D9U" kind="embed" id="6k3-mY-RSR"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -119,12 +113,12 @@
                             <constraint firstItem="zeh-aJ-q36" firstAttribute="top" secondItem="eJz-X9-9yO" secondAttribute="bottom" constant="30" id="2CH-Os-9nm"/>
                             <constraint firstItem="Wdu-gK-ePU" firstAttribute="leading" secondItem="Hda-Fi-sdi" secondAttribute="leading" constant="30" id="2l5-vc-3gh"/>
                             <constraint firstItem="El5-eC-24A" firstAttribute="top" secondItem="Wdu-gK-ePU" secondAttribute="bottom" constant="10" id="3Vb-Oh-OdU"/>
+                            <constraint firstItem="7hv-w8-STM" firstAttribute="top" secondItem="Wdu-gK-ePU" secondAttribute="bottom" constant="20" id="6jz-dK-vFh"/>
                             <constraint firstItem="whj-vJ-tqk" firstAttribute="top" secondItem="zeh-aJ-q36" secondAttribute="bottom" constant="8" id="7p1-wl-a0i"/>
                             <constraint firstItem="2mu-ry-YQT" firstAttribute="leading" secondItem="Hda-Fi-sdi" secondAttribute="leading" constant="30" id="BV1-cJ-YaT"/>
                             <constraint firstItem="jGp-QY-x0G" firstAttribute="top" secondItem="eJz-X9-9yO" secondAttribute="bottom" constant="30" id="D3a-Yy-z6b"/>
                             <constraint firstAttribute="trailing" secondItem="El5-eC-24A" secondAttribute="trailing" constant="30" id="DTu-hf-ckj"/>
                             <constraint firstItem="jGp-QY-x0G" firstAttribute="top" secondItem="eJz-X9-9yO" secondAttribute="bottom" constant="30" id="DVd-ME-RzA"/>
-                            <constraint firstItem="7hv-w8-STM" firstAttribute="top" secondItem="Hda-Fi-sdi" secondAttribute="topMargin" constant="200" id="HeI-S4-5QG"/>
                             <constraint firstItem="PrH-VW-xup" firstAttribute="top" secondItem="GUI-S0-jbK" secondAttribute="bottom" constant="20" id="Kao-UW-JMo"/>
                             <constraint firstItem="2mu-ry-YQT" firstAttribute="top" secondItem="Wdu-gK-ePU" secondAttribute="bottom" constant="10" id="O9p-cf-0In"/>
                             <constraint firstAttribute="trailing" secondItem="Wdu-gK-ePU" secondAttribute="trailing" constant="30" id="WNW-7a-b8i"/>
@@ -142,10 +136,17 @@
                             <constraint firstItem="El5-eC-24A" firstAttribute="leading" secondItem="Hda-Fi-sdi" secondAttribute="leading" constant="30" id="xuJ-2B-E1g"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="JyD-CO-RzZ"/>
+                    <navigationItem key="navigationItem" title="Perfil" id="JyD-CO-RzZ">
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar" id="Zvd-1z-HVc">
+                            <connections>
+                                <action selector="cerrar_niño:" destination="6ts-3q-vDV" id="bNk-vR-FXO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="InterfazPorcentaje" destination="tlI-mJ-c9l" id="wpj-zD-sPS"/>
                         <outlet property="btonJuega" destination="7hv-w8-STM" id="JMF-mv-Pu7"/>
+                        <outlet property="cerrar_admin" destination="Zvd-1z-HVc" id="fYl-iK-YIC"/>
                         <outlet property="fecha" destination="whj-vJ-tqk" id="Fmd-ry-0OR"/>
                         <outlet property="foto" destination="jGp-QY-x0G" id="p7n-P8-EGA"/>
                         <outlet property="graficaBarraPartidas" destination="2mu-ry-YQT" id="FBC-Lc-404"/>
@@ -161,7 +162,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1070" y="238"/>
+            <point key="canvasLocation" x="1882" y="238"/>
         </scene>
         <!--Barra Partidas View Controller-->
         <scene sceneID="gUk-Bq-EIG">
@@ -242,7 +243,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eK3-Jk-ovP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1747" y="385.5"/>
+            <point key="canvasLocation" x="2559" y="385.5"/>
         </scene>
         <!--Ver Partidas-->
         <scene sceneID="AFH-6N-l8q">
@@ -309,24 +310,6 @@
             </objects>
             <point key="canvasLocation" x="963" y="991"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TO0-SH-exj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mZJ-Sg-psr" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jD3-eI-Xrg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="6ts-3q-vDV" kind="relationship" relationship="rootViewController" id="asD-Ll-9xG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XYP-ZH-GO4" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="388" y="238"/>
-        </scene>
         <!--Grafica Resumen-->
         <scene sceneID="aiB-hJ-GIX">
             <objects>
@@ -365,7 +348,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JSy-2l-CpJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1747" y="40.5"/>
+            <point key="canvasLocation" x="2559" y="40.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="dh7-4h-dJJ">
+            <objects>
+                <navigationController storyboardIdentifier="perfilNinio" automaticallyAdjustsScrollViewInsets="NO" id="M8l-LC-qjI" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bTE-kT-fPq">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6ts-3q-vDV" kind="relationship" relationship="rootViewController" id="oBB-zL-Cmt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Int-oO-zYX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070" y="238"/>
         </scene>
     </scenes>
     <resources>

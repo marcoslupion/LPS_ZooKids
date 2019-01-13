@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-
+var administrador = false;
 
 
 class Inicio_de_sesionViewController: UIViewController {
@@ -22,15 +22,15 @@ class Inicio_de_sesionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //self.crear_profesor_por_defecto()
+        self.crear_profesor_por_defecto()
         //self.crear_alumno()
-        //self.crear_fallos()
-        //self.prueba()
+        self.crear_fallos()
+        self.prueba()
     }
     
     func crear_profesor_por_defecto(){
         //Ya se crea el profesor al crear el alumno
-        /*let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
         
@@ -39,7 +39,7 @@ class Inicio_de_sesionViewController: UIViewController {
         let profesor = Profesor(entity:entity!, insertIntoManagedObjectContext: managedContext)
         profesor.nombre_usuario = "admin"
         profesor.contrasenia = "admin"
-        
+        profesor.email = "profe@gmail.com"
         
         do{
             try managedContext.save()
@@ -48,7 +48,7 @@ class Inicio_de_sesionViewController: UIViewController {
         catch{
             
             print("error")
-        }*/
+        }
     }
     
     func crear_alumno(){

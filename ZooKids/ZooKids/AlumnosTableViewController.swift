@@ -114,6 +114,14 @@ class AlumnosTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        PerfilNinioViewController.ninioIniciado = listaAlumnos[indexPath.row]
+        let storyboard = UIStoryboard(name: "nino", bundle: nil)
+        let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
+        
+        self.presentViewController(controller, animated: true, completion: nil)
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
