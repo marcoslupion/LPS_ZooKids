@@ -14,6 +14,7 @@ class AlumnosTableViewController: UITableViewController {
     var listaPartidas = [Partida]()
     var nAciertos: Int16 = 0
     var nErrores: Int16 = 0
+    var orden: String!
     static var cantAciertos: Double = 0.0
     override func viewDidLoad() {
         navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
@@ -24,6 +25,7 @@ class AlumnosTableViewController: UITableViewController {
         let rightBarButton = UIBarButtonItem()
         rightBarButton.customView = btnImage
         self.navigationItem.rightBarButtonItem = rightBarButton
+        orden = "nombre_usuario"
         super.viewDidLoad()
 
         // Uncomment the following line to preserve selection between presentations
@@ -48,6 +50,8 @@ class AlumnosTableViewController: UITableViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         let fetchRequest = NSFetchRequest(entityName: "Alumno")
+        let sortDescriptor = NSSortDescriptor(key: orden, ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
         do {
             let resultados = try managedContext.executeFetchRequest(fetchRequest)
             listaAlumnos = resultados as! [Alumno]
