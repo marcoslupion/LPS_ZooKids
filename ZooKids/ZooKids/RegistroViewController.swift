@@ -22,7 +22,7 @@ class RegistroViewController: UIViewController, UITextFieldDelegate, UIImagePick
     var imagenH: Bool = false
     var imagenM: Bool = false
     var fechaInsertar: NSDate!
-    var profesor: Profesor!
+    //var profesor: Profesor!
     
     @IBAction func cancelar_registro(sender: UIBarButtonItem) {
         let storyboard = UIStoryboard(name: "Admin", bundle: nil)
@@ -170,7 +170,7 @@ class RegistroViewController: UIViewController, UITextFieldDelegate, UIImagePick
         
         //Asignar el alumno al profesor
         //TODO: Profe a añadir = Variable global de profesor
-        //alumno.profesor=profesor
+        alumno.profesor=profesor
         
         
         

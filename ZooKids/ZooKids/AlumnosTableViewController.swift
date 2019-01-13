@@ -15,7 +15,9 @@ class AlumnosTableViewController: UITableViewController {
     var nAciertos: Int16 = 0
     var nErrores: Int16 = 0
     var orden: String!
+    //var profesor: Profesor!
     static var cantAciertos: Double = 0.0
+    
     override func viewDidLoad() {
         navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         let btnImage = UIButton()
@@ -52,9 +54,11 @@ class AlumnosTableViewController: UITableViewController {
         let fetchRequest = NSFetchRequest(entityName: "Alumno")
         let sortDescriptor = NSSortDescriptor(key: orden, ascending: true)
         fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.predicate = NSPredicate(format: "profesor.nombre_usuario == %@", profesor.nombre_usuario)
         do {
             let resultados = try managedContext.executeFetchRequest(fetchRequest)
             listaAlumnos = resultados as! [Alumno]
+            print("results : ",listaAlumnos.count)
         }
         catch {
             print("Error al cargar los alumnos")
@@ -87,11 +91,11 @@ class AlumnosTableViewController: UITableViewController {
         AlumnosTableViewController.cantAciertos = 0.0
         var i: Int16 = 0
         for partida in listaPartidas{
-            print("partida :", i)
-            print("nombre partida : ", partida.alumno.nombre_usuario, "nombre user: ", alumno.nombre_usuario)
+            //print("partida :", i)
+            //print("nombre partida : ", partida.alumno.nombre_usuario, "nombre user: ", alumno.nombre_usuario)
             if partida.alumno.nombre_usuario == alumno.nombre_usuario{
-                print("coincide")
-                print("aciertos: ", partida.num_aciertos, " errores: ", partida.num_fallos)
+                //print("coincide")
+                //print("aciertos: ", partida.num_aciertos, " errores: ", partida.num_fallos)
                 nAciertos += partida.num_aciertos
                 nErrores += partida.num_fallos
                 i+=1

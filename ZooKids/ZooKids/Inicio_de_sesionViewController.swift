@@ -22,13 +22,12 @@ class Inicio_de_sesionViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.crear_profesor_por_defecto()
         //self.crear_alumno()
-        self.crear_fallos()
-        self.prueba()
+        //self.crear_fallos()
+        //self.prueba() //Muestra el CoreData
     }
     
-    func crear_profesor_por_defecto(){
+    /*func crear_profesor_por_defecto(){
         //Ya se crea el profesor al crear el alumno
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -49,7 +48,7 @@ class Inicio_de_sesionViewController: UIViewController {
             
             print("error")
         }
-    }
+    }*/
     
     func crear_alumno(){
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -151,9 +150,10 @@ class Inicio_de_sesionViewController: UIViewController {
         
         do{
             let resultsProfesor = try managedContext.executeFetchRequest(fetchRequestProfesor)
-            for profesor in resultsProfesor{
-                if(profesor.nombre_usuario == userTxtField.text && profesor.contrasenia == passTxtField.text){
-                    print("Usuario y contraseña correcto: PROFESOR")
+            for pr in resultsProfesor{
+                if(pr.nombre_usuario == userTxtField.text && pr.contrasenia == passTxtField.text){
+                    //print("Usuario y contraseña correcto: PROFESOR")
+                    profesor = pr as! Profesor
                     let storyboard = UIStoryboard(name: "Admin", bundle: nil)
                     let controller = storyboard.instantiateViewControllerWithIdentifier("viewAdmin") as UIViewController
                     

@@ -47,7 +47,7 @@ class Estadisticas_ViewController: ViewController {
         //Cargar estadísticas al iniciar la ventana
         self.cargarEstadisticas()
         
-        print("Childs = ", self.childViewControllers)
+        //print("Childs = ", self.childViewControllers)
         
         //ChildViewController 0 = GraficaResultadosViewController
         let graficaResultado = self.childViewControllers[0] as! GraficaResultadosViewController
@@ -96,13 +96,17 @@ class Estadisticas_ViewController: ViewController {
         
         //Partidas totales
         let fetchRequestPartidas = NSFetchRequest(entityName: "Partida")
-        var preguntasTotales:Int = 0
+        var preguntasTotales:Int16 = 0
         var erroresTotales = 0 as Int16
         do{
             let resultsPartidas = try managedContext.executeFetchRequest(fetchRequestPartidas)
-            preguntasTotales = resultsPartidas.count * 25
+            //preguntasTotales = resultsPartidas.count * 25
             //Errores
             for partida in resultsPartidas as! [Partida]{
+                if(partida.alumno.profesor.nombre_usuario != profesor.nombre_usuario){
+                    continue
+                }
+                preguntasTotales += partida.num_aciertos + partida.num_fallos
                 erroresTotales += partida.num_fallos
             }
             
@@ -122,7 +126,7 @@ class Estadisticas_ViewController: ViewController {
             for fallo in resultsFallos as! [Fallo]{
                 //print("Fallo ",fallo.tipo_animal," total de ",fallo.fallos, "fallos")
                 fallosTotales += fallo.fallos
-                tipoAnimalMap[fallo.tipo_animal] = fallo.fallos
+                tipoAnimalMap[fallo.tipo_animal] = tipoAnimalMap[fallo.tipo_animal]!+fallo.fallos
                 
             }
             
@@ -144,6 +148,9 @@ class Estadisticas_ViewController: ViewController {
             let resultsFallosGenero = try managedContext.executeFetchRequest(fetchRequestGenero)
             
             for partida in resultsFallosGenero as! [Partida]{
+                if(partida.alumno.profesor.nombre_usuario != profesor.nombre_usuario){
+                    continue
+                }
                 //print("partida id = ",partida.id_partida)
                 if(partida.alumno.sexo == "M"){
                     //print("género = M")

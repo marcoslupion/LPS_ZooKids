@@ -9,7 +9,7 @@
 
 import UIKit
 
-
+var profesor: Profesor!
 
 class AdminViewController: UIViewController {
 
@@ -31,6 +31,7 @@ class AdminViewController: UIViewController {
         let controller = storyboard.instantiateViewControllerWithIdentifier("inicio") as UIViewController
         
         self.presentViewController(controller, animated: true, completion: nil)
+        
     }
 
     /*
