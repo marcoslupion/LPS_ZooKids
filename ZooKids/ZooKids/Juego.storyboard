@@ -265,7 +265,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="iww-QE-0ei">
-                                <rect key="frame" x="172" y="146" width="560" height="496"/>
+                                <rect key="frame" x="172" y="146" width="560" height="406"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué tipo de animal es?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9G-mO-m67">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
@@ -273,8 +273,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-EQ-Zst">
-                                        <rect key="frame" x="0.0" y="71" width="560" height="425"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-EQ-Zst">
+                                        <rect key="frame" x="0.0" y="71" width="560" height="335"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-xH-zAi">
                                                 <rect key="frame" x="155" y="0.0" width="250" height="75"/>
@@ -293,7 +293,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qev-eP-UIZ">
-                                                <rect key="frame" x="155" y="175" width="250" height="75"/>
+                                                <rect key="frame" x="155" y="95" width="250" height="75"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="5QO-Si-NB4"/>
@@ -308,7 +308,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6i-GS-zCU">
-                                                <rect key="frame" x="155" y="350" width="250" height="75"/>
+                                                <rect key="frame" x="155" y="190" width="250" height="75"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="75" id="Yh3-wd-4RI"/>
@@ -322,6 +322,19 @@
                                                     <action selector="escoge_opcion_3:" destination="vQa-DU-T54" eventType="touchUpInside" id="wII-Of-PfQ"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-Sb-RjA">
+                                                <rect key="frame" x="155" y="285" width="250" height="50"/>
+                                                <color key="backgroundColor" red="1" green="0.048174922891643046" blue="0.4612204477629559" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="1qu-f1-80F"/>
+                                                    <constraint firstAttribute="width" constant="250" id="Ff7-eR-jzP"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Siguiente animal"/>
+                                                <connections>
+                                                    <action selector="siguiente_animal:" destination="vQa-DU-T54" eventType="touchUpInside" id="1nm-8n-szF"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -329,13 +342,6 @@
                                     <constraint firstItem="lKv-EQ-Zst" firstAttribute="top" secondItem="t9G-mO-m67" secondAttribute="bottom" constant="120" id="krU-OM-NOM"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-Sb-RjA">
-                                <rect key="frame" x="244" y="285" width="113" height="30"/>
-                                <state key="normal" title="Siguiente animal"/>
-                                <connections>
-                                    <action selector="siguiente_animal:" destination="vQa-DU-T54" eventType="touchUpInside" id="1nm-8n-szF"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recordar animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-Km-AMb">
                                 <rect key="frame" x="105" y="571" width="124" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

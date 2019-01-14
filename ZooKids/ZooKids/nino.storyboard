@@ -137,7 +137,8 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Perfil" id="JyD-CO-RzZ">
-                        <barButtonItem key="leftBarButtonItem" title="Cerrar" id="Zvd-1z-HVc">
+                        <barButtonItem key="leftBarButtonItem" title="Salir" id="Zvd-1z-HVc">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="cerrar_niño:" destination="6ts-3q-vDV" id="bNk-vR-FXO"/>
                             </connections>

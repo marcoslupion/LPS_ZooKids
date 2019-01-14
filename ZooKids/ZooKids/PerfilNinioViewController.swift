@@ -50,7 +50,13 @@ class PerfilNinioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
-
+        let btnImage = UIButton()
+        btnImage.setImage(UIImage(named: "Logo Item Bar"), forState: .Normal)
+        btnImage.frame=CGRectMake(0,0,40,40)
+        btnImage.userInteractionEnabled = false
+        let rightBarButton = UIBarButtonItem()
+        rightBarButton.customView = btnImage
+        self.navigationItem.rightBarButtonItem = rightBarButton
         nombre.text = PerfilNinioViewController.ninioIniciado.nombre_usuario
         let fechaN = PerfilNinioViewController.ninioIniciado.fecha_nacimiento
         let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
