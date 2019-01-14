@@ -22,9 +22,15 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
     @IBOutlet weak var pregunta: UILabel!
     @IBOutlet weak var stack_botones: UIStackView!
     @IBOutlet weak var stack_tf: UIStackView!
-    @IBOutlet weak var tf: UITextField!
+    @IBOutlet weak var slider: UISlider!
+    @IBOutlet weak var valorSlider: UILabel!
+    // @IBOutlet weak var tf: UITextField!
     @IBOutlet weak var avanzar: UIButton!
     
+    @IBAction func sliderValueChanged(sender: UISlider) {
+        let selectedValue = Int16(sender.value)
+        valorSlider.text = String(selectedValue)
+    }
     @IBAction func recordar_imagen(sender: UITapGestureRecognizer) {
         // FALTARIA RETOCARLO PARA QUE RECUERDE
         recordar = 1;
@@ -41,9 +47,11 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
         
          navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         super.viewDidLoad()
-        tf.hidden = true;
+        // tf.hidden = true;
+        slider.hidden = true
+        valorSlider.hidden = true
         avanzar.hidden = true;
-
+        valorSlider.text = "0"
         rellenar_preguntas()
         print("Entra en la clase")
         num_pregunta.text = String(preguntaActual+1)+"/8";
@@ -62,11 +70,14 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
     
     
     @IBAction func avanzar_tf(sender: UIButton) {
-        let patas = tf.text;
-        if (patas != "" && Int(patas!) != nil){
-            respuestas.append(Int(patas!)!);
+        let patas = Int16(slider.value)
+        // let patas = tf.text;
+        //if (patas != "" && Int(patas!) != nil){
+        if (patas != 0){
+            respuestas.append(Int(patas));
+            
             siguientePregunta();
-            //respuestas.append(patas);
+            // respuestas.append(patas);
         }else{
         
         }
@@ -166,12 +177,16 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
             //se ocultan los botones y se añade el textField y el botón de aceptar
             yes_button.hidden = true;
             no_button.hidden = true;
-            tf.hidden = false;
+            slider.hidden = false
+            valorSlider.hidden = false
+            //tf.hidden = false;
             avanzar.hidden = false;
         }else {
             yes_button.hidden = false;
             no_button.hidden = false;
-            tf.hidden = true;
+            //tf.hidden = true;
+            valorSlider.hidden = true
+            slider.hidden = true
             avanzar.hidden = true;
             
         }

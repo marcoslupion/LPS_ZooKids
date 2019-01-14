@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="17G65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -121,7 +121,7 @@
                                 </connections>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Nbj-oL-iDd">
-                                <rect key="frame" x="182" y="95" width="520" height="546"/>
+                                <rect key="frame" x="182" y="95" width="520" height="579"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="G6y-3v-UIw">
                                         <rect key="frame" x="211" y="0.0" width="98" height="21"/>
@@ -180,18 +180,22 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="72" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="rPi-mp-Lja">
-                                        <rect key="frame" x="160" y="474" width="200" height="72"/>
+                                        <rect key="frame" x="160" y="474" width="200" height="105"/>
                                         <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="30" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b8y-8O-gAJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="200" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="q7B-WS-JjS"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valor Slider" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sk-UU-N2g">
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="xTd-l7-3oN">
+                                                <rect key="frame" x="-2" y="33" width="204" height="31"/>
+                                                <connections>
+                                                    <action selector="sliderValueChanged:" destination="cmI-jo-HTk" eventType="valueChanged" id="CWz-z3-kN1"/>
+                                                </connections>
+                                            </slider>
                                             <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="30" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bJO-oc-5kg">
-                                                <rect key="frame" x="0.0" y="42" width="200" height="30"/>
+                                                <rect key="frame" x="0.0" y="75" width="200" height="30"/>
                                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="200" id="uG2-f8-Drv"/>
@@ -237,9 +241,10 @@
                         <outlet property="no_button" destination="0og-CG-ezo" id="fgN-sc-B83"/>
                         <outlet property="num_pregunta" destination="BeX-Sk-5ZI" id="0RK-Hn-q87"/>
                         <outlet property="pregunta" destination="miH-0J-QNF" id="92Z-hu-db6"/>
+                        <outlet property="slider" destination="xTd-l7-3oN" id="qbp-bf-J1d"/>
                         <outlet property="stack_botones" destination="4o3-JZ-8Nv" id="JH1-db-xiK"/>
                         <outlet property="stack_tf" destination="rPi-mp-Lja" id="Y31-fl-Q2g"/>
-                        <outlet property="tf" destination="b8y-8O-gAJ" id="qWZ-aq-yLF"/>
+                        <outlet property="valorSlider" destination="1sk-UU-N2g" id="rjH-yb-R6C"/>
                         <outlet property="yes_button" destination="L4F-NL-g3j" id="nAA-Tv-hFB"/>
                     </connections>
                 </viewController>
@@ -273,7 +278,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-EQ-Zst">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-EQ-Zst">
                                         <rect key="frame" x="0.0" y="71" width="560" height="335"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-xH-zAi">
@@ -322,7 +327,7 @@
                                                     <action selector="escoge_opcion_3:" destination="vQa-DU-T54" eventType="touchUpInside" id="wII-Of-PfQ"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-Sb-RjA">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-Sb-RjA">
                                                 <rect key="frame" x="155" y="285" width="250" height="50"/>
                                                 <color key="backgroundColor" red="1" green="0.048174922891643046" blue="0.4612204477629559" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
