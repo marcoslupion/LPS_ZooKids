@@ -49,19 +49,24 @@ class GraficaResultadosViewController: UIViewController {
         
         var colors: [UIColor] = []
         
-        for i in 0..<dataPoints.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
+        let color2 = UIColor(red: 255/255, green: 206/255, blue: 241/255, alpha: 1)
+        let color1 = UIColor(red: 143/255, green: 214/255, blue: 128/255, alpha: 1)
             
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }
-        
+        colors.append(color1)
+        colors.append(color2)
+            
+    
+        let colorAgujero = UIColor(red: 255/255, green: 240/255, blue: 201/255, alpha: 1)
+        pieView.holeColor = colorAgujero
+      
+    
         pieChartDataSet.colors = colors
         
-        
+        pieView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: ChartEasingOption.EaseOutBack)
    
+        
+        
+        
         
     }
 }

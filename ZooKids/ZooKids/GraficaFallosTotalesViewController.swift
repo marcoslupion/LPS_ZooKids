@@ -62,22 +62,19 @@ class GraficaFallosTotalesViewController: UIViewController {
         
         var colors: [UIColor] = []
         
-        for i in 0..<dataPoints.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }
+        let color2 = UIColor(red: 255/255, green: 206/255, blue: 241/255, alpha: 1)
+        let color1 = UIColor(red: 143/255, green: 214/255, blue: 128/255, alpha: 1)
+        
+        colors.append(color1)
+        colors.append(color2)
+        
+        
+        let colorAgujero = UIColor(red: 255/255, green: 240/255, blue: 201/255, alpha: 1)
+        pieView.holeColor = colorAgujero
         
         pieChartDataSet.colors = colors
         
-        
-        // let lineChartDataSet = LineChartDataSet(yVals: dataEntries, label: "Units Sold")
-        //  let lineChartData = LineChartData(xVals: dataPoints, dataSet: lineChartDataSet)
-        // pieView.data = lineChartData
-        
+        pieView.animate(xAxisDuration: 1.5, yAxisDuration: 1.5, easingOption: ChartEasingOption.EaseOutBack)        
     }
 
 }

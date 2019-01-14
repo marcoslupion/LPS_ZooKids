@@ -52,25 +52,29 @@ class graficaResumen: UIViewController {
             dataEntries.append(dataEntry)
         }
         
-        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: "")
+        let pieChartDataSet = PieChartDataSet(yVals: dataEntries, label: " ")
         let pieChartData = PieChartData(xVals: dataPoints, dataSet: pieChartDataSet)
         
         pieView.data = pieChartData
+         pieView.descriptionText = " "
         
+        pieView.animate(xAxisDuration: 5.5, yAxisDuration: 5.5, easingOption: ChartEasingOption.EaseOutBack)
         
+       
         var colors: [UIColor] = []
         
-        for i in 0..<dataPoints.count {
-            let red = Double(arc4random_uniform(256))
-            let green = Double(arc4random_uniform(256))
-            let blue = Double(arc4random_uniform(256))
-            
-            let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-            colors.append(color)
-        }
+        let color2 = UIColor(red: 255/255, green: 206/255, blue: 241/255, alpha: 1)
+        let color1 = UIColor(red: 143/255, green: 214/255, blue: 128/255, alpha: 1)
+        
+        colors.append(color1)
+        colors.append(color2)
+        
+        
+        let colorAgujero = UIColor(red: 255/255, green: 240/255, blue: 201/255, alpha: 1)
+        pieView.holeColor = colorAgujero
+        
         
         pieChartDataSet.colors = colors
-        
         
       
         
