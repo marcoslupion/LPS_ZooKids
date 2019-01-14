@@ -20,40 +20,52 @@ class Inicio_de_sesionViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        //self.crear_alumno()
-        //self.crear_fallos()
+      
+        
+        let esta = self.comprobar_predeterminado()
+        if !esta{
+            print("Se crea el alumno predeterminado y los fallos")
+            self.crear_alumno()
+            self.crear_fallos()
+        }
+        
         //self.prueba() //Muestra el CoreData
     }
     
     /*func crear_profesor_por_defecto(){
-        //Ya se crea el profesor al crear el alumno
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        
-        let managedContext = appDelegate.managedObjectContext
-        
-        let entity = NSEntityDescription.entityForName("Profesor", inManagedObjectContext: managedContext)
-        
-        let profesor = Profesor(entity:entity!, insertIntoManagedObjectContext: managedContext)
-        profesor.nombre_usuario = "admin"
-        profesor.contrasenia = "admin"
-        profesor.email = "profe@gmail.com"
-        
-        do{
-            try managedContext.save()
-            
-        }
-        catch{
-            
-            print("error")
-        }
-    }*/
+     //Ya se crea el profesor al crear el alumno
+     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+     
+     let managedContext = appDelegate.managedObjectContext
+     
+     let entity = NSEntityDescription.entityForName("Profesor", inManagedObjectContext: managedContext)
+     
+     let profesor = Profesor(entity:entity!, insertIntoManagedObjectContext: managedContext)
+     profesor.nombre_usuario = "admin"
+     profesor.contrasenia = "admin"
+     profesor.email = "profe@gmail.com"
+     
+     do{
+     try managedContext.save()
+     
+     }
+     catch{
+     
+     print("error")
+     }
+     }*/
     
     func crear_alumno(){
+        
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
+
+        
+        
         
         let entity = NSEntityDescription.entityForName("Alumno", inManagedObjectContext: managedContext)
         
@@ -75,7 +87,7 @@ class Inicio_de_sesionViewController: UIViewController {
         profe.email = "admin@email.es"
         
         alumno.profesor=profe
-
+        
         do{
             try managedContext.save()
             
@@ -122,7 +134,7 @@ class Inicio_de_sesionViewController: UIViewController {
         }
         
         
-
+        
     }
     
     @IBAction func btnEntrar(sender: UIButton) {
@@ -187,7 +199,7 @@ class Inicio_de_sesionViewController: UIViewController {
         catch{
             print("error")
         }
-
+        
         
         //AlertController error comprobar usuario
         let alertController = UIAlertController(title: "¡Cuidado!", message: "Usuario y/o contraseña incorrecto", preferredStyle: .Alert)
@@ -198,18 +210,48 @@ class Inicio_de_sesionViewController: UIViewController {
     }
     
     /*@IBAction func ir_a_juego(sender: UIButton) {
-        
-        let storyboard = UIStoryboard(name: "Juego", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
-        
-        self.presentViewController(controller, animated: true, completion: nil)
-    }*/
+     
+     let storyboard = UIStoryboard(name: "Juego", bundle: nil)
+     let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
+     
+     self.presentViewController(controller, animated: true, completion: nil)
+     }*/
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func comprobar_predeterminado() -> Bool {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        var esta = false;
+       
+        
+        //Alumno
+        
+        let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
+        
+        do{
+            let resultsAlumno = try managedContext.executeFetchRequest(fetchRequestAlumno)
+            for alumno in resultsAlumno as! [Alumno]{
+                if alumno.nombre_usuario == "alumno" {
+                    esta = true;
+                    print("SE HA ENCONTRADO UN USUARio")
+                }
+            }
+            
+        }
+        catch{
+            print("error")
+        }
+        
+        
+        return esta;
+    
+    }
     
     /*
      // MARK: - Navigation
@@ -222,15 +264,15 @@ class Inicio_de_sesionViewController: UIViewController {
      */
     
     /*@IBAction func btnPerfil(sender: AnyObject) {
-        //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        //let managedContext = appDelegate.managedObjectContext
-        let storyboard = UIStoryboard(name: "nino", bundle: nil)
-        let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
-        
-        self.presentViewController(controller, animated: true, completion: nil)
-        
- 
-    }*/
+     //let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+     //let managedContext = appDelegate.managedObjectContext
+     let storyboard = UIStoryboard(name: "nino", bundle: nil)
+     let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
+     
+     self.presentViewController(controller, animated: true, completion: nil)
+     
+     
+     }*/
     
     func prueba(){
         //Mostrar todos los objetos del Core Data
@@ -256,7 +298,7 @@ class Inicio_de_sesionViewController: UIViewController {
         catch{
             print("error")
         }
-
+        
         
         //Alumno
         
@@ -289,7 +331,7 @@ class Inicio_de_sesionViewController: UIViewController {
         }catch{
             print("Error")
         }
-
+        
         //Fallo
         
         let fetchRequestFallos = NSFetchRequest(entityName: "Fallo")
