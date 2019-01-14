@@ -52,6 +52,7 @@ class ListaAlumnosViewController: UIViewController, UITableViewDelegate, UITable
         cargarDatos()
         let alumnosTabla = self.childViewControllers[0] as! AlumnosTableViewController
         alumnosTabla.listaAlumnos = alumnos
+        alumnosTabla.orden = self.orden
         alumnosTabla.viewDidLoad()
         // Do any additional setup after loading the view.
     }
@@ -80,13 +81,26 @@ class ListaAlumnosViewController: UIViewController, UITableViewDelegate, UITable
         btnOrdenar.setTitle(selectedItem as String, forState: UIControlState.Normal)
         if selectedItem.isEqualToString("Nombre"){
         // ORDENAMOS POR NOMBRE EL CONTAINER
-            orden = "nombre_usuario"
-            cargarDatos()
+            self.orden = "nombre_usuario"
+            
+            
+            //cargarDatos()
+            let alumnosTabla = self.childViewControllers[0] as! AlumnosTableViewController
+            //alumnosTabla.listaAlumnos = alumnos
+            alumnosTabla.orden = self.orden
+            alumnosTabla.cargar_datos_ordenados()
+            
             listaAlumnos.reloadInputViews()
         } else if selectedItem.isEqualToString("Fecha"){
         // ORDENAMOS POR FECHA EL CONTAINER
-            orden = "fecha_nacimiento"
-            cargarDatos()
+            self.orden = "fecha_nacimiento"
+            
+            //cargarDatos()
+            let alumnosTabla = self.childViewControllers[0] as! AlumnosTableViewController
+            //alumnosTabla.listaAlumnos = alumnos
+            alumnosTabla.orden = self.orden
+            alumnosTabla.cargar_datos_ordenados()
+            
             listaAlumnos.reloadInputViews()
         }
         listaOrdenar?.hidden = true

@@ -19,6 +19,7 @@ class AlumnosTableViewController: UITableViewController {
     static var cantAciertos: Double = 0.0
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         let btnImage = UIButton()
         btnImage.setImage(UIImage(named: "Logo Item Bar"), forState: .Normal)
@@ -28,13 +29,8 @@ class AlumnosTableViewController: UITableViewController {
         rightBarButton.customView = btnImage
         self.navigationItem.rightBarButtonItem = rightBarButton
         orden = "nombre_usuario"
-        super.viewDidLoad()
+        cargar_datos_ordenados();
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     @IBAction func salir(sender: UIBarButtonItem) {
@@ -71,6 +67,33 @@ class AlumnosTableViewController: UITableViewController {
         catch {
             print("Error al cargar las partidas")
         }
+    }
+    
+     func cargar_datos_ordenados() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "Alumno")
+        
+        let sortDescriptor = NSSortDescriptor(key: orden, ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor]
+        fetchRequest.predicate = NSPredicate(format: "profesor.nombre_usuario == %@", profesor.nombre_usuario)
+        do {
+            let resultados = try managedContext.executeFetchRequest(fetchRequest)
+            listaAlumnos = resultados as! [Alumno]
+            print("results : ",listaAlumnos.count)
+        }
+        catch {
+            print("Error al cargar los alumnos")
+        }
+        let fetchRequestPartida = NSFetchRequest(entityName: "Partida")
+        do {
+            let resultadosPartidas = try managedContext.executeFetchRequest(fetchRequestPartida)
+            listaPartidas = resultadosPartidas as! [Partida]
+        }
+        catch {
+            print("Error al cargar las partidas")
+        }
+        self.tableView.reloadData()
     }
     // MARK: - Table view data source
 
@@ -127,49 +150,5 @@ class AlumnosTableViewController: UITableViewController {
         
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

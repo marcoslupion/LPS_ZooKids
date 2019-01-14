@@ -54,6 +54,7 @@ class TestViewController: ViewController {
           respuesta_seleccionada = true;
         procesar_resultado(0);
         
+        
     }
 
     
@@ -221,7 +222,12 @@ class TestViewController: ViewController {
     func procesar_resultado(boton : Int){
         animales[estadoAnimal].respuesta_dada = respuesta_dada;
         animales[estadoAnimal].respuesta_verdadera = respuesta_correcta;
+        print("SE PROCESA LA RESPUESTA")
+        print(respuesta_dada)
+        print(respuesta_correcta)
+        
         if respuesta_dada == respuesta_correcta {
+            print("Se pinta verde, coinciden")
             animales[estadoAnimal].resultado = true;
             if boton == 0{
                 opcion_1.backgroundColor = UIColor.greenColor()
@@ -231,25 +237,55 @@ class TestViewController: ViewController {
                 opcion_3.backgroundColor = UIColor.greenColor()
             }
         }else{
+            print("Se pinta rojo")
+            print(boton)
             animales[estadoAnimal].resultado = false;
             if boton == 0{
                 opcion_1.backgroundColor = UIColor.redColor()
+                //encontrar la correcta
+                if opcion_1.titleLabel?.text == respuesta_correcta{
+                    opcion_1.backgroundColor = UIColor.greenColor()
+                    
+                }else if opcion_2.titleLabel?.text == respuesta_correcta{
+                    opcion_2.backgroundColor = UIColor.greenColor()
+                }else{
+                    opcion_3.backgroundColor = UIColor.greenColor()
+                    
+                }
             }else if boton == 1{
                 opcion_2.backgroundColor = UIColor.redColor()
+                //encontrar la correcta
+                if opcion_1.titleLabel?.text == respuesta_correcta{
+                    opcion_1.backgroundColor = UIColor.greenColor()
+                    
+                }else if opcion_2.titleLabel?.text == respuesta_correcta{
+                    opcion_2.backgroundColor = UIColor.greenColor()
+                }else{
+                    opcion_3.backgroundColor = UIColor.greenColor()
+                    
+                }
             }else{
+            print("Se pinta de rojo la opcion 3, no verde")
                 opcion_3.backgroundColor = UIColor.redColor()
+                //encontrar la correcta
+                print("Valores de los botones")
+                print(String(opcion_1.titleLabel!.text!))
+                print(String(opcion_2.titleLabel!.text!))
+                print(String(opcion_3.titleLabel!.text!))
+                if String(opcion_1.titleLabel!.text!) == respuesta_correcta{
+                    opcion_1.backgroundColor = UIColor.greenColor()
+                    print("Se mete en el boton 1")
+                }else if String(opcion_2.titleLabel!.text!) == respuesta_correcta{
+                    opcion_2.backgroundColor = UIColor.greenColor()
+                    print("Se mete en el boton 2")
+                }else{
+                    opcion_3.backgroundColor = UIColor.greenColor()
+                    print("Se mete en el boton 3")
+                    
+                }
             }
             
-            //encontrar la correcta
-            if opcion_1.titleLabel?.text == respuesta_correcta{
-                opcion_1.backgroundColor = UIColor.greenColor()
-
-            }else if opcion_1.titleLabel?.text == respuesta_correcta{
-                opcion_2.backgroundColor = UIColor.greenColor()
-            }else{
-                opcion_3.backgroundColor = UIColor.greenColor()
-                
-            }
+            
             
         }
         estadoAnimal = estadoAnimal + 1 ;
