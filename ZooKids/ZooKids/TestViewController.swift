@@ -18,8 +18,68 @@ class TestViewController: ViewController {
     @IBOutlet weak var opcion_3: UIButton!
     @IBOutlet weak var opcion_2: UIButton!
     @IBOutlet weak var opcion_1: UIButton!
+    var seleccionada_alumno_1 = ""
+    var anterior  = UIButton()
+    var primera_vez_click = true;
     
+    @IBOutlet weak var salir_app1: UIButton!
+    @IBOutlet weak var btn_mamifero: UIButton!
     
+    @IBOutlet weak var siguiente_animal: UIButton!
+    @IBOutlet weak var btn_ave: UIButton!
+    
+    @IBOutlet weak var btn_insecto: UIButton!
+    
+    @IBOutlet weak var btn_anfibio: UIButton!
+    
+    @IBOutlet weak var btn_pez: UIButton!
+    
+    @IBOutlet weak var btn_reptil: UIButton!
+    
+    @IBOutlet weak var btn_invertebrado: UIButton!
+    
+    @IBAction func salir_app1(sender: UIButton) {
+        if seleccionada_alumno_1 != ""{
+            procesar_resultados_app1()
+            resetear_variables_globales();
+            let storyboard = UIStoryboard(name: "nino", bundle: nil)
+            let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
+            
+            self.presentViewController(controller, animated: true, completion: nil)
+        
+        }
+        
+        
+        
+    }
+    @IBAction func seleccionar_tipo_animal_boton(sender: UIButton) {
+        seleccionada_alumno_1 = sender.titleLabel!.text!
+         sender.backgroundColor = UIColor.yellowColor()
+        if !primera_vez_click{
+            anterior.backgroundColor = UIColor.blueColor()
+        }
+        if (seleccionada_alumno_1 == "Mamífero"){
+            anterior = btn_mamifero
+        }else if (seleccionada_alumno_1 == "Ave"){
+            anterior = btn_ave
+        }else if (seleccionada_alumno_1 == "Insecto"){
+            anterior = btn_insecto
+        }
+        else if (seleccionada_alumno_1 == "Anfibio"){
+            anterior = btn_anfibio
+        }
+        else if (seleccionada_alumno_1 == "Pez"){
+            anterior = btn_pez
+        }
+        else if (seleccionada_alumno_1 == "Reptil"){
+            anterior = btn_reptil
+        }else{
+            anterior = btn_invertebrado
+        }
+        primera_vez_click = false;
+       
+    }
+   
     func resetear_variables_globales(){
         animales.removeAll();
         numeros.removeAll();
@@ -36,7 +96,12 @@ class TestViewController: ViewController {
     override func viewDidLoad() {
         navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         super.viewDidLoad()
-        calcular_correcta_nuevo();
+        if app == 1{
+            mostrar_botones()
+        }else{
+            calcular_correcta_nuevo();
+        }
+        
         
         // Do any additional setup after loading the view.
     }
@@ -47,52 +112,61 @@ class TestViewController: ViewController {
     }
     
     @IBAction func escoge_opcion_1(sender: UIButton) {
-        /*
-         if respuesta_seleccionada{
-         return;
-         }
-         respuesta_dada = (sender.titleLabel?.text)!;
-         respuesta_seleccionada = true;
-         procesar_resultado(0);
-         */
         
     }
     
     
     @IBAction func escoge_opcion_2(sender: UIButton) {
-        /*
-         if respuesta_seleccionada{
-         return;
-         }
-         respuesta_dada = (sender.titleLabel?.text)!;
-         respuesta_seleccionada = true;
-         procesar_resultado(1);
-         */
+
         
     }
     @IBAction func escoge_opcion_3(sender: UIButton) {
-        /*
-         if respuesta_seleccionada{
-         return;
-         }
-         respuesta_dada = (sender.titleLabel?.text)!;
-         respuesta_seleccionada = true;
-         procesar_resultado(2);
-         */
+
         
     }
-    func calcular_correcta(){
-        //este es el método que calcula cuál es la respuesta correcta de entre todas.
-        //respuesta_correctya = lo que salga del metodo
-        self.respuesta_correcta = algoritmo();
-        opciones_mostradas.append(self.respuesta_correcta);
+    func mostrar_botones(){
+        //boton_de_finalizar.hidden = false;
+        opcion_2.hidden = true;
+        opcion_1.hidden = true;
+        opcion_3.hidden = true;
         
-        //generar_2_opciones();
-        //insertar_botones();
+
+        
+        if estadoAnimal == 2{
+            //para probar se puede poner cuando estadoAnimal = 1            
+            //mostrar el boton de acabar
+            
+            //ocultar el boton de siguiente animal
+            siguiente_animal.hidden = true;
+        }
+    }
+    func procesar_resultados_app1(){
+        print("PROCESO DE LOS RESULTADOS OBTENIDOS : ")
+        //esta variable contiene el tipo de animal que el niño ha escogido : 
+        print(seleccionada_alumno_1)
+        
+        //esta es la variable donde están las respuestas del alumno
+        //animales[estadoAnimal]
+        print(animales[estadoAnimal])
+        
+        
         
     }
+    func desactivar_botones_app1(){
+    //desactivar los botones de la app 1
+        btn_invertebrado.hidden = true;
+        btn_mamifero.hidden = true
+        btn_ave.hidden = true;
+        btn_anfibio.hidden = true;
+        btn_insecto.hidden = true;
+        btn_reptil.hidden = true;
+        btn_pez.hidden = true;
+        salir_app1.hidden = true
+        
     
+    }
     func calcular_correcta_nuevo(){
+        desactivar_botones_app1()
         
         self.correcta_establecida = animales[estadoAnimal].respuesta_verdadera_establecida
         //este es el método que calcula cuál es la respuesta correcta de entre todas.
@@ -125,21 +199,6 @@ class TestViewController: ViewController {
         opciones_totales.append("Insecto");
         opciones_totales.append("Ave");
         
-        let limite = 3 - opciones_mostradas.count
-        
-        var contador = 0
-        while contador<limite {
-            let numAleatorio=Int(arc4random_uniform(6))
-            print("Entra en el bucle")
-            if opciones_totales[numAleatorio] != respuesta_correcta && opciones_totales[numAleatorio] != correcta_establecida  && !opciones_mostradas.contains(opciones_totales[numAleatorio]) {
-                opciones_mostradas.append(opciones_totales[numAleatorio]);
-                print("Opcion escogida : ");
-                print(opciones_totales[numAleatorio]);
-                print(numAleatorio)
-                contador=contador+1;
-            }
-        }
-        
     }
     func insertar_botones_app2(){
         if opciones_mostradas.count == 1{
@@ -156,91 +215,8 @@ class TestViewController: ViewController {
             opcion_1.backgroundColor = UIColor.redColor()
             opcion_2.backgroundColor = UIColor.yellowColor()
         }
-        /*
-         
-         print(opciones_mostradas);
-         
-         var contador = 0 ;
-         var numeros_escogidos = [Int]();
-         while contador<3 {
-         let numAleatorio=Int(arc4random_uniform(3));
-         print("Se muestran los numeros");
-         if !numeros_escogidos.contains(numAleatorio){
-         numeros_escogidos.append(numAleatorio);
-         print(numAleatorio);
-         contador = contador + 1;
-         }
-         
-         }
-         print(opciones_mostradas[numeros_escogidos[0]]);
-         print(opciones_mostradas[numeros_escogidos[1]]);
-         print(opciones_mostradas[numeros_escogidos[2]]);
-         let numeros = [0,1,2]
-         
-         for a in numeros {
-         let opcion = opciones_mostradas[numeros_escogidos[a]]
-         print("ESTO ES DENTRO DEL BUCLE DE LOS COJONES")
-         print(a)
-         print(respuesta_correcta)
-         print(correcta_establecida)
-         print(opcion)
-         if a==0 {
-         opcion_1.setTitle(opciones_mostradas[numeros_escogidos[a]], forState: UIControlState.Normal);
-         if respuesta_correcta == self.correcta_establecida && respuesta_correcta == opcion {
-         opcion_1.backgroundColor = UIColor.greenColor()
-         print("Entra porque son iguales 0 ")
-         }else if(opcion == self.correcta_establecida && opcion != self.respuesta_correcta ){
-         //mostrar el item del robotn
-         opcion_1.backgroundColor = UIColor.redColor()
-         }else if(opcion == self.respuesta_correcta && opcion != self.correcta_establecida ){
-         //mostrar el item del niño
-         opcion_1.backgroundColor = UIColor.yellowColor()
-         }else{
-         //no mostrar ninguna
-         //opcion_1.backgroundColor = UIColor.blueColor()
-         }
-         
-         }else if a==1{
-         opcion_2.setTitle(opciones_mostradas[numeros_escogidos[a]], forState: UIControlState.Normal);
-         if respuesta_correcta == self.correcta_establecida && respuesta_correcta == opcion {
-         opcion_2.backgroundColor = UIColor.greenColor()
-         print("Entra porque son iguales 1 ")
-         }else if(opcion == self.correcta_establecida && opcion != self.respuesta_correcta ){
-         //mostrar el item del robotn
-         opcion_2.backgroundColor = UIColor.redColor()
-         }else if(opcion == self.respuesta_correcta && opcion != self.correcta_establecida ){
-         //mostrar el item del niño
-         opcion_2.backgroundColor = UIColor.yellowColor()
-         }else{
-         //no mostrar ninguna
-         //opcion_2.backgroundColor = UIColor.blueColor()
-         }
-         }else{
-         opcion_3.setTitle(opciones_mostradas[numeros_escogidos[a]], forState: UIControlState.Normal);
-         if respuesta_correcta == self.correcta_establecida && respuesta_correcta == opcion {
-         opcion_3.backgroundColor = UIColor.greenColor()
-         print("Entra porque son iguales 2 ")
-         }else if(opcion == self.correcta_establecida && opcion != self.respuesta_correcta ){
-         //mostrar el item del robotn
-         opcion_3.backgroundColor = UIColor.redColor()
-         }else if(opcion == self.respuesta_correcta && opcion != self.correcta_establecida ){
-         //mostrar el item del niño
-         opcion_3.backgroundColor = UIColor.yellowColor()
-         }else{
-         //no mostrar ninguna
-         //opcion_3.backgroundColor = UIColor.blueColor()
-         }
-         }
-         }
-         */
-        
         estadoAnimal = estadoAnimal + 1 ;
-        
-        /*
-         opcion_1.setTitle(opciones_mostradas[numeros_escogidos[0]], forState: UIControlState.Normal);
-         opcion_2.setTitle(opciones_mostradas[numeros_escogidos[1]], forState: UIControlState.Normal);
-         opcion_3.setTitle(opciones_mostradas[numeros_escogidos[2]], forState: UIControlState.Normal);
-         */
+
     }
     
     func algoritmo() -> String {
@@ -283,55 +259,54 @@ class TestViewController: ViewController {
         }else{
             return "Mamífero"
         }
-        
-        //se ha comentado porque todavia el array de respuestas no es de tipo string. No se habia
-        //tenido en cuenta que había que introducir el número de patas del animal
+      
         
     }
     
     
     @IBAction func siguiente_animal(sender: UIButton) {
-        
-        
-        if estadoAnimal == 5{
-            print(animales);
-            print("ESTE ES EL ULTIMO ANIMAL, POR LO QUE SE NAVEGA");
-            //ya se han hecho 5 animales, se navega a la ventana de resultados;
-            /*
-             if presentingViewController is UINavigationController{
-             dismissViewControllerAnimated(true, completion: nil)
-             } else {
-             navigationController!.popViewControllerAnimated(true)
-             }*/
-            
-            let storyboard = UIStoryboard(name: "Juego", bundle: nil)
-            let controller = storyboard.instantiateViewControllerWithIdentifier("resultadosN") as UIViewController
-            
-            self.presentViewController(controller, animated: true, completion: nil)
+        if app == 2{
+            if estadoAnimal == 5{
+                print(animales);
+                print("ESTE ES EL ULTIMO ANIMAL, POR LO QUE SE NAVEGA");
+                
+                let storyboard = UIStoryboard(name: "Juego", bundle: nil)
+                let controller = storyboard.instantiateViewControllerWithIdentifier("resultadosN") as UIViewController
+                
+                self.presentViewController(controller, animated: true, completion: nil)
+            }else{
+                
+                
+                let storyboard = UIStoryboard(name: "Juego", bundle: nil)
+                let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
+                
+                self.presentViewController(controller, animated: true, completion: nil)
+                
+            }
         }else{
-            /*
-             if presentingViewController is UINavigationController{
-             dismissViewControllerAnimated(true, completion: nil)
-             } else {
-             navigationController!.popViewControllerAnimated(true)
-             }
-             */
             
-            let storyboard = UIStoryboard(name: "Juego", bundle: nil)
-            let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
+            //se van a tener hasta 20 animales escogidos por lo que el contador va a estar a 20 y cuando llegue a 20, se tiene que ver qué hacer
+            if seleccionada_alumno_1 != ""{
+                procesar_resultados_app1()
+                
+                estadoAnimal = estadoAnimal + 1 ;
+                let storyboard = UIStoryboard(name: "Juego", bundle: nil)
+                let controller = storyboard.instantiateViewControllerWithIdentifier("entrada") as UIViewController
+                
+                self.presentViewController(controller, animated: true, completion: nil)
+                
+            }
             
-            self.presentViewController(controller, animated: true, completion: nil)
             
+        
         }
         
         
-    }
-    
-    
-    func procesar_resultado(boton : Int){
         
         
     }
+    
+    
     /*
      func procesar_resultado(boton : Int){
      animales[estadoAnimal].respuesta_dada = respuesta_dada;

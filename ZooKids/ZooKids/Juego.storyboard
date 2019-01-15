@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="17G65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -270,7 +270,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="iww-QE-0ei">
-                                <rect key="frame" x="172" y="146" width="560" height="406"/>
+                                <rect key="frame" x="172" y="146" width="560" height="806"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué tipo de animal es?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9G-mO-m67">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
@@ -279,7 +279,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-EQ-Zst">
-                                        <rect key="frame" x="0.0" y="71" width="560" height="335"/>
+                                        <rect key="frame" x="0.0" y="71" width="560" height="735"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-xH-zAi">
                                                 <rect key="frame" x="155" y="0.0" width="250" height="75"/>
@@ -327,8 +327,57 @@
                                                     <action selector="escoge_opcion_3:" destination="vQa-DU-T54" eventType="touchUpInside" id="wII-Of-PfQ"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT4-nv-1OW">
+                                                <rect key="frame" x="248" y="285" width="65" height="30"/>
+                                                <state key="normal" title="Mamifero"/>
+                                                <connections>
+                                                    <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="Vb2-9N-g0b"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sv-gs-EUk">
+                                                <rect key="frame" x="265" y="335" width="30" height="30"/>
+                                                <state key="normal" title="Ave"/>
+                                                <connections>
+                                                    <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="Oku-qS-qUl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZP-6E-7m4">
+                                                <rect key="frame" x="256" y="385" width="49" height="30"/>
+                                                <state key="normal" title="Anfibio"/>
+                                                <connections>
+                                                    <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="VsP-mK-Ffa"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvz-vu-zZO">
+                                                <rect key="frame" x="265" y="435" width="30" height="30"/>
+                                                <state key="normal" title="Pez"/>
+                                                <connections>
+                                                    <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="IT5-Td-3FQ"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIS-qW-paj">
+                                                <rect key="frame" x="261" y="485" width="39" height="30"/>
+                                                <state key="normal" title="Reptil"/>
+                                                <connections>
+                                                    <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="vGQ-07-bj7"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXz-AM-nhJ">
+                                                <rect key="frame" x="236" y="535" width="88" height="30"/>
+                                                <state key="normal" title="Invertebrado"/>
+                                                <connections>
+                                                    <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="pIi-Fk-tKD"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfU-vC-WRu">
+                                                <rect key="frame" x="255" y="585" width="51" height="30"/>
+                                                <state key="normal" title="Insecto"/>
+                                                <connections>
+                                                    <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="mkK-eZ-e1R"/>
+                                                </connections>
+                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-Sb-RjA">
-                                                <rect key="frame" x="155" y="285" width="250" height="50"/>
+                                                <rect key="frame" x="155" y="635" width="250" height="50"/>
                                                 <color key="backgroundColor" red="1" green="0.048174922891643046" blue="0.4612204477629559" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="1qu-f1-80F"/>
@@ -338,6 +387,13 @@
                                                 <state key="normal" title="Siguiente animal"/>
                                                 <connections>
                                                     <action selector="siguiente_animal:" destination="vQa-DU-T54" eventType="touchUpInside" id="1nm-8n-szF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPj-KO-K4l">
+                                                <rect key="frame" x="198" y="705" width="164" height="30"/>
+                                                <state key="normal" title="Guardar repuesta y salir"/>
+                                                <connections>
+                                                    <action selector="salir_app1:" destination="vQa-DU-T54" eventType="touchUpInside" id="4O8-yS-Uec"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -379,9 +435,18 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="btn_anfibio" destination="XZP-6E-7m4" id="t79-0V-qub"/>
+                        <outlet property="btn_ave" destination="1Sv-gs-EUk" id="are-yF-NfC"/>
+                        <outlet property="btn_insecto" destination="vfU-vC-WRu" id="8TU-ds-7W7"/>
+                        <outlet property="btn_invertebrado" destination="iXz-AM-nhJ" id="7Mi-8m-m4w"/>
+                        <outlet property="btn_mamifero" destination="RT4-nv-1OW" id="LP7-7G-siv"/>
+                        <outlet property="btn_pez" destination="Nvz-vu-zZO" id="UZp-mY-Cqq"/>
+                        <outlet property="btn_reptil" destination="CIS-qW-paj" id="lcq-X4-QTc"/>
                         <outlet property="opcion_1" destination="PhE-xH-zAi" id="dpq-Ly-iHe"/>
                         <outlet property="opcion_2" destination="qev-eP-UIZ" id="ZgZ-nd-jvl"/>
                         <outlet property="opcion_3" destination="V6i-GS-zCU" id="b1k-xp-Leb"/>
+                        <outlet property="salir_app1" destination="oPj-KO-K4l" id="ap4-NM-I8x"/>
+                        <outlet property="siguiente_animal" destination="S9n-Sb-RjA" id="m7z-xM-6O9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASn-EX-Fhp" userLabel="First Responder" sceneMemberID="firstResponder"/>

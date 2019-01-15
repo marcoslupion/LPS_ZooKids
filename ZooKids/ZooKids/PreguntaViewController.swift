@@ -54,7 +54,12 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
         valorSlider.text = "0"
         rellenar_preguntas()
         print("Entra en la clase")
+        if app == 1{
         num_pregunta.text = String(preguntaActual+1)+"/8";
+        }else{
+        num_pregunta.text = String(preguntaActual+1)+"/5";
+        }
+        
         foto.image=UIImage(named: "Pregunta"+String(preguntaActual+1))
         print("El valor de la imagen que coge es "+String(preguntaActual+1))
         pregunta.text = preguntas[preguntaActual];
@@ -111,8 +116,9 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
     func comprobar_fin() -> Bool {
         print("ENTRA EN COMPROBAR FIN");
         print(String(respuestas.count));
+        if app == 1 { return respuestas.count==8; }
+        else {return respuestas.count==5; }
         
-        return respuestas.count==8;
     }
     
     @IBAction func cerrar_juego(sender: UIButton) {
@@ -168,7 +174,12 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
     }
     func siguientePregunta(){
         preguntaActual=preguntaActual+1;
-        num_pregunta.text = String(preguntaActual+1)+"/8";
+        if app == 1{
+            num_pregunta.text = String(preguntaActual+1)+"/8";
+        }else{
+            num_pregunta.text = String(preguntaActual+1)+"/5";
+        }
+        
         foto.image=UIImage(named: "Pregunta"+String(preguntaActual+1))
         pregunta.text = preguntas[preguntaActual];
         if preguntaActual+1 == 4{

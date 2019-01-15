@@ -52,16 +52,28 @@ class PartidaViewController: ViewController {
             recordar = 2
         }
         
-        if estadoAnimal==(-1){
-            escoger_animales_aleatoriamente();
-            estadoAnimal = 0;
+        if app == 1{
+            
+            if estadoAnimal==(-1){
+                escoger_animales_aleatoriamente_app1();
+                estadoAnimal = 0;
+                animalActual.text = "Animal "+String(estadoAnimal+1);
+            }else{
+                animalActual.text = "Animal "+String(estadoAnimal+1);
+            }
         }else{
-            animalActual.text = "Animal "+String(estadoAnimal+1)+"/5";
+            if estadoAnimal==(-1){
+                escoger_animales_aleatoriamente();
+                estadoAnimal = 0;
+            }else{
+                animalActual.text = "Animal "+String(estadoAnimal+1)+"/5";
+            }
         }
+        
         
         //print("Se ejecuta ek accesi a ka varuavke de numeros")
         //print(String(numeros[estadoAnimal]));
-        
+        print("Animal"+String(numeros[estadoAnimal]))
         fotoAnimal.image=UIImage(named: "Animal"+String(numeros[estadoAnimal]))
         
         
@@ -93,10 +105,32 @@ class PartidaViewController: ViewController {
                 contador=contador+1;
             }
         }
+    }
+    
+    func escoger_animales_aleatoriamente_app1(){
+        //cargar animales diferentes de los xassets
         
         
+        var contador = 0
+        var n = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]
+        while contador<20 {
+            //entre 0 y 19, indices min y maximo de n
+            let numAleatorio=Int(arc4random_uniform(UInt32(n.count)))
+            
+                numeros.append(n[numAleatorio]);
+                let an = Animal();
+                an.imagen = numAleatorio;
+                let array_animal = animales_tipo[numAleatorio]
+                
+                an.respuesta_verdadera_establecida = array_animal![1]
+                an.nombre = array_animal![0]
+                animales.append(an)
+                n.removeAtIndex(numAleatorio)
+                contador=contador+1;
+            
+        }
         
-        
+        print("Hola")
     }
     
     @IBAction func jugar(sender: UIButton) {

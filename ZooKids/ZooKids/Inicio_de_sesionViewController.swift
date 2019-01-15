@@ -11,7 +11,7 @@ import CoreData
 
 
 var administrador = false;
-var app = 2;
+var app = 1;
 var animales_tipo = Dictionary<Int,[String]>()
 
 class Inicio_de_sesionViewController: UIViewController {
