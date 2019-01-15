@@ -73,14 +73,12 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
         let patas = Int16(slider.value)
         // let patas = tf.text;
         //if (patas != "" && Int(patas!) != nil){
-        if (patas != 0){
+        
             respuestas.append(Int(patas));
             
             siguientePregunta();
             // respuestas.append(patas);
-        }else{
         
-        }
         
         
     }
@@ -136,7 +134,7 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
         preguntas.append(pregunta1);
         let pregunta2 = "¿Este animal tiene alas?";
         preguntas.append(pregunta2);
-        let pregunta3 = "¿Este animal respira?";
+        let pregunta3 = "¿Este animal tiene pulmones?";
         preguntas.append(pregunta3);
         let pregunta4 = "¿Este animal cuantas patas tiene?";
         preguntas.append(pregunta4);

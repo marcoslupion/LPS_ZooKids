@@ -61,11 +61,11 @@ class ResultadosViewController: ViewController {
     func insertar_datos_bd(){
         //se tiene que recorrer el array de animales, en el que se tienen todos los datos.
         /*print("UN EJEMPLO DEL PRIMER ANIMAL ES ")
-        print(animales[0].respuesta_dada);
-        print(animales[0].respuesta_verdadera);
-        print(animales[0].imagen);
-        print(animales[0].respuestas_dadas);
-        print(animales[0].resultado);*/
+         print(animales[0].respuesta_dada);
+         print(animales[0].respuesta_verdadera);
+         print(animales[0].imagen);
+         print(animales[0].respuestas_dadas);
+         print(animales[0].resultado);*/
         
         //se tiene que meter en la base de datos todos los datos que hay recogidos en animales
         
@@ -107,70 +107,70 @@ class ResultadosViewController: ViewController {
             //ATENCIOOOOOOOOOOOOOOOOOOOOON JOSEF
             //este bucle creo que esta mal, respuestas_dadas contiene lo que se va  contestnado a las preguntas del animal... creo que aqui tienes que hacer el for de arriba comprobando la propiedad de resultado.. de todas formas creo que está hecho en el constructor. Solo habria que comprobar si la respuesta dada es igual que la respuesta verdadera y eso es si ha acertado o no..... seria como he puesto abajo creo
             /*
-            for respuestas in animal.respuestas_dadas{
-                if (respuestas == true){
-                    numAciertos+=1
-                }else{
-                    numFallos+=1
-                }
-            }
- */
+             for respuestas in animal.respuestas_dadas{
+             if (respuestas == true){
+             numAciertos+=1
+             }else{
+             numFallos+=1
+             }
+             }
+             */
             if animal.resultado{
                 numAciertos+=1
             }else{
                 numFallos+=1
-                self.guardarFallo(animal.respuesta_verdadera)
-
+                self.guardarFallo(animal.respuesta_verdadera_establecida)
+                
             }
             
             //Fallos en la respuesta final
             /*
-            if(animal.resultado == false){
-                //Se almacena el animal que ha fallado
-                self.guardarFallo(animal.respuesta_verdadera)
-                
-            }
- */
+             if(animal.resultado == false){
+             //Se almacena el animal que ha fallado
+             self.guardarFallo(animal.respuesta_verdadera)
+             
+             }
+             */
         }
         
         //Guardar partida
         
         //Primero crear alumno mock
         /*let entity2 = NSEntityDescription.entityForName("Alumno", inManagedObjectContext: managedContext)
-        let alumno = Alumno(entity:entity2!, insertIntoManagedObjectContext: managedContext)
-        alumno.contrasenia = "prueba"
-        alumno.fecha_nacimiento = NSDate()
-        alumno.foto = UIImage(named: "ninio")
-        alumno.sexo="M"
-        alumno.nombre_usuario="prueba"
+         let alumno = Alumno(entity:entity2!, insertIntoManagedObjectContext: managedContext)
+         alumno.contrasenia = "prueba"
+         alumno.fecha_nacimiento = NSDate()
+         alumno.foto = UIImage(named: "ninio")
+         alumno.sexo="M"
+         alumno.nombre_usuario="prueba"
+         
+         do{
+         try managedContext.save()
+         
+         }
+         catch{
+         
+         print("error")
+         }*/
         
-        do{
-            try managedContext.save()
-            
-        }
-        catch{
-            
-            print("error")
-        }*/
+        /* var alumno: Alumno!
+         let nombreAlumno = PerfilNinioViewController.ninioIniciado
+         let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
+         fetchRequestAlumno.predicate = NSPredicate(format: "nombre_usuario == %@",nombreAlumno)
+         do{
+         let resultsAlumnoEncontrado = try managedContext.executeFetchRequest(fetchRequestAlumno)
+         
+         if (resultsAlumnoEncontrado.count != 0){
+         alumno = resultsAlumnoEncontrado[0] as! Alumno
+         }
+         
+         try managedContext.save()
+         
+         }catch{
+         print("Error")
+         }*/
         
-       /* var alumno: Alumno!
-        let nombreAlumno = PerfilNinioViewController.ninioIniciado
-        let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
-        fetchRequestAlumno.predicate = NSPredicate(format: "nombre_usuario == %@",nombreAlumno)
-        do{
-            let resultsAlumnoEncontrado = try managedContext.executeFetchRequest(fetchRequestAlumno)
-            
-            if (resultsAlumnoEncontrado.count != 0){
-                    alumno = resultsAlumnoEncontrado[0] as! Alumno
-            }
-            
-            try managedContext.save()
-            
-        }catch{
-            print("Error")
-        }*/
-
-
+        
         //Segundo guardar partida y asociar alumno
         let partida = Partida(entity:entity!, insertIntoManagedObjectContext: managedContext)
         
@@ -198,24 +198,24 @@ class ResultadosViewController: ViewController {
         
         //Mock : cargar el alumno creado por defecto para añadirlo al CoreData
         /*let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
-        fetchRequestAlumno.predicate = NSPredicate(format: "nombre_usuario == %@","alumno")
-        do{
-            let resultsAlumnoEncontrado = try managedContext.executeFetchRequest(fetchRequestAlumno)
-            
-            if (resultsAlumnoEncontrado.count != 0){
-                let alumnoEncontrado = resultsAlumnoEncontrado[0] as! Alumno
-                partida.setValue(alumnoEncontrado, forKey: "alumno")
-                
-            }
-            
-            try managedContext.save()
-            
-        }catch{
-            print("Error")
-            
-        }*/
+         fetchRequestAlumno.predicate = NSPredicate(format: "nombre_usuario == %@","alumno")
+         do{
+         let resultsAlumnoEncontrado = try managedContext.executeFetchRequest(fetchRequestAlumno)
+         
+         if (resultsAlumnoEncontrado.count != 0){
+         let alumnoEncontrado = resultsAlumnoEncontrado[0] as! Alumno
+         partida.setValue(alumnoEncontrado, forKey: "alumno")
+         
+         }
+         
+         try managedContext.save()
+         
+         }catch{
+         print("Error")
+         
+         }*/
         
-
+        
         
     }
     
@@ -231,7 +231,7 @@ class ResultadosViewController: ViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
-
+        
         
         //Almacenar fallo en Core Data
         //var numFallosAnimal = 0

@@ -11,7 +11,8 @@ import CoreData
 
 
 var administrador = false;
-
+var app = 2;
+var animales_tipo = Dictionary<Int,[String]>()
 
 class Inicio_de_sesionViewController: UIViewController {
     
@@ -23,13 +24,14 @@ class Inicio_de_sesionViewController: UIViewController {
         
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-      
+        self.rellenar_animales()
         
         let esta = self.comprobar_predeterminado()
         if !esta{
             print("Se crea el alumno predeterminado y los fallos")
             self.crear_alumno()
             self.crear_fallos()
+            
         }
         
         //self.prueba() //Muestra el CoreData
@@ -63,7 +65,7 @@ class Inicio_de_sesionViewController: UIViewController {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
         let managedContext = appDelegate.managedObjectContext
-
+        
         
         
         
@@ -133,6 +135,33 @@ class Inicio_de_sesionViewController: UIViewController {
             }
         }
         
+        
+        
+    }
+    
+    func rellenar_animales(){
+        if animales_tipo.isEmpty{
+            animales_tipo[0] = ["oso","Mamífero"]
+            animales_tipo[1] = ["rana","Anfibio"]
+            animales_tipo[2] = ["tucán","Ave"]
+            animales_tipo[3] = ["cebra","Mamífero"]
+            animales_tipo[4] = ["tiburón","Pez"]
+            animales_tipo[5] = ["león","Mamífero"]
+            animales_tipo[6] = ["jirafa","Mamífero"]
+            animales_tipo[7] = ["koala","Mamífero"]
+            animales_tipo[8] = ["avispa","Insecto"]
+            animales_tipo[9] = ["araña","Insecto"]
+            animales_tipo[10] = ["pinguino","Ave"]
+            animales_tipo[11] = ["zorro","Mamífero"]
+            animales_tipo[12] = ["cuervo","Ave"]
+            animales_tipo[13] = ["caballo","Mamífero"]
+            animales_tipo[14] = ["elefante","Mamífero"]
+            animales_tipo[15] = ["tortuga","Anfibio"]
+            animales_tipo[16] = ["delfin","Mamífero"]
+            animales_tipo[17] = ["medusa","Invertebrado"]
+            animales_tipo[18] = ["caracol","Invertebrado"]
+            animales_tipo[19] = ["buho","Ave"]
+        }
         
         
     }
@@ -228,7 +257,7 @@ class Inicio_de_sesionViewController: UIViewController {
         let managedContext = appDelegate.managedObjectContext
         
         var esta = false;
-       
+        
         
         //Alumno
         
@@ -250,7 +279,7 @@ class Inicio_de_sesionViewController: UIViewController {
         
         
         return esta;
-    
+        
     }
     
     /*

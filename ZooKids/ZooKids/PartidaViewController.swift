@@ -15,15 +15,14 @@ class PartidaViewController: ViewController {
     }
     @IBAction func salir(sender: UIBarButtonItem) {
         if(recordar != 2){
-            print("Se sale del juego al perfil del niño")
+            
             resetear_variables_globales();
             let storyboard = UIStoryboard(name: "nino", bundle: nil)
             let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
             
             self.presentViewController(controller, animated: true, completion: nil)
         }else{
-            print("Es 2, se cierra esto y ya está")
-            print(recordar)
+            
             recordar = 0 ;
             //se tiene que cerrar esta ventana
             if presentingViewController is UINavigationController{
@@ -43,12 +42,11 @@ class PartidaViewController: ViewController {
     
     override func viewDidLoad() {
         
-         navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
+        navigationController?.navigationBar.barTintColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         super.viewDidLoad()
-        //print("Entra en la clase")
-        print("Recordar ahora es : ")
+        
         if recordar == 1 {
-            print("Entra a cambiar el titulo del boton y desactivar el otro")
+            
             salir_btn.title = "Volver al juego"
             jugarBtn.hidden = true;
             recordar = 2
@@ -63,9 +61,7 @@ class PartidaViewController: ViewController {
         
         //print("Se ejecuta ek accesi a ka varuavke de numeros")
         //print(String(numeros[estadoAnimal]));
-        print("Se carga la foto inicial del animal, estos son los numeros")
-        print(numeros)
-        print("Animal"+String(numeros[estadoAnimal]))
+        
         fotoAnimal.image=UIImage(named: "Animal"+String(numeros[estadoAnimal]))
         
         
@@ -78,8 +74,6 @@ class PartidaViewController: ViewController {
     
     func escoger_animales_aleatoriamente(){
         //cargar animales diferentes de los xassets
-        print("Se ejecu8ta el metodo")
-        
         
         
         var contador = 0
@@ -90,8 +84,12 @@ class PartidaViewController: ViewController {
                 numeros.append(numAleatorio);
                 let an = Animal();
                 an.imagen = numAleatorio;
+                let array_animal = animales_tipo[numAleatorio-1]
+                
+                an.respuesta_verdadera_establecida = array_animal![1]
+                an.nombre = array_animal![0]
                 animales.append(an)
-                print(numAleatorio)
+                
                 contador=contador+1;
             }
         }
