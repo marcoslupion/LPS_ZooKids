@@ -96,6 +96,8 @@ class Estadisticas_ViewController: ViewController {
         
         //Partidas totales
         let fetchRequestPartidas = NSFetchRequest(entityName: "Partida")
+        //Cargar todas las partidas que pertenecen al admin
+        fetchRequestPartidas.predicate = NSPredicate(format: "alumno.profesor.nombre_usuario == %@", profesor.nombre_usuario)
         var preguntasTotales:Int16 = 0
         var erroresTotales = 0 as Int16
         do{
@@ -103,9 +105,9 @@ class Estadisticas_ViewController: ViewController {
             //preguntasTotales = resultsPartidas.count * 25
             //Errores
             for partida in resultsPartidas as! [Partida]{
-                if(partida.alumno.profesor.nombre_usuario != profesor.nombre_usuario){
+                /*if(partida.alumno.profesor.nombre_usuario != profesor.nombre_usuario){
                     continue
-                }
+                }*/
                 preguntasTotales += partida.num_aciertos + partida.num_fallos
                 erroresTotales += partida.num_fallos
             }
@@ -116,6 +118,7 @@ class Estadisticas_ViewController: ViewController {
         
         //Fallos totales
         let fetchRequestFallos = NSFetchRequest(entityName: "Fallo")
+        fetchRequestFallos.predicate = NSPredicate(format: "admin.nombre_usuario == %@", profesor.nombre_usuario)
         //var fallosTotales : Int16 = 0
         //var tipoAnimalMap = Dictionary<String,Int16>()
         tipoAnimalMap = initializeDictionary()
@@ -138,19 +141,16 @@ class Estadisticas_ViewController: ViewController {
         
         //Por género
         let fetchRequestGenero = NSFetchRequest(entityName: "Partida")
-        /*var numAciertosH:Int16 = 0
-        var numFallosH:Int16 = 0
-        var numAciertosM:Int16 = 0
-        var numFallosM:Int16 = 0*/
+        fetchRequestGenero.predicate = NSPredicate(format: "alumno.profesor.nombre_usuario == %@", profesor.nombre_usuario)
         
         do{
             
             let resultsFallosGenero = try managedContext.executeFetchRequest(fetchRequestGenero)
             
             for partida in resultsFallosGenero as! [Partida]{
-                if(partida.alumno.profesor.nombre_usuario != profesor.nombre_usuario){
+                /*if(partida.alumno.profesor.nombre_usuario != profesor.nombre_usuario){
                     continue
-                }
+                }*/
                 //print("partida id = ",partida.id_partida)
                 if(partida.alumno.sexo == "M"){
                     //print("género = M")
@@ -174,13 +174,14 @@ class Estadisticas_ViewController: ViewController {
         //let aciertosTotales = numAciertosM + numFallosH
         aciertosTotales = numAciertosM + numAciertosH
         
+        /*
         print("Errores totales = ",String(erroresTotales))
         print("Preguntas totales = ",preguntasTotales)
         print("Fallos totales = ",fallosTotales," ; fallos H = ",numFallosH," ; fallos M = ",numFallosM)
         print("Aciertos totales = ",aciertosTotales," ; aciertos H = ",numAciertosH,
               " ; aciertos M = ",numAciertosM)
         print("Errores por animal: ",tipoAnimalMap)
-        
+        */
         
 
         

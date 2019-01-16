@@ -30,7 +30,7 @@ class Inicio_de_sesionViewController: UIViewController {
         if !esta{
             print("Se crea el alumno predeterminado y los fallos")
             self.crear_alumno()
-            self.crear_fallos()
+            //self.crear_fallos()
             
         }
         
@@ -217,6 +217,10 @@ class Inicio_de_sesionViewController: UIViewController {
             let resultsAlumno = try managedContext.executeFetchRequest(fetchRequestAlumno)
             for alumno in resultsAlumno{
                 if(alumno.nombre_usuario == userTxtField.text && alumno.contrasenia == passTxtField.text){
+                    //Variable global profesor es el profesor al que pertenece el alumno
+                    //cuando se inicia como alumno
+                    let al = alumno as! Alumno
+                    profesor = al.profesor
                     PerfilNinioViewController.ninioIniciado = alumno as! Alumno
                     let storyboard = UIStoryboard(name: "nino", bundle: nil)
                     let controller = storyboard.instantiateViewControllerWithIdentifier("perfilNinio") as UIViewController
@@ -362,16 +366,38 @@ class Inicio_de_sesionViewController: UIViewController {
         }
         
         //Fallo
-        
         let fetchRequestFallos = NSFetchRequest(entityName: "Fallo")
         do{
             let resultsFallos = try managedContext.executeFetchRequest(fetchRequestFallos)
-            for fallo in resultsFallos{
-                print("Fallo: fallos = ",fallo.fallos," tipo de animal = ",fallo.tipo_animal)
+            for fallo in resultsFallos as! [Fallo]{
+                print("Fallo: Profesor = ",fallo.admin.nombre_usuario," animal = ",fallo.tipo_animal," nº fallos = ",fallo.fallos)
             }
         }catch{
             print("Error")
         }
+        
+        //ModeloDatos (resultados de las partidas)
+        let fetchRequestModeloDatos = NSFetchRequest(entityName: "ModeloDatos")
+        do{
+            let resultsModeloDatos = try managedContext.executeFetchRequest(fetchRequestModeloDatos)
+            for modeloDatos in resultsModeloDatos as! [ModeloDatos]{
+                print("Modelo de datos: Animal = ",modeloDatos.animal," resultado = ",modeloDatos.resultado)
+                print("Valores:")
+                print("Acuático = ",modeloDatos.acuaticio.description)
+                print("Alas = ",modeloDatos.alas.description)
+                print("Aletas = ",modeloDatos.aletas.description)
+                print("Dientes = ",modeloDatos.dientes.description)
+                print("Esqueleto = ",modeloDatos.esqueleto.description)
+                print("Leche = ",modeloDatos.leche.description)
+                print("Pulmones = ",modeloDatos.pulmones.description)
+                print("Piernas = ",modeloDatos.piernas.description)
+                
+            }
+            
+        }catch{
+            print("Error")
+        }
+
         
     }
 }

@@ -15,4 +15,5 @@ class Profesor: NSManagedObject {
     @NSManaged var contrasenia: String
     @NSManaged var alumnos: [Alumno]
     @NSManaged var email: String
+    @NSManaged var fallos: [Fallo]
 }

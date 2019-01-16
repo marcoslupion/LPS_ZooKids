@@ -23,6 +23,7 @@ class ResultadosViewController: ViewController {
         }else{
             mensaje.text = "Hay que estudiar más";
         }
+        
         insertar_datos_bd();
         // Do any additional setup after loading the view.
     }
@@ -68,6 +69,8 @@ class ResultadosViewController: ViewController {
          print(animales[0].resultado);*/
         
         //se tiene que meter en la base de datos todos los datos que hay recogidos en animales
+        
+        print("método insertar datos")
         
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         
@@ -133,45 +136,7 @@ class ResultadosViewController: ViewController {
              */
         }
         
-        //Guardar partida
-        
-        //Primero crear alumno mock
-        /*let entity2 = NSEntityDescription.entityForName("Alumno", inManagedObjectContext: managedContext)
-         let alumno = Alumno(entity:entity2!, insertIntoManagedObjectContext: managedContext)
-         alumno.contrasenia = "prueba"
-         alumno.fecha_nacimiento = NSDate()
-         alumno.foto = UIImage(named: "ninio")
-         alumno.sexo="M"
-         alumno.nombre_usuario="prueba"
-         
-         do{
-         try managedContext.save()
-         
-         }
-         catch{
-         
-         print("error")
-         }*/
-        
-        /* var alumno: Alumno!
-         let nombreAlumno = PerfilNinioViewController.ninioIniciado
-         let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
-         fetchRequestAlumno.predicate = NSPredicate(format: "nombre_usuario == %@",nombreAlumno)
-         do{
-         let resultsAlumnoEncontrado = try managedContext.executeFetchRequest(fetchRequestAlumno)
-         
-         if (resultsAlumnoEncontrado.count != 0){
-         alumno = resultsAlumnoEncontrado[0] as! Alumno
-         }
-         
-         try managedContext.save()
-         
-         }catch{
-         print("Error")
-         }*/
-        
-        
-        //Segundo guardar partida y asociar alumno
+        //Guardar partida y asociar alumno
         let partida = Partida(entity:entity!, insertIntoManagedObjectContext: managedContext)
         
         partida.fecha = NSDate()
@@ -191,32 +156,6 @@ class ResultadosViewController: ViewController {
             print("error")
         }
         
-        
-        //TODO :
-        
-        //partida.setValue(ALUMNO, forKey: "alumno")
-        
-        //Mock : cargar el alumno creado por defecto para añadirlo al CoreData
-        /*let fetchRequestAlumno = NSFetchRequest(entityName: "Alumno")
-         fetchRequestAlumno.predicate = NSPredicate(format: "nombre_usuario == %@","alumno")
-         do{
-         let resultsAlumnoEncontrado = try managedContext.executeFetchRequest(fetchRequestAlumno)
-         
-         if (resultsAlumnoEncontrado.count != 0){
-         let alumnoEncontrado = resultsAlumnoEncontrado[0] as! Alumno
-         partida.setValue(alumnoEncontrado, forKey: "alumno")
-         
-         }
-         
-         try managedContext.save()
-         
-         }catch{
-         print("Error")
-         
-         }*/
-        
-        
-        
     }
     
     func resetear_variables_globales(){
@@ -232,34 +171,85 @@ class ResultadosViewController: ViewController {
         
         let managedContext = appDelegate.managedObjectContext
         
-        
-        //Almacenar fallo en Core Data
-        //var numFallosAnimal = 0
-        //var tipoAnimalFallo = ""
-        
-        //Cargar el tipo de animal para añadir los valores
+        //Guardar fallo para el administrador actual
         let fetchRequestFalloAnimal = NSFetchRequest(entityName: "Fallo")
-        fetchRequestFalloAnimal.predicate = NSPredicate(format: "tipo_animal == %@",respuestaCorrecta)
+        //Cargar todos los fallos que pertenecen al admin
+        //fetchRequestFalloAnimal.predicate = NSPredicate(format: "alumno.profesor.nombre_usuario == %@", profesor.nombre_usuario)
         do{
             let resultsFalloAnimal = try managedContext.executeFetchRequest(fetchRequestFalloAnimal)
-            
-            if (resultsFalloAnimal.count != 0){
-                let resultado = resultsFalloAnimal[0]
-                var fallosAnteriores = resultado.valueForKey("fallos") as? Int
-                if (fallosAnteriores == nil ){
-                    fallosAnteriores = 1
-                }else{
-                    fallosAnteriores=fallosAnteriores!+1
+            if(resultsFalloAnimal.count == 0){
+                //Inicializar fallos para este admin
+                crear_fallos(respuestaCorrecta)
+            }else{
+                //Añadir fallos a los anteriores
+                for fallos in resultsFalloAnimal as! [Fallo]{
+                    if(fallos.tipo_animal == respuestaCorrecta){
+                        var fallosAnteriores = fallos.valueForKey("fallos") as? Int
+                        if (fallosAnteriores == nil ){
+                            fallosAnteriores = 1
+                        }else{
+                            fallosAnteriores=fallosAnteriores!+1
+                        }
+                        fallos.setValue(fallosAnteriores, forKey: "fallos")
+                    }
+                    
                 }
-                resultado.setValue(fallosAnteriores, forKey: "fallos")
-                
             }
             
             try managedContext.save()
-            
         }catch{
             print("Error")
+            
         }
         
     }
+    
+    func crear_fallos(respuestaCorrecta:String){
+        //Para evitar que al acceder a los fallos haya valores nulos se inicializan los fallos a 0
+        
+        
+        var opciones_totales = [String]();
+        opciones_totales.append("Mamífero");
+        opciones_totales.append("Pez");
+        opciones_totales.append("Anfibio");
+        opciones_totales.append("Reptil");
+        opciones_totales.append("Invertebrado");
+        opciones_totales.append("Insecto");
+        opciones_totales.append("Ave");
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let entity = NSEntityDescription.entityForName("Fallo", inManagedObjectContext: managedContext)
+        
+        for str in opciones_totales{
+            
+            let fallos = Fallo(entity:entity!, insertIntoManagedObjectContext: managedContext)
+            
+            fallos.tipo_animal = str
+            if(str == respuestaCorrecta){
+                fallos.fallos = 1 as Int16!
+            }else{
+                fallos.fallos = 0 as Int16!
+            }
+            //fallos.admin = profesor
+            fallos.setValue(profesor, forKey: "admin")
+            
+            
+            do{
+                try managedContext.save()
+                //print("Creado fallo: ",fallos.tipo_animal," nº fallos = ",fallos.fallos," del admin = ",fallos.admin.nombre_usuario)
+                
+            }
+            catch{
+                
+                print("error")
+            }
+            
+        }
+        
+    }
+    
+    
 }

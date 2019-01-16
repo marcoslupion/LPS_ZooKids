@@ -13,5 +13,7 @@ class Fallo: NSManagedObject {
 
     @NSManaged var fallos: Int16
     @NSManaged var tipo_animal: String
+    @NSManaged var admin: Profesor
+
     
 }

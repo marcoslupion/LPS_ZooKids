@@ -45,6 +45,8 @@
 		D230EC0721D550B6001F9631 /* AlumnosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0321D550B6001F9631 /* AlumnosTableViewController.swift */; };
 		D230EC0921D550B6001F9631 /* Fallo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0521D550B6001F9631 /* Fallo.swift */; };
 		D230EC2421D580E5001F9631 /* Partida.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC2321D580E5001F9631 /* Partida.swift */; };
+		D2EE8C3C21EE9AC60006EABE /* ModeloDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE8C3B21EE9AC60006EABE /* ModeloDatos.swift */; };
+		D2EE8C3F21EE9ADB0006EABE /* ZooKids.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2EE8C3D21EE9ADB0006EABE /* ZooKids.xcdatamodeld */; };
 		D2FCB9BD21DA445E00EFEBA4 /* AlumnoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9B921DA445E00EFEBA4 /* AlumnoTableViewCell.swift */; };
 		D2FCB9BE21DA445E00EFEBA4 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9BA21DA445E00EFEBA4 /* RegistroViewController.swift */; };
 		D2FCB9BF21DA445E00EFEBA4 /* ZooKids.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9BB21DA445E00EFEBA4 /* ZooKids.xcdatamodeld */; };
@@ -116,6 +118,8 @@
 		D230EC0321D550B6001F9631 /* AlumnosTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlumnosTableViewController.swift; sourceTree = "<group>"; };
 		D230EC0521D550B6001F9631 /* Fallo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fallo.swift; sourceTree = "<group>"; };
 		D230EC2321D580E5001F9631 /* Partida.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Partida.swift; sourceTree = "<group>"; };
+		D2EE8C3B21EE9AC60006EABE /* ModeloDatos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeloDatos.swift; sourceTree = "<group>"; };
+		D2EE8C3E21EE9ADB0006EABE /* ZooKids.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZooKids.xcdatamodel; sourceTree = "<group>"; };
 		D2FCB9B921DA445E00EFEBA4 /* AlumnoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlumnoTableViewCell.swift; sourceTree = "<group>"; };
 		D2FCB9BA21DA445E00EFEBA4 /* RegistroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
 		D2FCB9BC21DA445E00EFEBA4 /* ZooKids.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZooKids.xcdatamodel; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 				29B9A82721C8092800F1CED9 /* Alumno.swift */,
 				D2FCB9B921DA445E00EFEBA4 /* AlumnoTableViewCell.swift */,
 				D2FCB9BA21DA445E00EFEBA4 /* RegistroViewController.swift */,
+				D2EE8C3D21EE9ADB0006EABE /* ZooKids.xcdatamodeld */,
+				D2EE8C3B21EE9AC60006EABE /* ModeloDatos.swift */,
 				D2FCB9BB21DA445E00EFEBA4 /* ZooKids.xcdatamodeld */,
 				29B9A82521C8052000F1CED9 /* Profesor.swift */,
 				8D87449421B6EBD300F7986A /* Assets.xcassets */,
@@ -328,11 +334,13 @@
 				D2FCB9BD21DA445E00EFEBA4 /* AlumnoTableViewCell.swift in Sources */,
 				29B9A83121C81C7500F1CED9 /* TestViewController.swift in Sources */,
 				84F03F1521DE8E17002DBCF9 /* grafica.swift in Sources */,
+				D2EE8C3C21EE9AC60006EABE /* ModeloDatos.swift in Sources */,
 				8413917721ED3D9F00F54B1C /* BarrasAciertosTabla.swift in Sources */,
 				84412ED021D3FF1A002DA550 /* TableviewCell1.swift in Sources */,
 				29B9A82E21C81C7500F1CED9 /* PartidaViewController.swift in Sources */,
 				8413917321ED3D9F00F54B1C /* ListaAlumnosViewController.swift in Sources */,
 				D230EC0921D550B6001F9631 /* Fallo.swift in Sources */,
+				D2EE8C3F21EE9ADB0006EABE /* ZooKids.xcdatamodeld in Sources */,
 				844E4BF621E6773300ADD1DB /* GraficaGeneroViewController.swift in Sources */,
 				29B9A82F21C81C7500F1CED9 /* PreguntaViewController.swift in Sources */,
 				8D696DFB21D15EEC00AECD45 /* Animal.swift in Sources */,
@@ -568,6 +576,16 @@
 				8D87449221B6EBD300F7986A /* ZooKids.xcdatamodel */,
 			);
 			currentVersion = 8D87449221B6EBD300F7986A /* ZooKids.xcdatamodel */;
+			path = ZooKids.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+		D2EE8C3D21EE9ADB0006EABE /* ZooKids.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D2EE8C3E21EE9ADB0006EABE /* ZooKids.xcdatamodel */,
+			);
+			currentVersion = D2EE8C3E21EE9ADB0006EABE /* ZooKids.xcdatamodel */;
 			path = ZooKids.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
