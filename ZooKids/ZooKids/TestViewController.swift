@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class TestViewController: ViewController {
     var respuesta_dada = "";
@@ -148,9 +149,46 @@ class TestViewController: ViewController {
         //esta es la variable donde están las respuestas del alumno
         //animales[estadoAnimal]
         print(animales[estadoAnimal])
+        let an = animales[estadoAnimal]
+        /*print("Elegido por el alumno: Nombre animal = ",an.nombre," respuesta dada = ",an.respuesta_dada, " respuesta establecida = ",an.respuesta_verdadera_establecida," imagen = ",an.imagen)
+        print("Respuestas dadas ",an.respuestas_dadas)*/
+        
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let entity = NSEntityDescription.entityForName("ModeloDatos", inManagedObjectContext: managedContext)
+        
+        let modeloDatos = ModeloDatos(entity:entity!, insertIntoManagedObjectContext: managedContext)
+        modeloDatos.leche = comprobar_bool(an.respuestas_dadas[0])
+        modeloDatos.alas = comprobar_bool(an.respuestas_dadas[1])
+        modeloDatos.pulmones = comprobar_bool(an.respuestas_dadas[2])
+        modeloDatos.piernas = Int16(an.respuestas_dadas[3])
+        modeloDatos.dientes = comprobar_bool(an.respuestas_dadas[4])
+        modeloDatos.acuatico = comprobar_bool(an.respuestas_dadas[5])
+        modeloDatos.aletas = comprobar_bool(an.respuestas_dadas[6])
+        modeloDatos.esqueleto = comprobar_bool(an.respuestas_dadas[7])
+        modeloDatos.animal = an.nombre
+        modeloDatos.resultado = seleccionada_alumno_1
+        
+        do{
+            try managedContext.save()
+        }
+        catch{
+            
+            print("error")
+        }
         
         
         
+        
+    }
+    
+    func comprobar_bool(i: Int) -> Bool{
+        if(i == 0) {
+            return false
+        }
+        
+        return true
     }
     func desactivar_botones_app1(){
     //desactivar los botones de la app 1

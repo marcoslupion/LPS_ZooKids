@@ -61,7 +61,7 @@ class PreguntaViewController: ViewController,UITextFieldDelegate {
         }
         
         foto.image=UIImage(named: "Pregunta"+String(preguntaActual+1))
-        print("El valor de la imagen que coge es "+String(preguntaActual+1))
+        //print("El valor de la imagen que coge es "+String(preguntaActual+1))
         pregunta.text = preguntas[preguntaActual];
         
         

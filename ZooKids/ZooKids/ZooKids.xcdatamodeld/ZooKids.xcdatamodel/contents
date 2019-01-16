@@ -14,7 +14,7 @@
         <attribute name="tipo_animal" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="admin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Profesor" inverseName="fallos" inverseEntity="Profesor" syncable="YES"/>
     </entity>
-    <entity name="ModeloDatos" syncable="YES">
+    <entity name="ModeloDatos" representedClassName=".ModeloDatos" syncable="YES">
         <attribute name="acuatico" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="alas" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="aletas" optional="YES" attributeType="Boolean" syncable="YES"/>

@@ -12,7 +12,7 @@ import CoreData
 class ModeloDatos: NSManagedObject {
 
     @NSManaged var animal: String
-    @NSManaged var acuaticio: Bool
+    @NSManaged var acuatico: Bool
     @NSManaged var alas: Bool
     @NSManaged var aletas: Bool
     @NSManaged var dientes: Bool

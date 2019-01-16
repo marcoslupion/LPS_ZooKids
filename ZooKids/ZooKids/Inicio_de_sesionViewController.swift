@@ -383,7 +383,7 @@ class Inicio_de_sesionViewController: UIViewController {
             for modeloDatos in resultsModeloDatos as! [ModeloDatos]{
                 print("Modelo de datos: Animal = ",modeloDatos.animal," resultado = ",modeloDatos.resultado)
                 print("Valores:")
-                print("Acuático = ",modeloDatos.acuaticio.description)
+                print("Acuático = ",modeloDatos.acuatico.description)
                 print("Alas = ",modeloDatos.alas.description)
                 print("Aletas = ",modeloDatos.aletas.description)
                 print("Dientes = ",modeloDatos.dientes.description)
