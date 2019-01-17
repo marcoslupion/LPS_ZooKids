@@ -38,17 +38,7 @@ class BarrasAciertosTabla: UIView {
             /*print("Aciertos: ",BarrasAciertosTabla.nAciertos," total: ",total," porcentaje = ", cantAciertos, " de ", BarrasAciertosTabla.nombre)*/
             for i in 0..<10{
                 let boton = UIButton(frame: tamanio)
-                if(AlumnosTableViewController.cantAciertos.isNaN){
-                    continue
-                }
-                if( i<Int(AlumnosTableViewController.cantAciertos)){
-                    boton.setImage(UIImage(named:"verde"), forState: .Normal)
-                }else{
-                    boton.setImage(UIImage(named:"rosa"), forState: .Normal)
-                }
-                
                 boton.adjustsImageWhenHighlighted = false
-                
                 boton.tag = i
                 botones += [boton]
                 addSubview(boton)

@@ -112,21 +112,25 @@ class AlumnosTableViewController: UITableViewController {
         nAciertos = 0
         nErrores = 0
         AlumnosTableViewController.cantAciertos = 0.0
-        var i: Int16 = 0
+        //Descomentar el siguiente bloque para enlazar las barras con las partidas
+        /*var i: Int16 = 0
         for partida in listaPartidas{
-            //print("partida :", i)
-            //print("nombre partida : ", partida.alumno.nombre_usuario, "nombre user: ", alumno.nombre_usuario)
             if partida.alumno.nombre_usuario == alumno.nombre_usuario{
-                //print("coincide")
-                //print("aciertos: ", partida.num_aciertos, " errores: ", partida.num_fallos)
                 nAciertos += partida.num_aciertos
                 nErrores += partida.num_fallos
                 i+=1
             }
         }
         let total = nAciertos + nErrores
-        AlumnosTableViewController.cantAciertos = (Double(nAciertos) / Double(total))*10
-        print(AlumnosTableViewController.cantAciertos)
+        AlumnosTableViewController.cantAciertos = (Double(nAciertos) / Double(total))*10*/
+        
+        //Quitar el siguiente if-else cuando esten enlazadas las partidas
+        if alumno.nombre_usuario == "alumno" {
+            AlumnosTableViewController.cantAciertos = 3.0
+        } else{
+            AlumnosTableViewController.cantAciertos = 5.0
+        }
+
         let cell = tableView.dequeueReusableCellWithIdentifier("celdaAlumno") as! AlumnoTableViewCell
         
         cell.nombre.text = alumno.nombre_usuario
@@ -138,6 +142,17 @@ class AlumnosTableViewController: UITableViewController {
         let fechaString = String(dd)+" / "+String(mm)+" / "+String(yy)
         cell.fecha.text = fechaString
         cell.foto.image = alumno.foto
+        for boton in cell.barra.botones{
+            if(AlumnosTableViewController.cantAciertos.isNaN){
+                continue
+            }
+            if( boton.tag<Int(AlumnosTableViewController.cantAciertos)){
+                boton.setImage(UIImage(named:"verde"), forState: .Normal)
+            }else{
+                boton.setImage(UIImage(named:"rosa"), forState: .Normal)
+            }
+        }
+
         return cell
     }
     

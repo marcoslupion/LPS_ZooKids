@@ -10,6 +10,7 @@ import UIKit
 
 class AlumnoTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var barra: BarrasAciertosTabla!
     @IBOutlet weak var nombre: UILabel!
 
     @IBOutlet weak var foto: UIImageView!
