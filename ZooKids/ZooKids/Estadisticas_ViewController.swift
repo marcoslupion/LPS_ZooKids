@@ -46,6 +46,7 @@ class Estadisticas_ViewController: ViewController {
 
         //Cargar estadísticas al iniciar la ventana
         self.cargarEstadisticas()
+        self.cambiarTextoGrafica()
         
         //print("Childs = ", self.childViewControllers)
         
@@ -187,6 +188,74 @@ class Estadisticas_ViewController: ViewController {
         
     }
     
+    //Modificar texto de resumen de los datos
+    func cambiarTextoGrafica(){
+        
+        var primerTexto: String = ""
+        var segundoTexto: String = ""
+        var tercerTexto: String = ""
+        if(aciertosTotales+fallosTotales==0){
+            primerTexto = "❗️ No se tienen datos de partidas todavía"
+            segundoTexto = ""
+            tercerTexto = ""
+        }else{
+            //Primer texto
+            if(aciertosTotales == fallosTotales){
+                primerTexto = "⏸ Hay los mismos aciertos ("+String(aciertosTotales)+") que fallos ("+String(fallosTotales)+")"
+            }else if(aciertosTotales > fallosTotales){
+                primerTexto = "✅ Hay un mayor número de aciertos ("+String(aciertosTotales)+") que de fallos ("+String(fallosTotales)+")"
+            }else{
+                primerTexto = "❌ Hay un mayor número de fallos ("+String(fallosTotales)+") que de aciertos ("+String(aciertosTotales)+")"
+            }
+            
+            //Segundo texto
+            if(numFallosH < numFallosM && numAciertosH > numAciertosM){
+                segundoTexto = "👦 Los niños tienen más aciertos y menos fallos totales"
+            }else if(numFallosM < numFallosM && numAciertosM > numAciertosH){
+                segundoTexto = "👧 Las niñas tienen más aciertos y menos fallos totales"
+            }else{
+                if(numFallosH == numFallosM && numAciertosH == numAciertosM){
+                    segundoTexto = "👫 Niños y niñas tienen el mismo número de fallos ("+String(numFallosM)+") y de aciertos ("+String(numAciertosM)+")"
+                }else{
+                    if(numAciertosM > numAciertosH){
+                        segundoTexto = "🙋‍♀️ Las niñas tienen más número de aciertos"
+                    }else if (numAciertosH > numAciertosM){
+                        segundoTexto = "🙋‍♂️ Los niños tienes más número de aciertos"
+                    }
+                    
+                    if(numFallosH > numFallosM){
+                        segundoTexto += "\n🙅‍♂️ Los niños tienen más número de fallos"
+                    }else if(numFallosM > numFallosH){
+                        segundoTexto += "\n🙅‍♀️ Las niñas tienen más número de fallos"
+                    }
+                }
+            }
+            
+            //Tercer texto
+            var aux:Int16 = 0
+            var str = ""
+            for (key,value) in tipoAnimalMap{
+                print("key = ",key," value = ",String(value))
+                if(value > aux){
+                    aux = value
+                    str = key
+                }
+            }
+            if(aux == 0){
+                tercerTexto = ""
+            }else{
+                tercerTexto = "🐶 El animal que más se falla es: "+str
+            }
+            
+        }
+        
+        
+        textoGrafica.text = primerTexto + ".\n"+segundoTexto+".\n"+tercerTexto
+        textoGrafica.numberOfLines = 0
+        //textoGrafica.sizeToFit()
+        
+    }
+
     
     @IBAction func indexChanged(sender: AnyObject) {
         

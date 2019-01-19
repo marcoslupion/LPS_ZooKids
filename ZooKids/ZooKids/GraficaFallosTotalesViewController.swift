@@ -62,11 +62,24 @@ class GraficaFallosTotalesViewController: UIViewController {
         
         var colors: [UIColor] = []
         
-        let color2 = UIColor(red: 255/255, green: 206/255, blue: 241/255, alpha: 1)
-        let color1 = UIColor(red: 143/255, green: 214/255, blue: 128/255, alpha: 1)
+        //let color2 = UIColor(red: 255/255, green: 206/255, blue: 241/255, alpha: 1)
+        //let color1 = UIColor(red: 143/255, green: 214/255, blue: 128/255, alpha: 1)
+        
+        let color1 = UIColor.magentaColor()
+        let color2 = UIColor.greenColor()
+        let color3 = UIColor.redColor()
+        let color4 = UIColor.blueColor()
+        let color5 = UIColor.purpleColor()
+        let color6 = UIColor.cyanColor()
+        let color7 = UIColor.yellowColor()
         
         colors.append(color1)
         colors.append(color2)
+        colors.append(color3)
+        colors.append(color4)
+        colors.append(color5)
+        colors.append(color6)
+        colors.append(color7)
         
         
         let colorAgujero = UIColor(red: 255/255, green: 240/255, blue: 201/255, alpha: 1)
