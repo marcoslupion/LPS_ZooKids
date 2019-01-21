@@ -73,8 +73,8 @@ class PartidaViewController: ViewController {
         
         //print("Se ejecuta ek accesi a ka varuavke de numeros")
         //print(String(numeros[estadoAnimal]));
-        print("Animal"+String(numeros[estadoAnimal]))
-        fotoAnimal.image=UIImage(named: "Animal"+String(numeros[estadoAnimal]))
+        print("Animal"+String(numeros[estadoAnimal]+1))
+        fotoAnimal.image=UIImage(named: "Animal"+String(numeros[estadoAnimal]+1))
         
         
     }
@@ -91,12 +91,12 @@ class PartidaViewController: ViewController {
         var contador = 0
         
         while contador<5 {
-            let numAleatorio=Int(arc4random_uniform(20))+1
+            let numAleatorio=Int(arc4random_uniform(20))
             if !numeros.contains(numAleatorio) {
                 numeros.append(numAleatorio);
                 let an = Animal();
-                an.imagen = numAleatorio;
-                let array_animal = animales_tipo[numAleatorio-1]
+                an.imagen = numAleatorio+1;
+                let array_animal = animales_tipo[numAleatorio]
                 
                 an.respuesta_verdadera_establecida = array_animal![1]
                 an.nombre = array_animal![0]
@@ -119,7 +119,7 @@ class PartidaViewController: ViewController {
             
                 numeros.append(n[numAleatorio]);
                 let an = Animal();
-                an.imagen = numAleatorio;
+                an.imagen = numAleatorio+1;
                 let array_animal = animales_tipo[numAleatorio]
                 
                 an.respuesta_verdadera_establecida = array_animal![1]
