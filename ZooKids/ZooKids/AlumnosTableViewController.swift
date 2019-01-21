@@ -112,8 +112,8 @@ class AlumnosTableViewController: UITableViewController {
         nAciertos = 0
         nErrores = 0
         AlumnosTableViewController.cantAciertos = 0.0
-        //Descomentar el siguiente bloque para enlazar las barras con las partidas
-        /*var i: Int16 = 0
+        
+        var i: Int16 = 0
         for partida in listaPartidas{
             if partida.alumno.nombre_usuario == alumno.nombre_usuario{
                 nAciertos += partida.num_aciertos
@@ -122,14 +122,7 @@ class AlumnosTableViewController: UITableViewController {
             }
         }
         let total = nAciertos + nErrores
-        AlumnosTableViewController.cantAciertos = (Double(nAciertos) / Double(total))*10*/
-        
-        //Quitar el siguiente if-else cuando esten enlazadas las partidas
-        if alumno.nombre_usuario == "alumno" {
-            AlumnosTableViewController.cantAciertos = 3.0
-        } else{
-            AlumnosTableViewController.cantAciertos = 5.0
-        }
+        AlumnosTableViewController.cantAciertos = (Double(nAciertos) / Double(total))*10
 
         let cell = tableView.dequeueReusableCellWithIdentifier("celdaAlumno") as! AlumnoTableViewCell
         
@@ -144,6 +137,7 @@ class AlumnosTableViewController: UITableViewController {
         cell.foto.image = alumno.foto
         for boton in cell.barra.botones{
             if(AlumnosTableViewController.cantAciertos.isNaN){
+                boton.setImage(UIImage(named: "blanco"), forState: .Normal)
                 continue
             }
             if( boton.tag<Int(AlumnosTableViewController.cantAciertos)){
