@@ -222,7 +222,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <outlet property="BarraPorcentaje" destination="Asu-uu-kHs" id="C95-lE-sw3"/>
+                                            <outlet property="barraPartidas" destination="Asu-uu-kHs" id="icu-g5-4gl"/>
                                             <outlet property="fecha" destination="l1l-Zv-Z9s" id="nsG-sY-DYv"/>
                                             <outlet property="numeroPartida" destination="8UG-5w-GgN" id="1tB-3g-Kfj"/>
                                         </connections>

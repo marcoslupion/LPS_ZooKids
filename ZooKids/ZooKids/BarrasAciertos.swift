@@ -41,17 +41,8 @@ class BarrasAciertos: UIView {
          cantAciertos = (Double(BarrasAciertosTabla.nAciertos) / Double(total))*10*/
         // if(!cantAciertos.isNaN){
         /*print("Aciertos: ",BarrasAciertosTabla.nAciertos," total: ",total," porcentaje = ", cantAciertos, " de ", BarrasAciertosTabla.nombre)*/
-        for i in 0..<10{
+        for i in 0..<5{
             let boton = UIButton(frame: tamanio)
-            if(BarraPartidasViewController.cantAciertos.isNaN){
-                continue
-            }
-            print("Aciertos : ",BarraPartidasViewController.cantAciertos)
-            if( i<Int(BarraPartidasViewController.cantAciertos)){
-                boton.setImage(UIImage(named:"verde"), forState: .Normal)
-            }else{
-                boton.setImage(UIImage(named:"rosa"), forState: .Normal)
-            }
             
             boton.adjustsImageWhenHighlighted = false
             
@@ -63,14 +54,14 @@ class BarrasAciertos: UIView {
     }
     
     override func intrinsicContentSize() -> CGSize {
-        return CGSize(width: 17.5, height: 25)
+        return CGSize(width: 60.5, height: 25)
     }
     
     
     //método para mostrar las vistas, por defecto lo hace de forma apilada.
     override func layoutSubviews() {
         for (i, boton) in botones.enumerate() {
-            boton.frame.origin.x = CGFloat(i * (17*2 + 0))
+            boton.frame.origin.x = CGFloat(i * (60 + 0))
         }
         
 }

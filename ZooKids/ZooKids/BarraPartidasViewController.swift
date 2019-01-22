@@ -49,10 +49,20 @@ class BarraPartidasViewController:  UIViewController, UITableViewDataSource, UIT
         let fechaString = String(dd)+" / "+String(mm)+" / "+String(yy)
         //print("fecha = ",dd," / ",mm," / ",yy)
         cell.fecha.text = fechaString
-        BarraPartidasViewController.cantAciertos = 0.0
-        let nAciertos = partidas[indexPath.row].num_aciertos
+       // let aciertos = partidas[indexPath.row].num_aciertos
+        BarraPartidasViewController.cantAciertos = Double(partidas[indexPath.row].num_aciertos)
+        for boton in cell.barraPartidas.botones {
+            if(boton.tag < Int(BarraPartidasViewController.cantAciertos)){
+                boton.setImage(UIImage(named: "verde"), forState: .Normal)
+            }else {
+                boton.setImage(UIImage(named: "rosa"), forState: .Normal)
+            }
+        }
+        
+        /*let nAciertos = partidas[indexPath.row].num_aciertos
         let total = nAciertos + partidas[indexPath.row].num_fallos
-        BarraPartidasViewController.cantAciertos = (Double(nAciertos) / Double(total))*10
+        BarraPartidasViewController.cantAciertos = (Double(nAciertos) / Double(total))*10*/
+        
         
         
         return cell

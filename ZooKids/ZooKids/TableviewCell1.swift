@@ -16,7 +16,8 @@ class TableviewCell1: UITableViewCell {
     
     @IBOutlet weak var fecha: UILabel!
     
-    @IBOutlet weak var BarraPorcentaje: UIView!
+    
+    @IBOutlet weak var barraPartidas: BarrasAciertos!
     
     
     
