@@ -19,10 +19,12 @@ class PerfilNinioViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     @IBOutlet weak var cerrar_admin: UIBarButtonItem!
+    
     @IBOutlet weak var graficaBarraPartidas: UIView!
    
     @IBOutlet weak var btonJuega: UIButton!
 
+    @IBOutlet weak var btnCerrarSesion: UIImageView!
     @IBAction func cerrar_niño(sender: UIBarButtonItem) {
         if administrador {
             if presentingViewController is UINavigationController{
@@ -72,10 +74,12 @@ class PerfilNinioViewController: UIViewController {
             segmentedControl.removeSegmentAtIndex(0, animated: false)
             segmentedControl.selectedSegmentIndex = 0
             btonJuega.hidden=true
+            btnCerrarSesion.hidden=true
             graficaResumen.hidden=false
             graficaBarraPartidas.hidden = true;
         }else{
             cerrar_admin.title = ""
+            btnCerrarSesion.hidden=false
             btonJuega.hidden=false
             graficaResumen.hidden=true
             graficaBarraPartidas.hidden = true;

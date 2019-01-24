@@ -39,6 +39,12 @@ class TestViewController: ViewController {
     
     @IBOutlet weak var btn_invertebrado: UIButton!
     
+    @IBOutlet weak var img_o1: UIImageView!
+    
+    @IBOutlet weak var img_o2: UIImageView!
+    
+    @IBOutlet weak var img_o3: UIImageView!
+    
     @IBAction func salir_app1(sender: UIButton) {
         if seleccionada_alumno_1 != ""{
             procesar_resultados_app1()
@@ -55,27 +61,34 @@ class TestViewController: ViewController {
     }
     @IBAction func seleccionar_tipo_animal_boton(sender: UIButton) {
         seleccionada_alumno_1 = sender.titleLabel!.text!
-         sender.backgroundColor = UIColor.yellowColor()
+         // sender.backgroundColor = UIColor.yellowColor()
         if !primera_vez_click{
-            anterior.backgroundColor = UIColor.blueColor()
+            anterior.backgroundColor = UIColor(red:0.0, green:122.0/255.0, blue:1.0, alpha:1.0)
         }
-        if (seleccionada_alumno_1 == "Mamífero"){
+        if (seleccionada_alumno_1 == "Mamifero"){
             anterior = btn_mamifero
+            anterior.backgroundColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         }else if (seleccionada_alumno_1 == "Ave"){
             anterior = btn_ave
+            anterior.backgroundColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         }else if (seleccionada_alumno_1 == "Insecto"){
             anterior = btn_insecto
+            anterior.backgroundColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         }
         else if (seleccionada_alumno_1 == "Anfibio"){
             anterior = btn_anfibio
+            anterior.backgroundColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         }
         else if (seleccionada_alumno_1 == "Pez"){
             anterior = btn_pez
+            anterior.backgroundColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         }
         else if (seleccionada_alumno_1 == "Reptil"){
             anterior = btn_reptil
+            anterior.backgroundColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         }else{
             anterior = btn_invertebrado
+            anterior.backgroundColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
         }
         primera_vez_click = false;
        
@@ -113,17 +126,16 @@ class TestViewController: ViewController {
     }
     
     @IBAction func escoge_opcion_1(sender: UIButton) {
-        
+        img_o1.image = UIImage(named: "RespuestaNinio")
     }
     
     
     @IBAction func escoge_opcion_2(sender: UIButton) {
-
+        img_o2.image = UIImage(named: "RespuestaNinio")
         
     }
     @IBAction func escoge_opcion_3(sender: UIButton) {
-
-        
+        img_o3.image = UIImage(named: "RespuestaNinio")
     }
     func mostrar_botones(){
         //boton_de_finalizar.hidden = false;
@@ -241,7 +253,8 @@ class TestViewController: ViewController {
     func insertar_botones_app2(){
         if opciones_mostradas.count == 1{
             //solo mostrar un boton y además con los iconos del robot y del niño
-            opcion_2.backgroundColor = UIColor.greenColor()
+            opcion_2.backgroundColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
+            img_o2.image = UIImage(named: "RespuestaCorrecta")
             opcion_2.setTitle(opciones_mostradas[0], forState: UIControlState.Normal);
             opcion_1.hidden = true;
             opcion_3.hidden = true
@@ -250,8 +263,11 @@ class TestViewController: ViewController {
             opcion_3.hidden = true;
             opcion_1.setTitle(opciones_mostradas[0], forState: UIControlState.Normal);
             opcion_2.setTitle(opciones_mostradas[1], forState: UIControlState.Normal);
-            opcion_1.backgroundColor = UIColor.redColor()
-            opcion_2.backgroundColor = UIColor.yellowColor()
+            img_o1.image = UIImage(named: "RespuestaApp")
+            opcion_1.backgroundColor = UIColor(red:0.56, green:0.91, blue:0.85, alpha:1.0)
+            img_o2.image = UIImage(named: "RespuestaNinio")
+            opcion_2.backgroundColor = UIColor.redColor()
+            
         }
         estadoAnimal = estadoAnimal + 1 ;
 

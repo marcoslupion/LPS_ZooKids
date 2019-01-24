@@ -270,7 +270,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="iww-QE-0ei">
-                                <rect key="frame" x="172" y="146" width="560" height="806"/>
+                                <rect key="frame" x="172" y="146" width="560" height="831"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="¿Qué tipo de animal es?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t9G-mO-m67">
                                         <rect key="frame" x="0.0" y="0.0" width="560" height="21"/>
@@ -279,105 +279,172 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="lKv-EQ-Zst">
-                                        <rect key="frame" x="0.0" y="71" width="560" height="735"/>
+                                        <rect key="frame" x="0.0" y="71" width="560" height="760"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-xH-zAi">
-                                                <rect key="frame" x="155" y="0.0" width="250" height="75"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mGI-JB-8g7">
+                                                <rect key="frame" x="155" y="0.0" width="250" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PhE-xH-zAi">
+                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="80"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="Pez">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="escoge_opcion_1:" destination="vQa-DU-T54" eventType="touchUpInside" id="5NR-Te-3Db"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dhn-z3-QZb">
+                                                        <rect key="frame" x="170" y="0.0" width="80" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="Igl-XR-yfd"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="75" id="S3A-UB-8iy"/>
-                                                    <constraint firstAttribute="width" constant="250" id="aXT-ew-gk2"/>
-                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="zT1-fC-8B3"/>
+                                                    <constraint firstAttribute="width" constant="250" id="V88-sp-qWz"/>
+                                                    <constraint firstAttribute="height" constant="80" id="y7v-Qp-tH4"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="Pez">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="escoge_opcion_1:" destination="vQa-DU-T54" eventType="touchUpInside" id="5NR-Te-3Db"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qev-eP-UIZ">
-                                                <rect key="frame" x="155" y="95" width="250" height="75"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1BJ-YM-c12">
+                                                <rect key="frame" x="155" y="100" width="250" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qev-eP-UIZ">
+                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="80"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="Mamífero">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="escoge_opcion_2:" destination="vQa-DU-T54" eventType="touchUpInside" id="gdD-a9-tyX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nrs-2A-3Wl">
+                                                        <rect key="frame" x="170" y="0.0" width="80" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="Q5d-aN-oAr"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="75" id="5QO-Si-NB4"/>
-                                                    <constraint firstAttribute="width" constant="250" id="i4z-X1-LnJ"/>
+                                                    <constraint firstAttribute="width" constant="250" id="T08-zo-ICB"/>
+                                                    <constraint firstAttribute="height" constant="80" id="XNX-Y0-OGJ"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="Mamífero">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="escoge_opcion_2:" destination="vQa-DU-T54" eventType="touchUpInside" id="gdD-a9-tyX"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6i-GS-zCU">
-                                                <rect key="frame" x="155" y="190" width="250" height="75"/>
-                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZs-zb-I6q">
+                                                <rect key="frame" x="155" y="200" width="250" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6i-GS-zCU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="170" height="80"/>
+                                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="Anfibio">
+                                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="escoge_opcion_3:" destination="vQa-DU-T54" eventType="touchUpInside" id="wII-Of-PfQ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oaJ-X0-hgV">
+                                                        <rect key="frame" x="170" y="0.0" width="80" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="80" id="iZf-u2-jaF"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="75" id="Yh3-wd-4RI"/>
-                                                    <constraint firstAttribute="width" constant="250" id="eeT-rL-hZG"/>
+                                                    <constraint firstAttribute="width" constant="250" id="0dF-9j-dMu"/>
+                                                    <constraint firstAttribute="height" constant="80" id="bre-c0-Jcf"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <state key="normal" title="Anfibio">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="escoge_opcion_3:" destination="vQa-DU-T54" eventType="touchUpInside" id="wII-Of-PfQ"/>
-                                                </connections>
-                                            </button>
+                                            </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RT4-nv-1OW">
-                                                <rect key="frame" x="248" y="285" width="65" height="30"/>
+                                                <rect key="frame" x="155" y="300" width="250" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="yxN-Pa-UhM"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Mamifero"/>
                                                 <connections>
                                                     <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="Vb2-9N-g0b"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Sv-gs-EUk">
-                                                <rect key="frame" x="265" y="335" width="30" height="30"/>
+                                                <rect key="frame" x="155" y="350" width="250" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="l0e-Xg-V6t"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Ave"/>
                                                 <connections>
                                                     <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="Oku-qS-qUl"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZP-6E-7m4">
-                                                <rect key="frame" x="256" y="385" width="49" height="30"/>
+                                                <rect key="frame" x="155" y="400" width="250" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="zEf-vP-BBC"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Anfibio"/>
                                                 <connections>
                                                     <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="VsP-mK-Ffa"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nvz-vu-zZO">
-                                                <rect key="frame" x="265" y="435" width="30" height="30"/>
+                                                <rect key="frame" x="155" y="450" width="250" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="arX-ff-irv"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Pez"/>
                                                 <connections>
                                                     <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="IT5-Td-3FQ"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CIS-qW-paj">
-                                                <rect key="frame" x="261" y="485" width="39" height="30"/>
+                                                <rect key="frame" x="155" y="500" width="250" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="lW3-vm-YtB"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Reptil"/>
                                                 <connections>
                                                     <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="vGQ-07-bj7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXz-AM-nhJ">
-                                                <rect key="frame" x="236" y="535" width="88" height="30"/>
+                                                <rect key="frame" x="155" y="550" width="250" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="cj8-iw-0bs"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Invertebrado"/>
                                                 <connections>
                                                     <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="pIi-Fk-tKD"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfU-vC-WRu">
-                                                <rect key="frame" x="255" y="585" width="51" height="30"/>
+                                                <rect key="frame" x="155" y="600" width="250" height="30"/>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="w5e-uq-Dcr"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <state key="normal" title="Insecto"/>
                                                 <connections>
                                                     <action selector="seleccionar_tipo_animal_boton:" destination="vQa-DU-T54" eventType="touchUpInside" id="mkK-eZ-e1R"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9n-Sb-RjA">
-                                                <rect key="frame" x="155" y="635" width="250" height="50"/>
+                                                <rect key="frame" x="155" y="650" width="250" height="50"/>
                                                 <color key="backgroundColor" red="1" green="0.048174922891643046" blue="0.4612204477629559" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="1qu-f1-80F"/>
@@ -389,9 +456,15 @@
                                                     <action selector="siguiente_animal:" destination="vQa-DU-T54" eventType="touchUpInside" id="1nm-8n-szF"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPj-KO-K4l">
-                                                <rect key="frame" x="198" y="705" width="164" height="30"/>
-                                                <state key="normal" title="Guardar repuesta y salir"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oPj-KO-K4l">
+                                                <rect key="frame" x="155" y="720" width="250" height="40"/>
+                                                <color key="backgroundColor" red="1" green="0.56720529566846278" blue="0.69454100532519758" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="250" id="lA1-z0-3Xx"/>
+                                                    <constraint firstAttribute="height" constant="40" id="qfM-r6-g27"/>
+                                                </constraints>
+                                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Guardar respuesta y salir"/>
                                                 <connections>
                                                     <action selector="salir_app1:" destination="vQa-DU-T54" eventType="touchUpInside" id="4O8-yS-Uec"/>
                                                 </connections>
@@ -442,6 +515,9 @@
                         <outlet property="btn_mamifero" destination="RT4-nv-1OW" id="LP7-7G-siv"/>
                         <outlet property="btn_pez" destination="Nvz-vu-zZO" id="UZp-mY-Cqq"/>
                         <outlet property="btn_reptil" destination="CIS-qW-paj" id="lcq-X4-QTc"/>
+                        <outlet property="img_o1" destination="Dhn-z3-QZb" id="xVd-4A-Evl"/>
+                        <outlet property="img_o2" destination="nrs-2A-3Wl" id="yXd-AV-6qe"/>
+                        <outlet property="img_o3" destination="oaJ-X0-hgV" id="CNH-h6-6cU"/>
                         <outlet property="opcion_1" destination="PhE-xH-zAi" id="dpq-Ly-iHe"/>
                         <outlet property="opcion_2" destination="qev-eP-UIZ" id="ZgZ-nd-jvl"/>
                         <outlet property="opcion_3" destination="V6i-GS-zCU" id="b1k-xp-Leb"/>

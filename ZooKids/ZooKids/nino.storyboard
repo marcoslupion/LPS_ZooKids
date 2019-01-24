@@ -146,6 +146,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="InterfazPorcentaje" destination="tlI-mJ-c9l" id="wpj-zD-sPS"/>
+                        <outlet property="btnCerrarSesion" destination="d6F-IT-NhZ" id="QHB-2u-8KR"/>
                         <outlet property="btonJuega" destination="7hv-w8-STM" id="JMF-mv-Pu7"/>
                         <outlet property="cerrar_admin" destination="Zvd-1z-HVc" id="fYl-iK-YIC"/>
                         <outlet property="fecha" destination="whj-vJ-tqk" id="Fmd-ry-0OR"/>

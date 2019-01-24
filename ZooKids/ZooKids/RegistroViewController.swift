@@ -78,7 +78,7 @@ class RegistroViewController: UIViewController, UITextFieldDelegate, UIImagePick
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
         self.fecha.text = dateFormatter.stringFromDate(sender.date)
-        self.fecha.resignFirstResponder()
+        // self.fecha.resignFirstResponder()
         fechaInsertar = sender.date
     }
     
