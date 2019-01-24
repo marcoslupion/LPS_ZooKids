@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Ver_niño-->
@@ -325,11 +324,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2z4-Bb-2m6" customClass="PieChartView" customModule="Charts">
-                                <rect key="frame" x="0.0" y="50" width="528" height="185"/>
+                                <rect key="frame" x="0.0" y="50" width="528" height="222"/>
                                 <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="% acierto y fallos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIj-dM-SZ3">
-                                <rect key="frame" x="102" y="12" width="155" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Número de Fallos y Aciertos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aIj-dM-SZ3">
+                                <rect key="frame" x="102" y="12" width="237" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -337,9 +336,9 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="2z4-Bb-2m6" secondAttribute="trailing" id="WU4-SS-Ii8"/>
-                            <constraint firstItem="aIj-dM-SZ3" firstAttribute="leading" secondItem="xlP-Jf-Hoy" secondAttribute="leading" constant="102" id="X5c-Nw-Iac"/>
-                            <constraint firstItem="2z4-Bb-2m6" firstAttribute="leading" secondItem="xlP-Jf-Hoy" secondAttribute="leadingMargin" id="k6C-tV-KPI"/>
+                            <constraint firstItem="aIj-dM-SZ3" firstAttribute="leading" secondItem="xlP-Jf-Hoy" secondAttribute="leading" constant="50" id="X5c-Nw-Iac"/>
+                            <constraint firstItem="2z4-Bb-2m6" firstAttribute="leading" secondItem="xlP-Jf-Hoy" secondAttribute="leading" id="d9a-qv-Fjt"/>
+                            <constraint firstAttribute="trailing" secondItem="2z4-Bb-2m6" secondAttribute="trailing" id="mIU-TR-bst"/>
                             <constraint firstItem="aIj-dM-SZ3" firstAttribute="top" secondItem="xlP-Jf-Hoy" secondAttribute="top" constant="12" id="mVA-ux-2nw"/>
                         </constraints>
                     </view>

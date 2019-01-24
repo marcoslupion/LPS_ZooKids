@@ -243,7 +243,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-ZJ-JaL">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="QpI-ZJ-JaL">
                                 <rect key="frame" x="40" y="100" width="520" height="29"/>
                                 <segments>
                                     <segment title="Resultados"/>
@@ -262,17 +262,17 @@
                             </containerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Fantástico puedes mejorar tu puntuación." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Iu-AR-spq">
                                 <rect key="frame" x="49" y="501" width="434" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUQ-Ij-EBL">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sUQ-Ij-EBL">
                                 <rect key="frame" x="36" y="153" width="528" height="394"/>
                                 <connections>
                                     <segue destination="O4t-xs-N5C" kind="embed" id="TBL-Vo-plQ"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="95L-oa-YgS">
+                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="95L-oa-YgS">
                                 <rect key="frame" x="36" y="153" width="528" height="394"/>
                                 <connections>
                                     <segue destination="Mtd-NO-KZU" kind="embed" id="ap6-4G-fjF"/>
@@ -685,14 +685,14 @@
                         <viewControllerLayoutGuide type="bottom" id="22T-Ub-XTs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7wd-yp-zmm">
-                        <rect key="frame" x="0.0" y="0.0" width="528" height="315"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QBO-Bq-Qll">
                                 <rect key="frame" x="0.0" y="0.0" width="528" height="50"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="% aciertos y fallos de los usuarios" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHv-gm-Mig">
-                                        <rect key="frame" x="0.0" y="0.0" width="300" height="34"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Número de Fallos y Aciertos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHv-gm-Mig">
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -700,9 +700,7 @@
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.94117647059999998" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="SHv-gm-Mig" secondAttribute="trailing" id="Hju-nd-xq3"/>
-                                    <constraint firstItem="SHv-gm-Mig" firstAttribute="top" secondItem="QBO-Bq-Qll" secondAttribute="top" id="Zmi-b2-5Py"/>
-                                    <constraint firstItem="SHv-gm-Mig" firstAttribute="leading" secondItem="QBO-Bq-Qll" secondAttribute="leading" constant="20" id="nI5-MX-81n"/>
+                                    <constraint firstItem="SHv-gm-Mig" firstAttribute="leading" secondItem="QBO-Bq-Qll" secondAttribute="leading" id="DNJ-Su-9yp"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SXN-9G-8cW" customClass="PieChartView" customModule="Charts">
@@ -734,7 +732,7 @@
                         <viewControllerLayoutGuide type="bottom" id="w2V-Yk-9XY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sTA-Pk-IhL">
-                        <rect key="frame" x="0.0" y="0.0" width="528" height="394"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="03r-bv-RVP" customClass="BarChartView" customModule="Charts">
@@ -765,7 +763,7 @@
                         <viewControllerLayoutGuide type="bottom" id="1kF-aq-FIh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KZm-F8-sgL">
-                        <rect key="frame" x="0.0" y="0.0" width="528" height="394"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ydb-gF-iba" customClass="PieChartView" customModule="Charts">
