@@ -70,16 +70,13 @@ class Inicio_de_sesionViewController: UIViewController {
         
         let managedContext = appDelegate.managedObjectContext
         
-        
-        
-        
         let entity = NSEntityDescription.entityForName("Alumno", inManagedObjectContext: managedContext)
         
         let alumno = Alumno(entity:entity!, insertIntoManagedObjectContext: managedContext)
         alumno.nombre_usuario = "alumno"
         alumno.contrasenia = "alumno"
         alumno.foto = UIImage(named: "ninio")
-        alumno.sexo = "M"
+        alumno.sexo = "H"
         alumno.fecha_nacimiento = NSDate()
         
         //Asignar el primer profesor
@@ -93,6 +90,11 @@ class Inicio_de_sesionViewController: UIViewController {
         profe.email = "admin@email.es"
         
         alumno.profesor=profe
+        
+        let profe2 = Profesor(entity:entityProfe!, insertIntoManagedObjectContext: managedContext)
+        profe2.nombre_usuario = "profesor"
+        profe2.contrasenia = "profesor"
+        profe2.email = "profesor@email.es"
         
         do{
             try managedContext.save()

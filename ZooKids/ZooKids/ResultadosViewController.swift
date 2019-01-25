@@ -174,7 +174,7 @@ class ResultadosViewController: ViewController {
         //Guardar fallo para el administrador actual
         let fetchRequestFalloAnimal = NSFetchRequest(entityName: "Fallo")
         //Cargar todos los fallos que pertenecen al admin
-        //fetchRequestFalloAnimal.predicate = NSPredicate(format: "alumno.profesor.nombre_usuario == %@", profesor.nombre_usuario)
+        fetchRequestFalloAnimal.predicate = NSPredicate(format: "admin.nombre_usuario == %@", profesor.nombre_usuario)
         do{
             let resultsFalloAnimal = try managedContext.executeFetchRequest(fetchRequestFalloAnimal)
             if(resultsFalloAnimal.count == 0){

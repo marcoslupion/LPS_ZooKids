@@ -83,6 +83,7 @@ class PerfilNinioViewController: UIViewController {
             btonJuega.hidden=false
             graficaResumen.hidden=true
             graficaBarraPartidas.hidden = true;
+            profesor = PerfilNinioViewController.ninioIniciado.profesor
         }
         
         cargarDatos()
