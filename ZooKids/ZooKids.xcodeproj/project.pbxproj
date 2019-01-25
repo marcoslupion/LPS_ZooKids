@@ -48,6 +48,46 @@
 		D2EE8C3C21EE9AC60006EABE /* ModeloDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE8C3B21EE9AC60006EABE /* ModeloDatos.swift */; };
 		D2FCB9BD21DA445E00EFEBA4 /* AlumnoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9B921DA445E00EFEBA4 /* AlumnoTableViewCell.swift */; };
 		D2FCB9BE21DA445E00EFEBA4 /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9BA21DA445E00EFEBA4 /* RegistroViewController.swift */; };
+		D3D4B5B721FB634D00AC472E /* Estadisticas_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 840311E621E549DF007AA445 /* Estadisticas_ViewController.swift */; };
+		D3D4B5B821FB634D00AC472E /* AlumnosTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0321D550B6001F9631 /* AlumnosTableViewController.swift */; };
+		D3D4B5B921FB634D00AC472E /* GraficaResultadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413917021ED3D9F00F54B1C /* GraficaResultadosViewController.swift */; };
+		D3D4B5BA21FB634D00AC472E /* RegistroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9BA21DA445E00EFEBA4 /* RegistroViewController.swift */; };
+		D3D4B5BB21FB634D00AC472E /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0221D550B6001F9631 /* AdminViewController.swift */; };
+		D3D4B5BC21FB634D00AC472E /* Alumno.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82721C8092800F1CED9 /* Alumno.swift */; };
+		D3D4B5BD21FB634D00AC472E /* AlumnoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FCB9B921DA445E00EFEBA4 /* AlumnoTableViewCell.swift */; };
+		D3D4B5BE21FB634D00AC472E /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82D21C81C7500F1CED9 /* TestViewController.swift */; };
+		D3D4B5BF21FB634D00AC472E /* grafica.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F03F1421DE8E17002DBCF9 /* grafica.swift */; };
+		D3D4B5C021FB634D00AC472E /* ModeloDatos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2EE8C3B21EE9AC60006EABE /* ModeloDatos.swift */; };
+		D3D4B5C121FB634D00AC472E /* BarrasAciertosTabla.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413917221ED3D9F00F54B1C /* BarrasAciertosTabla.swift */; };
+		D3D4B5C221FB634D00AC472E /* TableviewCell1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECF21D3FF1A002DA550 /* TableviewCell1.swift */; };
+		D3D4B5C321FB634D00AC472E /* PartidaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82A21C81C7500F1CED9 /* PartidaViewController.swift */; };
+		D3D4B5C421FB634D00AC472E /* ListaAlumnosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413916E21ED3D9F00F54B1C /* ListaAlumnosViewController.swift */; };
+		D3D4B5C521FB634D00AC472E /* Fallo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC0521D550B6001F9631 /* Fallo.swift */; };
+		D3D4B5C621FB634D00AC472E /* GraficaGeneroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E4BF221E6773300ADD1DB /* GraficaGeneroViewController.swift */; };
+		D3D4B5C721FB634D00AC472E /* PreguntaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82B21C81C7500F1CED9 /* PreguntaViewController.swift */; };
+		D3D4B5C821FB634D00AC472E /* ZooKids.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D206FD3B21EFC522002486C6 /* ZooKids.xcdatamodeld */; };
+		D3D4B5C921FB634D00AC472E /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D696DFA21D15EEC00AECD45 /* Animal.swift */; };
+		D3D4B5CA21FB634D00AC472E /* Partida.swift in Sources */ = {isa = PBXBuildFile; fileRef = D230EC2321D580E5001F9631 /* Partida.swift */; };
+		D3D4B5CB21FB634D00AC472E /* BarraPartidasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412EC921D3FEA1002DA550 /* BarraPartidasViewController.swift */; };
+		D3D4B5CC21FB634D00AC472E /* ResultadosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82C21C81C7500F1CED9 /* ResultadosViewController.swift */; };
+		D3D4B5CD21FB634D00AC472E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448C21B6EBD300F7986A /* ViewController.swift */; };
+		D3D4B5CE21FB634D00AC472E /* PerfilNinioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84AAE47D21DFBF8F00AB6C28 /* PerfilNinioViewController.swift */; };
+		D3D4B5CF21FB634D00AC472E /* Inicio_de_sesionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843B817621B9C52F0051146F /* Inicio_de_sesionViewController.swift */; };
+		D3D4B5D021FB634D00AC472E /* BarrasAciertos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84412ECA21D3FEA1002DA550 /* BarrasAciertos.swift */; };
+		D3D4B5D121FB634D00AC472E /* GraficaFallosTotalesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413917121ED3D9F00F54B1C /* GraficaFallosTotalesViewController.swift */; };
+		D3D4B5D221FB634D00AC472E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D87448A21B6EBD300F7986A /* AppDelegate.swift */; };
+		D3D4B5D321FB634D00AC472E /* Profesor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29B9A82521C8052000F1CED9 /* Profesor.swift */; };
+		D3D4B5D421FB634D00AC472E /* graficaResumen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8413916F21ED3D9F00F54B1C /* graficaResumen.swift */; };
+		D3D4B5D621FB634D00AC472E /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A70F21DFA78A007E6B7C /* Realm.framework */; };
+		D3D4B5D721FB634D00AC472E /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A71221DFABA7007E6B7C /* Charts.framework */; };
+		D3D4B5D921FB634D00AC472E /* Juego.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DF58F2321BC5460004ACFC5 /* Juego.storyboard */; };
+		D3D4B5DA21FB634D00AC472E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D87449621B6EBD300F7986A /* LaunchScreen.storyboard */; };
+		D3D4B5DB21FB634D00AC472E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8D87449421B6EBD300F7986A /* Assets.xcassets */; };
+		D3D4B5DC21FB634D00AC472E /* nino.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84AAE47E21DFBF8F00AB6C28 /* nino.storyboard */; };
+		D3D4B5DD21FB634D00AC472E /* Admin.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844E4BF421E6773300ADD1DB /* Admin.storyboard */; };
+		D3D4B5DE21FB634D00AC472E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D87448E21B6EBD300F7986A /* Main.storyboard */; };
+		D3D4B5E021FB634D00AC472E /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A70F21DFA78A007E6B7C /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D3D4B5E121FB634D00AC472E /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 8473A71221DFABA7007E6B7C /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +109,18 @@
 			files = (
 				8473A71121DFA78C007E6B7C /* Realm.framework in Embed Frameworks */,
 				8473A71421DFABA7007E6B7C /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D4B5DF21FB634D00AC472E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D3D4B5E021FB634D00AC472E /* Realm.framework in Embed Frameworks */,
+				D3D4B5E121FB634D00AC472E /* Charts.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -119,6 +171,8 @@
 		D2EE8C3B21EE9AC60006EABE /* ModeloDatos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModeloDatos.swift; sourceTree = "<group>"; };
 		D2FCB9B921DA445E00EFEBA4 /* AlumnoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlumnoTableViewCell.swift; sourceTree = "<group>"; };
 		D2FCB9BA21DA445E00EFEBA4 /* RegistroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistroViewController.swift; sourceTree = "<group>"; };
+		D3D4B5E521FB634D00AC472E /* ZooKids2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZooKids2.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3D4B5E621FB634E00AC472E /* ZooKids copy-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "ZooKids copy-Info.plist"; path = "/Users/alberto/Documents/LPS_ZooKids/ZooKids/ZooKids copy-Info.plist"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +189,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D4B5D521FB634D00AC472E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D4B5D621FB634D00AC472E /* Realm.framework in Frameworks */,
+				D3D4B5D721FB634D00AC472E /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +221,7 @@
 				8D87448921B6EBD300F7986A /* ZooKids */,
 				8D8744A121B6EBD300F7986A /* ZooKidsTests */,
 				8D87448821B6EBD300F7986A /* Products */,
+				D3D4B5E621FB634E00AC472E /* ZooKids copy-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -166,6 +230,7 @@
 			children = (
 				8D87448721B6EBD300F7986A /* ZooKids.app */,
 				8D87449E21B6EBD300F7986A /* ZooKidsTests.xctest */,
+				D3D4B5E521FB634D00AC472E /* ZooKids2.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +318,24 @@
 			productReference = 8D87449E21B6EBD300F7986A /* ZooKidsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		D3D4B5B521FB634D00AC472E /* ZooKids2 */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3D4B5E221FB634D00AC472E /* Build configuration list for PBXNativeTarget "ZooKids2" */;
+			buildPhases = (
+				D3D4B5B621FB634D00AC472E /* Sources */,
+				D3D4B5D521FB634D00AC472E /* Frameworks */,
+				D3D4B5D821FB634D00AC472E /* Resources */,
+				D3D4B5DF21FB634D00AC472E /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZooKids2;
+			productName = ZooKids;
+			productReference = D3D4B5E521FB634D00AC472E /* ZooKids2.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -287,6 +370,7 @@
 			targets = (
 				8D87448621B6EBD300F7986A /* ZooKids */,
 				8D87449D21B6EBD300F7986A /* ZooKidsTests */,
+				D3D4B5B521FB634D00AC472E /* ZooKids2 */,
 			);
 		};
 /* End PBXProject section */
@@ -309,6 +393,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D4B5D821FB634D00AC472E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D4B5D921FB634D00AC472E /* Juego.storyboard in Resources */,
+				D3D4B5DA21FB634D00AC472E /* LaunchScreen.storyboard in Resources */,
+				D3D4B5DB21FB634D00AC472E /* Assets.xcassets in Resources */,
+				D3D4B5DC21FB634D00AC472E /* nino.storyboard in Resources */,
+				D3D4B5DD21FB634D00AC472E /* Admin.storyboard in Resources */,
+				D3D4B5DE21FB634D00AC472E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +454,43 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D8744A321B6EBD300F7986A /* ZooKidsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D3D4B5B621FB634D00AC472E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3D4B5B721FB634D00AC472E /* Estadisticas_ViewController.swift in Sources */,
+				D3D4B5B821FB634D00AC472E /* AlumnosTableViewController.swift in Sources */,
+				D3D4B5B921FB634D00AC472E /* GraficaResultadosViewController.swift in Sources */,
+				D3D4B5BA21FB634D00AC472E /* RegistroViewController.swift in Sources */,
+				D3D4B5BB21FB634D00AC472E /* AdminViewController.swift in Sources */,
+				D3D4B5BC21FB634D00AC472E /* Alumno.swift in Sources */,
+				D3D4B5BD21FB634D00AC472E /* AlumnoTableViewCell.swift in Sources */,
+				D3D4B5BE21FB634D00AC472E /* TestViewController.swift in Sources */,
+				D3D4B5BF21FB634D00AC472E /* grafica.swift in Sources */,
+				D3D4B5C021FB634D00AC472E /* ModeloDatos.swift in Sources */,
+				D3D4B5C121FB634D00AC472E /* BarrasAciertosTabla.swift in Sources */,
+				D3D4B5C221FB634D00AC472E /* TableviewCell1.swift in Sources */,
+				D3D4B5C321FB634D00AC472E /* PartidaViewController.swift in Sources */,
+				D3D4B5C421FB634D00AC472E /* ListaAlumnosViewController.swift in Sources */,
+				D3D4B5C521FB634D00AC472E /* Fallo.swift in Sources */,
+				D3D4B5C621FB634D00AC472E /* GraficaGeneroViewController.swift in Sources */,
+				D3D4B5C721FB634D00AC472E /* PreguntaViewController.swift in Sources */,
+				D3D4B5C821FB634D00AC472E /* ZooKids.xcdatamodeld in Sources */,
+				D3D4B5C921FB634D00AC472E /* Animal.swift in Sources */,
+				D3D4B5CA21FB634D00AC472E /* Partida.swift in Sources */,
+				D3D4B5CB21FB634D00AC472E /* BarraPartidasViewController.swift in Sources */,
+				D3D4B5CC21FB634D00AC472E /* ResultadosViewController.swift in Sources */,
+				D3D4B5CD21FB634D00AC472E /* ViewController.swift in Sources */,
+				D3D4B5CE21FB634D00AC472E /* PerfilNinioViewController.swift in Sources */,
+				D3D4B5CF21FB634D00AC472E /* Inicio_de_sesionViewController.swift in Sources */,
+				D3D4B5D021FB634D00AC472E /* BarrasAciertos.swift in Sources */,
+				D3D4B5D121FB634D00AC472E /* GraficaFallosTotalesViewController.swift in Sources */,
+				D3D4B5D221FB634D00AC472E /* AppDelegate.swift in Sources */,
+				D3D4B5D321FB634D00AC472E /* Profesor.swift in Sources */,
+				D3D4B5D421FB634D00AC472E /* graficaResumen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +619,7 @@
 				);
 				INFOPLIST_FILE = ZooKids/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D LPS1";
 				PRODUCT_BUNDLE_IDENTIFIER = ual.ZooKids;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -500,6 +635,7 @@
 				);
 				INFOPLIST_FILE = ZooKids/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D LPS1";
 				PRODUCT_BUNDLE_IDENTIFIER = ual.ZooKids;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -529,6 +665,38 @@
 			};
 			name = Release;
 		};
+		D3D4B5E321FB634D00AC472E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "ZooKids copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D LPS2";
+				PRODUCT_BUNDLE_IDENTIFIER = ual.ZooKids;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D3D4B5E421FB634D00AC472E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "ZooKids copy-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "-D LPS2";
+				PRODUCT_BUNDLE_IDENTIFIER = ual.ZooKids;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -555,6 +723,15 @@
 			buildConfigurations = (
 				8D8744AB21B6EBD300F7986A /* Debug */,
 				8D8744AC21B6EBD300F7986A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D3D4B5E221FB634D00AC472E /* Build configuration list for PBXNativeTarget "ZooKids2" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3D4B5E321FB634D00AC472E /* Debug */,
+				D3D4B5E421FB634D00AC472E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -10,7 +10,7 @@
         <!--Juego-->
         <scene sceneID="9Ds-5E-tEE">
             <objects>
-                <viewController storyboardIdentifier="juego" id="sq7-ZI-7Pe" customClass="PartidaViewController" customModule="ZooKids" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="juego" id="sq7-ZI-7Pe" customClass="PartidaViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oFL-SL-2rq"/>
                         <viewControllerLayoutGuide type="bottom" id="rKr-Nv-7xK"/>
@@ -102,7 +102,7 @@
         <!--Pregunta-->
         <scene sceneID="SE7-1C-geT">
             <objects>
-                <viewController storyboardIdentifier="pregunta" id="cmI-jo-HTk" customClass="PreguntaViewController" customModule="ZooKids" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="pregunta" id="cmI-jo-HTk" customClass="PreguntaViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fO3-Ip-1NU"/>
                         <viewControllerLayoutGuide type="bottom" id="iZ4-mw-20t"/>
@@ -260,7 +260,7 @@
         <!--Test-->
         <scene sceneID="zCn-iQ-ETk">
             <objects>
-                <viewController storyboardIdentifier="test" id="vQa-DU-T54" customClass="TestViewController" customModule="ZooKids" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="test" id="vQa-DU-T54" customClass="TestViewController" customModule="ZooKids" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y8P-oI-AY6"/>
                         <viewControllerLayoutGuide type="bottom" id="z41-kW-KOe"/>
@@ -347,7 +347,7 @@
                                                             <action selector="escoge_opcion_3:" destination="vQa-DU-T54" eventType="touchUpInside" id="wII-Of-PfQ"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oaJ-X0-hgV">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oaJ-X0-hgV">
                                                         <rect key="frame" x="170" y="0.0" width="80" height="80"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="80" id="iZf-u2-jaF"/>

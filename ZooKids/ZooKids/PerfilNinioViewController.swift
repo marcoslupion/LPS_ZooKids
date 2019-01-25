@@ -90,8 +90,11 @@ class PerfilNinioViewController: UIViewController {
        let barrasPartida = self.childViewControllers[0] as! BarraPartidasViewController
         barrasPartida.partidas=partidasTotales
         barrasPartida.viewDidLoad()
-        
-        let graficaFinal = self.childViewControllers[1] as! ZooKids.graficaResumen
+        #if LPS1
+            let graficaFinal = self.childViewControllers[1] as! ZooKids.graficaResumen
+            #else
+            let graficaFinal = self.childViewControllers[1] as! ZooKids2.graficaResumen
+            #endif
         graficaFinal.numAciertos = numAciertos
         graficaFinal.numFallos = numFallos
         graficaFinal.viewDidLoad()
