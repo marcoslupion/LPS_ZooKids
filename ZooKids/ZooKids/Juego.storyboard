@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="17G3025" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -336,7 +336,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FZs-zb-I6q">
                                                 <rect key="frame" x="155" y="200" width="250" height="80"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6i-GS-zCU">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6i-GS-zCU">
                                                         <rect key="frame" x="0.0" y="0.0" width="170" height="80"/>
                                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -473,7 +473,7 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="lKv-EQ-Zst" firstAttribute="top" secondItem="t9G-mO-m67" secondAttribute="bottom" constant="120" id="krU-OM-NOM"/>
+                                    <constraint firstItem="lKv-EQ-Zst" firstAttribute="leading" secondItem="iww-QE-0ei" secondAttribute="leading" constant="30" id="RFr-cf-dJW"/>
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recordar animal" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IbW-Km-AMb">
@@ -523,6 +523,9 @@
                         <outlet property="opcion_3" destination="V6i-GS-zCU" id="b1k-xp-Leb"/>
                         <outlet property="salir_app1" destination="oPj-KO-K4l" id="ap4-NM-I8x"/>
                         <outlet property="siguiente_animal" destination="S9n-Sb-RjA" id="m7z-xM-6O9"/>
+                        <outlet property="sw1" destination="mGI-JB-8g7" id="XIL-0A-atT"/>
+                        <outlet property="sw2" destination="1BJ-YM-c12" id="zii-9Z-HIT"/>
+                        <outlet property="sw3" destination="FZs-zb-I6q" id="YX7-7B-3Eh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASn-EX-Fhp" userLabel="First Responder" sceneMemberID="firstResponder"/>

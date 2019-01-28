@@ -45,6 +45,8 @@ class TestViewController: ViewController {
     
     @IBOutlet weak var img_o3: UIImageView!
     
+    @IBOutlet weak var sw1: UIStackView!
+    @IBOutlet weak var sw2: UIStackView!
     @IBAction func salir_app1(sender: UIButton) {
         if seleccionada_alumno_1 != ""{
             procesar_resultados_app1()
@@ -59,6 +61,7 @@ class TestViewController: ViewController {
         
         
     }
+    @IBOutlet weak var sw3: UIStackView!
     @IBAction func seleccionar_tipo_animal_boton(sender: UIButton) {
         seleccionada_alumno_1 = sender.titleLabel!.text!
          // sender.backgroundColor = UIColor.yellowColor()
@@ -139,9 +142,15 @@ class TestViewController: ViewController {
     }
     func mostrar_botones(){
         //boton_de_finalizar.hidden = false;
-        opcion_2.hidden = true;
-        opcion_1.hidden = true;
-        opcion_3.hidden = true;
+        
+        
+        self.opcion_3.frame.size = CGSize(width: 20.0, height: 2.0)
+        self.opcion_2.frame.size = CGSize(width: 20.0, height: 2.0)
+        self.opcion_1.frame.size = CGSize(width: 20.0, height: 2.0)
+        
+        sw1.hidden = true;
+        sw2.hidden = true;
+        sw3.hidden = true;
         
 
         
